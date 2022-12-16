@@ -26,7 +26,7 @@ module.exports = withDocsInfra({
         destination: '/material-ui/getting-started/overview/',
         permanent: true,
       },
-    ]
+    ];
   },
   webpack: (config, options) => {
     const plugins = config.plugins.slice();

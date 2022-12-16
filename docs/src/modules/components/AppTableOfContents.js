@@ -2,13 +2,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import NoSsr from '@mui/material/NoSsr';
 import Link from 'docs/src/modules/components/Link';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { openLinkInNewTab } from 'docs/src/modules/components/MarkdownLinks';
-import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
 
 const Nav = styled('nav')(({ theme }) => ({
   top: 0,
@@ -117,21 +115,9 @@ function flatten(headings) {
   return itemsWithNode;
 }
 
-const shouldShowJobAd = () => {
-  const date = new Date();
-  const timeZoneOffset = date.getTimezoneOffset();
-  // Hide for time zones UT+5.5 - UTC+14 & UTC-8 - UTC-12
-  if (timeZoneOffset <= -5.5 * 60 || timeZoneOffset >= 8 * 60) {
-    return false;
-  }
-  return true;
-};
-
 export default function AppTableOfContents(props) {
   const { toc } = props;
   const t = useTranslate();
-  const showSurveyBanner = true;
-  const showAddJob = shouldShowJobAd() && !showSurveyBanner;
 
   const items = React.useMemo(() => flatten(toc), [toc]);
   const [activeState, setActiveState] = React.useState(null);
