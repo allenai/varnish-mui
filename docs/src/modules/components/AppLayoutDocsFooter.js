@@ -114,7 +114,7 @@ async function postFeedbackOnSlack(data) {
   /**
    Not used because I ignore how to encode that with:
       'content-type': 'application/x-www-form-urlencoded'
-   
+
    const complexSlackMessage = {
      blocks: [
        {
@@ -401,35 +401,6 @@ export default function AppLayoutDocsFooter(props) {
               ) : (
                 <div />
               )}
-              <FeedbackGrid
-                container
-                role="group"
-                justifyContent="center"
-                alignItems="center"
-                aria-labelledby="feedback-message"
-              >
-                <Typography
-                  align="center"
-                  component="div"
-                  id="feedback-message"
-                  variant="body2"
-                  sx={{ mx: 2 }}
-                >
-                  {t('feedbackMessage')}
-                </Typography>
-                <div>
-                  <Tooltip title={t('feedbackYes')}>
-                    <IconButton onClick={handleClickThumb(1)} aria-pressed={rating === 1}>
-                      <ThumbUpIcon fontSize="small" color={rating === 1 ? 'primary' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title={t('feedbackNo')}>
-                    <IconButton onClick={handleClickThumb(0)} aria-pressed={rating === 0}>
-                      <ThumbDownIcon fontSize="small" color={rating === 0 ? 'error' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                </div>
-              </FeedbackGrid>
               {nextPage !== null ? (
                 <PageLinkButton
                   component={Link}

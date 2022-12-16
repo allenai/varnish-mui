@@ -201,7 +201,6 @@ export default function AppFrame(props) {
           <GrowingDiv />
           <Stack direction="row" spacing={1.3}>
             <AppFrameBanner />
-            <DeferredAppSearch />
             <Tooltip title={t('appFrame.github')} enterDelay={300}>
               <IconButton
                 component="a"
@@ -213,7 +212,6 @@ export default function AppFrame(props) {
                 <GitHubIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Notifications />
             <Tooltip title={t('appFrame.toggleSettings')} enterDelay={300}>
               <IconButton color="primary" onClick={() => setSettingsOpen(true)} sx={{ px: '8px' }}>
                 <SettingsIcon fontSize="small" />

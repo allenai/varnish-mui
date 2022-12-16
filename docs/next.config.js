@@ -19,6 +19,15 @@ const isDeployPreview = Boolean(process.env.PULL_REQUEST_ID);
 const buildOnlyEnglishLocale = isDeployPreview && !l10nPRInNetlify && !vercelDeploy;
 
 module.exports = withDocsInfra({
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/material-ui/getting-started/overview/',
+        permanent: true,
+      },
+    ]
+  },
   webpack: (config, options) => {
     const plugins = config.plugins.slice();
 

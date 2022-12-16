@@ -95,22 +95,7 @@ ProductDrawerButton.propTypes = {
 function ProductIdentifier({ name, metadata, versionSelector }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Typography
-        sx={(theme) => ({
-          ml: 1,
-          color: theme.palette.grey[600],
-          fontSize: theme.typography.pxToRem(11),
-          fontWeight: 700,
-          textTransform: 'uppercase',
-          letterSpacing: '.08rem',
-        })}
-      >
-        {metadata}
-      </Typography>
-      <Box sx={{ display: 'flex' }}>
-        <ProductDrawerButton productName={name} />
-        {versionSelector}
-      </Box>
+      Varnish: Material UI
     </Box>
   );
 }
@@ -524,7 +509,6 @@ export default function AppNavDrawer(props) {
                 : theme.palette.grey[100],
           }}
         />
-        <DiamondSponsors />
         {navItems}
       </React.Fragment>
     );
