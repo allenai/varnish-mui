@@ -12,8 +12,8 @@ import {
   getDesignTokens,
   getThemedComponents,
   getMetaThemeColor,
-  getVarnishDesignTokens,
 } from 'docs/src/modules/brandingTheme';
+import { Theme as VarnishTheme } from '@allenai/mui-varnish';
 
 const languageMap = {
   en: enUS,
@@ -259,7 +259,7 @@ export function ThemeProvider(props) {
   }, [theme.palette.mode]);
 
   // bring in varnish overrides
-  const vanishTheme = deepmerge(theme, getVarnishDesignTokens(paletteMode));
+  const vanishTheme = deepmerge(theme, VarnishTheme.getVarnishDesignTokens(paletteMode));
 
   return (
     <MuiThemeProvider theme={vanishTheme}>

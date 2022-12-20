@@ -1,8 +1,7 @@
 // TODO: this file was pull over directly from varnish.
 // We should look it over and make sure it still makes sense.
 
-type Dictionary<T> = { [id: string]: T };
-type Indexable<T> = { [K in keyof T & string]: T[K] };
+import { Dictionary, Indexable } from './util';
 
 export class RGB {
   constructor(public r: number, public g: number, public b: number) {}

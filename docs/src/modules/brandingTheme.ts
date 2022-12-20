@@ -2,7 +2,6 @@ import { CSSObject } from '@mui/system';
 import type {} from '@mui/material/themeCssVarsAugmentation';
 import ArrowDropDownRounded from '@mui/icons-material/ArrowDropDownRounded';
 import { createTheme, ThemeOptions, Theme, alpha } from '@mui/material/styles';
-import { color as varnishColor } from './varnishColors';
 
 interface ApplyDarkStyles {
   (scheme: CSSObject): CSSObject;
@@ -163,23 +162,6 @@ export const getMetaThemeColor = (mode: 'light' | 'dark') => {
     dark: blueDark[800],
   };
   return themeColor[mode];
-};
-
-export const getVarnishDesignTokens = (mode: 'light' | 'dark') => {
-  return {
-    palette: {
-      primary: {
-        light: mode === 'light' ? varnishColor.B3.hex : varnishColor.B2.hex,
-        main: mode === 'light' ? varnishColor.B6.hex : varnishColor.B3.hex,
-        dark: mode === 'light' ? varnishColor.B8.hex : varnishColor.B5.hex,
-      },
-      secondary: {
-        light: mode === 'light' ? varnishColor.O4.hex : varnishColor.O2.hex,
-        main: mode === 'light' ? varnishColor.O7.hex : varnishColor.O4.hex,
-        dark: mode === 'light' ? varnishColor.O9.hex : varnishColor.O6.hex,
-      },
-    },
-  };
 };
 
 export const getDesignTokens = (mode: 'light' | 'dark') =>
