@@ -12,6 +12,7 @@ import {
   getDesignTokens,
   getThemedComponents,
   getMetaThemeColor,
+  getVarnishDesignTokens,
 } from 'docs/src/modules/brandingTheme';
 
 const languageMap = {
@@ -257,8 +258,11 @@ export function ThemeProvider(props) {
     }
   }, [theme.palette.mode]);
 
+  // bring in varnish overrides
+  const vanishTheme = deepmerge(theme, getVarnishDesignTokens(paletteMode));
+
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={vanishTheme}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </MuiThemeProvider>
   );
