@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import Divider from '@mui/material/Divider';
 import { styled, alpha } from '@mui/material/styles';
@@ -11,7 +10,6 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
-import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
@@ -219,24 +217,6 @@ export default function AppNavDrawer(props) {
     return (
       <React.Fragment>
         <ToolbarDiv>
-          <NextLink href="/" passHref legacyBehavior>
-            <Box
-              component="a"
-              onClick={onClose}
-              aria-label={t('goToHome')}
-              sx={{
-                pr: '12px',
-                mr: '4px',
-                borderRight: '1px solid',
-                borderColor: (theme) =>
-                  theme.palette.mode === 'dark'
-                    ? alpha(theme.palette.primary[100], 0.08)
-                    : theme.palette.grey[200],
-              }}
-            >
-              <SvgMuiLogo width={30} />
-            </Box>
-          </NextLink>
           {canonicalAs.startsWith('/material-ui/') && (
             <ProductIdentifier name="Varnish" metadata="Material UI" />
           )}

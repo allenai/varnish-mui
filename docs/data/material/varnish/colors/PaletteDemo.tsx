@@ -8,7 +8,7 @@ export default function Demo() {
         width: 100%;
         text-align: center;
         margin-bottom: ${theme.spacing(0.5)};
-        color: ${theme.palette.error.contrastText};
+        color: ${theme.palette.text.primary};
         background: ${theme.palette.error.light};
         border: 1px solid ${theme.palette.error.dark};
       `,
@@ -16,7 +16,7 @@ export default function Demo() {
 
   return (
     <div style={{ width: '100%' }}>
-      <Error>I cant do that, Dave.</Error>
+      <Error>I can&apos;t do that, Dave.</Error>
     </div>
   );
 }
