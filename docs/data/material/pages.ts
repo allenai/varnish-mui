@@ -1,4 +1,5 @@
 import pagesApi from './pagesApi';
+import pagesVarnish from './pagesVarnish';
 import { MuiPage } from '../../src/MuiPage';
 
 const pages: MuiPage[] = [
@@ -18,6 +19,12 @@ const pages: MuiPage[] = [
       { pathname: '/material-ui/getting-started/supported-platforms' },
       { pathname: '/material-ui/getting-started/support' },
     ],
+  },
+  {
+    title: 'Varnish',
+    pathname: '/material-ui/varnish',
+    icon: 'PaletteIcon',
+    children: pagesVarnish,
   },
   {
     pathname: '/material-ui/react-',

@@ -20,8 +20,10 @@ import ChromeReaderModeRoundedIcon from '@mui/icons-material/ChromeReaderModeRou
 import TableViewRoundedIcon from '@mui/icons-material/TableViewRounded';
 import ScienceIcon from '@mui/icons-material/Science';
 import DateRangeRounded from '@mui/icons-material/DateRangeRounded';
+import PaletteIcon from '@mui/icons-material/Palette';
 
 const iconsMap = {
+  PaletteIcon,
   DescriptionIcon: ArticleRoundedIcon,
   ToggleOnIcon: ToggleOffRoundedIcon,
   CodeIcon: CodeRoundedIcon,

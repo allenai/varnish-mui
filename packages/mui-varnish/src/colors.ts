@@ -1,6 +1,3 @@
-// TODO: this file was pull over directly from varnish.
-// We should look it over and make sure it still makes sense.
-
 import { Dictionary, Indexable } from './util';
 
 export class RGB {
@@ -133,10 +130,6 @@ export const color: Dictionary<Color> = {
   black: new Color('Black', '#000', true),
   white: new Color('White', '#FFF'),
   transparent: new Color('Transparent', 'transparent'),
-  // only for Tags
-  Gold: new Color('Gold', '#FFFEB8'),
-  Volcano: new Color('Volcano', '#FFE6DB'),
-  Lime: new Color('Lime', '#EBF9D2'),
 };
 
 export const lightCategoricalColor = {
@@ -168,45 +161,3 @@ export const colorsIdsToHexVals = (colorIds: Array<keyof typeof color>) =>
 export const colorMapToHexVals = (
   colorMap: typeof darkCategoricalColor | typeof lightCategoricalColor | typeof color,
 ) => Object.values(colorMap).map((v) => v.hex);
-
-// use for tags
-export const tagColor = {
-  Gray: { color: new Color('Gray', color.N8.hex), background: new Color('Gray', color.N4.hex) },
-  Magenta: {
-    color: new Color('Magenta', color.M10.hex),
-    background: new Color('Magenta', color.M2.hex),
-  },
-  Red: { color: new Color('Red', color.R10.hex), background: new Color('Red', color.R2.hex) },
-  Volcano: {
-    color: new Color('Volcano', color.R10.hex),
-    background: new Color('Volcano', color.Volcano.hex),
-  },
-  Orange: {
-    color: new Color('Orange', color.O10.hex),
-    background: new Color('Orange', color.O2.hex),
-  },
-  Gold: {
-    color: new Color('Gold', color.O10.hex),
-    background: new Color('Gold', color.Gold.hex),
-  },
-  Lime: { color: new Color('Lime', color.G9.hex), background: new Color('Lime', color.Lime.hex) },
-  Green: {
-    color: new Color('Green', color.G9.hex),
-    background: new Color('Green', color.G2.hex),
-  },
-  Cyan: { color: new Color('Cyan', color.T10.hex), background: new Color('Cyan', color.T2.hex) },
-  Blue: { color: new Color('Blue', color.B7.hex), background: new Color('Blue', color.B2.hex) },
-  Geekblue: {
-    color: new Color('Geekblue', color.A9.hex),
-    background: new Color('Geekblue', color.A2.hex),
-  },
-  Purple: {
-    color: new Color('Purple', color.P9.hex),
-    background: new Color('Purple', color.P2.hex),
-  },
-  Pink: { color: new Color('Pink', color.M8.hex), background: new Color('Pink', color.M2.hex) },
-  Yellow: {
-    color: new Color('Yellow', color.O6.hex),
-    background: new Color('Yellow', color.O1.hex),
-  },
-};

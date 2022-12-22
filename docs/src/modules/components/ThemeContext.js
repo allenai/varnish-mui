@@ -259,10 +259,10 @@ export function ThemeProvider(props) {
   }, [theme.palette.mode]);
 
   // bring in varnish overrides
-  const vanishTheme = deepmerge(theme, VarnishTheme.getVarnishDesignTokens(paletteMode));
-
+  const vTheme = VarnishTheme.getTheme(paletteMode);
+  const varnishTheme = deepmerge(theme, vTheme);
   return (
-    <MuiThemeProvider theme={vanishTheme}>
+    <MuiThemeProvider theme={varnishTheme}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </MuiThemeProvider>
   );

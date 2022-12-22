@@ -36,7 +36,7 @@ export default function MarkdownDocs(props) {
   const router = useRouter();
   const asPathWithoutLang = router.asPath.replace(/^\/[a-zA-Z]{2}\//, '/');
   const {
-    disableAd = false,
+    disableAd = true,
     disableToc = false,
     demos = {},
     docs,

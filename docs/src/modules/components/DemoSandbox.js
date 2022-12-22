@@ -17,6 +17,7 @@ import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import { getDesignTokens } from 'docs/src/modules/brandingTheme';
 import { highDensity } from 'docs/src/modules/components/ThemeContext';
+import { deepmerge } from '@mui/utils';
 
 function FramedDemo(props) {
   const { children, document } = props;
@@ -128,19 +129,24 @@ function getTheme(outerTheme) {
     outerTheme.palette.primary?.main &&
     outerTheme.palette.primary.main !== brandingDesignTokens.palette.primary.main;
   const resultTheme = createTheme(
-    {
-      palette: {
-        mode: outerTheme.palette.mode || 'light',
-        ...(isCustomized && {
-          // Apply color from the color playground
-          primary: { main: outerTheme.palette.primary.main },
-          secondary: { main: outerTheme.palette.secondary.main },
-        }),
+    // merging in the outer theme to preserve custom tokens added by varnish.
+    // this may have larger consequences yet to be understood... or it could be fine.
+    deepmerge(
+      outerTheme,
+      {
+        palette: {
+          mode: outerTheme.palette.mode || 'light',
+          ...(isCustomized && {
+            // Apply color from the color playground
+            primary: { main: outerTheme.palette.primary.main },
+            secondary: { main: outerTheme.palette.secondary.main },
+          }),
+        },
       },
-    },
-    // To make DensityTool playground works
-    // check from MuiFormControl because brandingTheme does not customize this component
-    outerTheme.components?.MuiFormControl?.defaultProps?.margin === 'dense' ? highDensity : {},
+      // To make DensityTool playground works
+      // check from MuiFormControl because brandingTheme does not customize this component
+      outerTheme.components?.MuiFormControl?.defaultProps?.margin === 'dense' ? highDensity : {},
+    ),
   );
   if (outerTheme.direction) {
     resultTheme.direction = outerTheme.direction;

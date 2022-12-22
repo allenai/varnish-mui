@@ -1,19 +1,25 @@
-import type {} from '@mui/material/themeCssVarsAugmentation';
-import { ThemeOptions } from '@mui/material/styles';
+import { ThemeOptions, createTheme } from '@mui/material/styles';
 import { color, Color } from './colors';
 import { Dictionary } from './util';
 
-declare module '@mui/material/styles' {
-  interface Theme {
-    color: Dictionary<Color>;
-  }
-  // allow configuration using `createTheme`
-  interface ThemeOptions {
-    color?: Dictionary<Color>;
-  }
+interface VarnishMuiTheme {
+  color: Dictionary<Color>;
 }
 
-const getVarnishDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => {
+interface VarnishMuiThemeOptions {
+  color?: Dictionary<Color>;
+}
+
+declare module '@mui/material/styles' {
+  interface Theme extends VarnishMuiTheme {}
+
+  // allow configuration using `createTheme`
+  interface ThemeOptions extends VarnishMuiThemeOptions {}
+}
+
+type Mode = 'light' | 'dark';
+
+const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   return {
     palette: {
       primary: {
@@ -28,7 +34,11 @@ const getVarnishDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => {
       },
     },
     color,
-  } as ThemeOptions;
+  };
 };
 
-export default { getVarnishDesignTokens };
+const getTheme = (mode: Mode) => {
+  return createTheme(getVarnishDesignTokens(mode));
+};
+
+export default { getVarnishDesignTokens, getTheme };
