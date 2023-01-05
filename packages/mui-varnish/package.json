@@ -15,7 +15,7 @@
     "directory": "packages/mui-varnish"
   },
   "license": "MIT",
-  "homepage": "https://mui-varnishj.allenai.org/material-ui/getting-started/overview/",
+  "homepage": "https://varnish-mui.apps.allenai.org/material-ui/getting-started/overview/",
   "scripts": {
     "build": "yarn build:legacy && yarn build:modern && yarn build:node && yarn build:stable && yarn build:umd && yarn build:types && yarn build:copy-files",
     "build:umd": "cross-env BABEL_ENV=stable rollup -c scripts/rollup.config.js",
