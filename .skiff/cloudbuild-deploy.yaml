@@ -53,3 +53,5 @@ artifacts:
 options:
   env:
   - DOCKER_BUILDKIT=1
+  machineType: N1_HIGHCPU_8
+
