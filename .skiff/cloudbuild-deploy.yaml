@@ -12,6 +12,11 @@ steps:
   - --build-arg
   - BUILDKIT_INLINE_CACHE=1
   - .
+- id: push
+  name: gcr.io/cloud-builders/docker
+  args:
+  - push
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 - id: config
   name: gcr.io/ai2-reviz/jsonnet
   args:
