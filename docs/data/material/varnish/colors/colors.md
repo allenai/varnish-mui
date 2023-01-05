@@ -36,8 +36,7 @@ eg: `theme.palette.primary.main`
 ### Text Contrast
 
 Each color defined by Varnish has a `useContrastText` boolean attached to it. If `true`, and the
-color is used as the `background` of an element, we suggest setting the text color to
-white for readability.
+color is used as the `background` of an element, we suggest inverting the text color for readability.
 
 {{"demo": "ContrastDemo.tsx", "bg": true}}
 
