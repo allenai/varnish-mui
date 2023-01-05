@@ -16,4 +16,4 @@ yarn add @allenai/mui-varnish
 
 ## Documentation
 
-[The documentation](https://mui-varnish.allenai.org)
+[The documentation](https://varnish-mui.apps.allenai.org)
