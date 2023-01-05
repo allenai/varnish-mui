@@ -1,0 +1,6 @@
+{
+    "appName": "varnish-mui",
+    "contact": "jonb",
+    "team": "reviz",
+    "replicas": { "prod": 1 }
+}
