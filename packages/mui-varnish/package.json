@@ -6,11 +6,7 @@
   "description": "Varnish theme and components that implement Google's Material Design.",
   "main": "./src/index.ts",
   "keywords": [
-    "react",
-    "react-component",
-    "mui",
-    "material-ui",
-    "material design",
+    "allenai",
     "varnish"
   ],
   "repository": {
