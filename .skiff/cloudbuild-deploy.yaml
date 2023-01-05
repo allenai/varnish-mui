@@ -1,16 +1,4 @@
 steps:
-- id: pull.latest
-  name: gcr.io/cloud-builders/docker
-  entrypoint: /bin/bash
-  args:
-  - -c
-  - docker pull gcr.io/$PROJECT_ID/$REPO_NAME:latest || exit 0
-- id: pull.sha
-  name: gcr.io/cloud-builders/docker
-  entrypoint: /bin/bash
-  args:
-  - -c
-  - docker pull gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA || exit 0
 - id: build
   name: gcr.io/cloud-builders/docker
   args:
@@ -24,16 +12,11 @@ steps:
   - --build-arg
   - BUILDKIT_INLINE_CACHE=1
   - .
-  waitFor:
-  - pull.latest
-  - pull.sha
 - id: push
   name: gcr.io/cloud-builders/docker
   args:
   - push
   - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
-  waitFor:
-  - build
 - id: config
   name: gcr.io/ai2-reviz/jsonnet
   args:
@@ -56,17 +39,12 @@ steps:
   - --tla-str
   - buildId=$BUILD_ID
   - .skiff/webapp.jsonnet
-  waitFor:
-  - "-"
 - id: deploy
   name: gcr.io/ai2-reviz/rudder
   args:
   - deploy
   - -f
   - .skiff/webapp.yaml
-  waitFor:
-  - push
-  - config
 substitutions:
   _ENV: prod
 images:
