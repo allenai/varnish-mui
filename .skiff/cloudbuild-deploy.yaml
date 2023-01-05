@@ -1,4 +1,10 @@
 steps:
+- id: pull
+  name: gcr.io/cloud-builders/docker
+  entrypoint: /bin/bash
+  args:
+  - -c
+  - "docker pull gcr.io/$PROJECT_ID/$REPO_NAME:latest gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA || exit 0"
 - id: build
   name: gcr.io/cloud-builders/docker
   args:
