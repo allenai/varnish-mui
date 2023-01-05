@@ -7,11 +7,14 @@ githubLabel: 'varnish: colors'
 
 <p class="description">Official AI2 Colors.</p>
 
-What colors should you use on your site? You could use any of these colors, eg. `theme.color.N9`.
-But if you are styling something that exists semantically in the theme.palette,
-we suggest using the palette, eg. `theme.palette.primary.main`. This has 2 advantages; 1) the code
-is more readable, 2) AI2 can change the palette colors without altering dozens of places in every
-code base.
+To ensure your site looks polished and consistent with AI2's broader brand, try to stick using the colors
+expressed here.
+
+You can refer to these colors in two ones. Either explicitly via a reference like `theme.color.N9`, or via
+a semantic name attached to the `palette` API: `theme.palette.primary.main`. The latter is preferred, as
+it means your UI will be updated if AI2's broader brand guidelines and change what the `primary` cluster
+is.
+
 
 ## Examples
 
