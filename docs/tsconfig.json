@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["next-env.d.ts", "types", "src", "pages", "data", "../packages/mui-varnish"],
+  "include": ["next-env.d.ts", "types", "src", "pages", "data", "../packages/varnish"],
   "compilerOptions": {
     "allowJs": true,
     "isolatedModules": true,

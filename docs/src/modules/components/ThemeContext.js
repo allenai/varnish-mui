@@ -13,7 +13,7 @@ import {
   getThemedComponents,
   getMetaThemeColor,
 } from 'docs/src/modules/brandingTheme';
-import { Theme as VarnishTheme } from '@allenai/mui-varnish';
+import { Theme as VarnishTheme } from '@allenai/varnish';
 
 const languageMap = {
   en: enUS,

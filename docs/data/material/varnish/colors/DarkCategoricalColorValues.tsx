@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { darkCategoricalColor, dictionaryToArray } from '@allenai/mui-varnish';
+import { darkCategoricalColor, dictionaryToArray } from '@allenai/varnish';
 import { ChartingGrid, ColorValues, ColorGroupDict } from './ColorValues';
 
 const darkCategoricalColorGroup: ColorGroupDict = {

@@ -1,4 +1,4 @@
-# @allenai/mui-varnish
+# @allenai/varnish
 
 Varnish theme and components that implement Google's Material Design.
 
@@ -8,12 +8,12 @@ Install the package in your project directory with:
 
 ```sh
 // with npm
-npm install @allenai/mui-varnish
+npm install @allenai/varnish
 
 // with yarn
-yarn add @allenai/mui-varnish
+yarn add @allenai/varnish
 ```
 
 ## Documentation
 
-[The documentation](https://varnish-mui.apps.allenai.org)
+[The documentation](https://varnish.apps.allenai.org)

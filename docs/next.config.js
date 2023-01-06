@@ -24,6 +24,7 @@ module.exports = withDocsInfra({
       {
         source: '/',
         destination: '/material-ui/getting-started/overview/',
+        permanent: true,
       },
     ];
   },

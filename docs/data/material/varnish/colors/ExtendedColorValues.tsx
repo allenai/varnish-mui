@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { color } from '@allenai/mui-varnish';
+import { color } from '@allenai/varnish';
 import { ColorValues, ColorGroupDict, ExtendedGrid } from './ColorValues';
 
 const colorGroups: ColorGroupDict = {

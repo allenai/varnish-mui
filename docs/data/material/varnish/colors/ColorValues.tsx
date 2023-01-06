@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTheme, styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { Color, CopyToClipboardButton } from '@allenai/mui-varnish';
+import { Color, CopyToClipboardButton } from '@allenai/varnish';
 
 export type ColorGroupDict = { [k: string]: Color[] };
 

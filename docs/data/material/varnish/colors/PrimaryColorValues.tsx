@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled, css } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { color, Color, CopyToClipboardButton } from '@allenai/mui-varnish';
+import { color, Color, CopyToClipboardButton } from '@allenai/varnish';
 
 interface PrimaryColorProps {
   color: Color;
@@ -42,10 +42,8 @@ const PrimaryGrid = styled('div')(
       align-items: center;
       margin-top: ${theme.spacing(2)};
       margin-bottom: ${theme.spacing(3)};
+      grid-template-columns: 1fr 1fr 1fr 1fr;
 
-      ${theme.breakpoints.down('lg')} {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
       ${theme.breakpoints.down('md')} {
         grid-template-columns: 1fr 1fr;
       }
@@ -54,17 +52,6 @@ const PrimaryGrid = styled('div')(
       } ;
     `,
 );
-/*
-  ${theme.breakpoints.down('md')} {
-    grid-template-columns: 1fr;
-  },
-  ${theme.breakpoints.up('md')} {
-    grid-template-columns: 1fr 1fr;
-  },
-  ${theme.breakpoints.up('lg')} {
-    grid-template-columns: repeat(4, 1fr);
-  }
-*/
 
 const PrimaryColorGrid = styled('div')`
   display: grid;

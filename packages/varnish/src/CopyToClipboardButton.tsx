@@ -6,19 +6,15 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 interface Props {
   text?: string;
-  children:
-    | string
-    | number
-    | boolean
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | React.ReactFragment
-    | React.ReactPortal;
+  autoHideDuration?: number;
+  children: NonNullable<React.ReactNode>;
 }
-function CopyToClipboardButton({ text, children }: Props) {
+function CopyToClipboardButton({ text, autoHideDuration, children }: Props) {
   const [open, setOpen] = useState(false);
+  const value = text ? (text as string) : children.toString();
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText(text ? (text as string) : children.toString());
+    navigator.clipboard.writeText(value);
   };
 
   return (
@@ -30,8 +26,8 @@ function CopyToClipboardButton({ text, children }: Props) {
       <Snackbar
         open={open}
         onClose={() => setOpen(false)}
-        autoHideDuration={2000}
-        message="Copied to clipboard"
+        autoHideDuration={autoHideDuration || 2500}
+        message={`Copied '${value}' to clipboard`}
       />
     </React.Fragment>
   );

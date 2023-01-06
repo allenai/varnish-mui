@@ -10,11 +10,10 @@ githubLabel: 'varnish: colors'
 To ensure your site looks polished and consistent with AI2's broader brand, try to stick using the colors
 expressed here.
 
-You can refer to these colors in two ones. Either explicitly via a reference like `theme.color.N9`, or via
-a semantic name attached to the `palette` API: `theme.palette.primary.main`. The latter is preferred, as
+You can refer to these colors in two ways. Either explicitly via a reference like `theme.color.N9`, or via
+a semantic name attached to the `palette` API, i.e. `theme.palette.primary.main`. The latter is preferred, as
 it means your UI will be updated if AI2's broader brand guidelines and change what the `primary` cluster
 is.
-
 
 ## Examples
 
@@ -50,7 +49,11 @@ color is used as the `background` of an element, we suggest inverting the text c
 
 ## Charting Colors
 
+When designing charts on a `light` background, use the following colors for data series.
+
 {{"demo": "LightCategoricalColorValues.tsx", "bg": true, "hideToolbar": true}}
+
+When designing charts on a `dark` background, use the following colors for data series.
 
 {{"demo": "DarkCategoricalColorValues.tsx", "bg": true, "hideToolbar": true}}
 

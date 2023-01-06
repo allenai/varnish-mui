@@ -11,14 +11,21 @@ export class RGB {
 // convert a hex color string to a RGB
 export function hexToRgb(hex: string): RGB {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  const shorthandRegex = /^#?([\da-f])([\da-f])([\da-f])$/i;
-  hex = hex.replace(shorthandRegex, (_, r, g, b) => {
-    return r + r + g + g + b + b;
-  });
-  const result = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(hex);
-  return result
-    ? new RGB(parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16))
-    : new RGB(0, 0, 0);
+  const expandShortHex = (shortHex: string): string => {
+    return [shortHex[0], shortHex[0], shortHex[1], shortHex[1], shortHex[2], shortHex[2]].join('');
+  };
+
+  hex = hex[0] === '#' ? hex.slice(1) : hex;
+  const isShorthand = hex.length < 6;
+  const expandedHex = isShorthand ? expandShortHex(hex) : hex;
+  if (expandedHex.length !== 6) {
+    throw Error(`invalid hex value: ${hex}`);
+  }
+  return new RGB(
+    parseInt(expandedHex.slice(0, 2), 16),
+    parseInt(expandedHex.slice(2, 4), 16),
+    parseInt(expandedHex.slice(4, 6), 16),
+  );
 }
 
 export class Color {
@@ -129,7 +136,6 @@ export const color: Dictionary<Color> = {
   N10: new Color('N10', '#303945', true),
   black: new Color('Black', '#000', true),
   white: new Color('White', '#FFF'),
-  transparent: new Color('Transparent', 'transparent'),
 };
 
 export const lightCategoricalColor = {

@@ -9,7 +9,3 @@ export function pxToRem(px: number, base: number = 16) {
 export function dictionaryToArray<T>(dict: Dictionary<T>) {
   return Object.keys(dict).map((key) => dict[key]);
 }
-
-export function strIncludes(filter: string, value: string) {
-  return value.toLowerCase().includes(filter.toLowerCase());
-}
