@@ -1,0 +1,18 @@
+import * as React from 'react';
+import { lightCategoricalColor, dictionaryToArray } from '@allenai/varnish';
+import { ChartingGrid, ColorValues, ColorGroupDict } from './ColorValues';
+
+const lightCategoricalColorGroup: ColorGroupDict = {
+  darkCategorical: dictionaryToArray(lightCategoricalColor),
+};
+
+export default function LightCategoricalColorValues() {
+  return (
+    <ChartingGrid id="lightCategoricalColor">
+      <ColorValues
+        colorGroupDict={lightCategoricalColorGroup}
+        themeProp="lightCategoricalColor"
+      />
+    </ChartingGrid>
+  );
+}

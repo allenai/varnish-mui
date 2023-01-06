@@ -13,6 +13,7 @@ import {
   getThemedComponents,
   getMetaThemeColor,
 } from 'docs/src/modules/brandingTheme';
+import { Theme as VarnishTheme } from '@allenai/varnish';
 
 const languageMap = {
   en: enUS,
@@ -257,8 +258,11 @@ export function ThemeProvider(props) {
     }
   }, [theme.palette.mode]);
 
+  // bring in varnish overrides
+  const vTheme = VarnishTheme.getTheme(paletteMode);
+  const varnishTheme = deepmerge(theme, vTheme);
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={varnishTheme}>
       <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </MuiThemeProvider>
   );

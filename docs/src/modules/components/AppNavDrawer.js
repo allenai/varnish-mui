@@ -1,98 +1,23 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { styled, alpha } from '@mui/material/styles';
 import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
-import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
-import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
-import { useUserLanguage, useTranslate } from 'docs/src/modules/utils/i18n';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import DoneRounded from '@mui/icons-material/DoneRounded';
-import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
-import materialPkgJson from '../../../../packages/mui-material/package.json';
-import joyPkgJson from '../../../../packages/mui-joy/package.json';
-import basePkgJson from '../../../../packages/mui-base/package.json';
-import systemPkgJson from '../../../../packages/mui-system/package.json';
+import { useTranslate } from 'docs/src/modules/utils/i18n';
 
 const savedScrollTop = {};
 
-function ProductDrawerButton(props) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  return (
-    <React.Fragment>
-      <Button
-        id="mui-product-selector"
-        aria-controls="drawer-open-button"
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        endIcon={<ArrowDropDownRoundedIcon fontSize="small" sx={{ ml: -0.5 }} />}
-        sx={(theme) => ({
-          py: 0.1,
-          minWidth: 0,
-          fontSize: theme.typography.pxToRem(13),
-          fontWeight: theme.typography.fontWeightMedium,
-          color:
-            theme.palette.mode === 'dark' ? theme.palette.primary[300] : theme.palette.primary[600],
-          '& svg': {
-            ml: -0.6,
-            width: 18,
-            height: 18,
-          },
-          '& > span': {
-            ml: '4px',
-          },
-        })}
-      >
-        {props.productName}
-      </Button>
-      <Menu
-        id="mui-product-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'mui-product-selector',
-        }}
-        PaperProps={{
-          sx: {
-            width: { xs: 340, sm: 'auto' },
-          },
-        }}
-      >
-        <MuiProductSelector />
-      </Menu>
-    </React.Fragment>
-  );
-}
-
-ProductDrawerButton.propTypes = {
-  productName: PropTypes.string,
-};
-
-function ProductIdentifier({ name, metadata, versionSelector }) {
+function ProductIdentifier({ name, metadata }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Typography
@@ -107,10 +32,7 @@ function ProductIdentifier({ name, metadata, versionSelector }) {
       >
         {metadata}
       </Typography>
-      <Box sx={{ display: 'flex' }}>
-        <ProductDrawerButton productName={name} />
-        {versionSelector}
-      </Box>
+      <Box sx={{ display: 'flex' }}>{name}</Box>
     </Box>
   );
 }
@@ -118,7 +40,6 @@ function ProductIdentifier({ name, metadata, versionSelector }) {
 ProductIdentifier.propTypes = {
   metadata: PropTypes.string,
   name: PropTypes.string,
-  versionSelector: PropTypes.element,
 };
 
 function PersistScroll(props) {
@@ -285,9 +206,6 @@ export default function AppNavDrawer(props) {
   const { className, disablePermanent, mobileOpen, onClose, onOpen } = props;
   const { activePage, pages } = React.useContext(PageContext);
   const router = useRouter();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const userLanguage = useUserLanguage();
-  const languagePrefix = userLanguage === 'en' ? '' : `/${userLanguage}`;
   const t = useTranslate();
   const mobile = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
@@ -296,221 +214,31 @@ export default function AppNavDrawer(props) {
 
     const navItems = renderNavItems({ onClose, pages, activePage, depth: 0, t });
 
-    const renderVersionSelector = (versions, sx) => {
-      if (!versions?.length) {
-        return null;
-      }
-
-      const currentVersion = versions.find((version) => version.current) || versions[0];
-      return (
-        <React.Fragment>
-          <Button
-            id="mui-version-selector"
-            onClick={(event) => {
-              setAnchorEl(event.currentTarget);
-            }}
-            endIcon={
-              versions.length > 1 ? (
-                <ArrowDropDownRoundedIcon fontSize="small" sx={{ ml: -0.5 }} />
-              ) : null
-            }
-            sx={[
-              (theme) => ({
-                py: 0.1,
-                minWidth: 0,
-                fontSize: theme.typography.pxToRem(13),
-                fontWeight: 500,
-                color:
-                  theme.palette.mode === 'dark'
-                    ? theme.palette.primary[300]
-                    : theme.palette.primary[600],
-                '& svg': {
-                  ml: -0.6,
-                  width: 18,
-                  height: 18,
-                },
-              }),
-              ...(Array.isArray(sx) ? sx : [sx]),
-            ]}
-          >
-            {currentVersion.text}
-          </Button>
-          <Menu
-            id="mui-version-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={() => setAnchorEl(null)}
-          >
-            {versions.map((item) => {
-              if (item.text === 'View all versions') {
-                return [
-                  <Divider key="divider" />,
-                  <MenuItem key="all-versions" component="a" href={item.href} onClick={onClose}>
-                    {/* eslint-disable-next-line material-ui/no-hardcoded-labels -- version string is untranslatable */}
-                    {`View all versions`}
-                  </MenuItem>,
-                ];
-              }
-              return (
-                <MenuItem
-                  key={item.text}
-                  {...(item.current
-                    ? {
-                        selected: true,
-                        onClick: () => setAnchorEl(null),
-                      }
-                    : {
-                        component: 'a',
-                        href: item.href,
-                        onClick: onClose,
-                      })}
-                >
-                  {item.text} {item.current && <DoneRounded sx={{ fontSize: 16, ml: 0.25 }} />}
-                </MenuItem>
-              );
-            })}
-          </Menu>
-        </React.Fragment>
-      );
-    };
-
     return (
       <React.Fragment>
         <ToolbarDiv>
-          <NextLink href="/" passHref legacyBehavior>
-            <Box
-              component="a"
-              onClick={onClose}
-              aria-label={t('goToHome')}
-              sx={{
-                pr: '12px',
-                mr: '4px',
-                borderRight: '1px solid',
-                borderColor: (theme) =>
-                  theme.palette.mode === 'dark'
-                    ? alpha(theme.palette.primary[100], 0.08)
-                    : theme.palette.grey[200],
-              }}
-            >
-              <SvgMuiLogo width={30} />
-            </Box>
-          </NextLink>
           {canonicalAs.startsWith('/material-ui/') && (
-            <ProductIdentifier
-              name="Material UI"
-              metadata="MUI Core"
-              versionSelector={renderVersionSelector([
-                { text: `v${materialPkgJson.version}`, current: true },
-                {
-                  text: 'v4',
-                  href: `https://v4.mui.com${languagePrefix}/getting-started/installation/`,
-                },
-                {
-                  text: 'View all versions',
-                  href: `https://mui.com${languagePrefix}/versions/`,
-                },
-              ])}
-            />
+            <ProductIdentifier name="Varnish" metadata="Material UI" />
           )}
           {canonicalAs.startsWith('/joy-ui/') && (
-            <ProductIdentifier
-              name="Joy UI"
-              metadata="MUI Core"
-              versionSelector={renderVersionSelector([
-                { text: `v${joyPkgJson.version}`, current: true },
-              ])}
-            />
+            <ProductIdentifier name="Joy UI" metadata="MUI Core" />
           )}
           {canonicalAs.startsWith('/system/') && (
-            <ProductIdentifier
-              name="MUI System"
-              metadata="MUI Core"
-              versionSelector={renderVersionSelector([
-                { text: `v${systemPkgJson.version}`, current: true },
-                { text: 'v4', href: `https://v4.mui.com${languagePrefix}/system/basics/` },
-                {
-                  text: 'View all versions',
-                  href: `https://mui.com${languagePrefix}/versions/`,
-                },
-              ])}
-            />
+            <ProductIdentifier name="MUI System" metadata="MUI Core" />
           )}
           {canonicalAs.startsWith('/base/') && (
-            <ProductIdentifier
-              name="MUI Base"
-              metadata="MUI Core"
-              versionSelector={renderVersionSelector([
-                { text: `v${basePkgJson.version}`, current: true },
-              ])}
-            />
+            <ProductIdentifier name="MUI Base" metadata="MUI Core" />
           )}
           {canonicalAs.startsWith('/x/introduction/') && (
             <ProductIdentifier name="Advanced components" metadata="MUI X" />
           )}
           {(canonicalAs.startsWith('/x/react-data-grid/') ||
             canonicalAs.startsWith('/x/api/data-grid/')) && (
-            <ProductIdentifier
-              name="Data Grid"
-              metadata="MUI X"
-              versionSelector={renderVersionSelector([
-                // DATA_GRID_VERSION is set from the X repo
-                {
-                  text: 'v6-alpha',
-                  ...(process.env.DATA_GRID_VERSION.startsWith('6')
-                    ? {
-                        text: `v${process.env.DATA_GRID_VERSION}`,
-                        current: true,
-                      }
-                    : {
-                        href: `https://next.mui.com${languagePrefix}/components/data-grid/`,
-                      }),
-                },
-                {
-                  text: 'v5',
-                  ...(process.env.DATA_GRID_VERSION.startsWith('5')
-                    ? {
-                        text: `v${process.env.DATA_GRID_VERSION}`,
-                        current: true,
-                      }
-                    : {
-                        href: `https://mui.com${languagePrefix}/components/data-grid/`,
-                      }),
-                },
-                { text: 'v4', href: `https://v4.mui.com${languagePrefix}/components/data-grid/` },
-              ])}
-            />
+            <ProductIdentifier name="Data Grid" metadata="MUI X" />
           )}
           {(canonicalAs.startsWith('/x/react-date-pickers/') ||
             canonicalAs.startsWith('/x/api/date-pickers/')) && (
-            <ProductIdentifier
-              name="Date pickers"
-              metadata="MUI X"
-              versionSelector={renderVersionSelector([
-                // DATE_PICKERS_VERSION is set from the X repo
-                {
-                  ...(process.env.DATE_PICKERS_VERSION.startsWith('6')
-                    ? {
-                        text: `v${process.env.DATE_PICKERS_VERSION}`,
-                        current: true,
-                      }
-                    : {
-                        text: `v6-alpha`,
-                        href: `https://next.mui.com${languagePrefix}/components/data-grid/`,
-                      }),
-                },
-                {
-                  ...(process.env.DATE_PICKERS_VERSION.startsWith('5')
-                    ? {
-                        text: `v${process.env.DATE_PICKERS_VERSION}`,
-                        current: true,
-                      }
-                    : {
-                        text: `v5`,
-                        href: `https://mui.com${languagePrefix}/components/data-grid/`,
-                      }),
-                },
-              ])}
-            />
+            <ProductIdentifier name="Date pickers" metadata="MUI X" />
           )}
           {canonicalAs.startsWith('/toolpad/') && (
             <ProductIdentifier name="Toolpad" metadata="MUI Toolpad" />
@@ -524,11 +252,10 @@ export default function AppNavDrawer(props) {
                 : theme.palette.grey[100],
           }}
         />
-        <DiamondSponsors />
         {navItems}
       </React.Fragment>
     );
-  }, [activePage, pages, onClose, languagePrefix, t, anchorEl, setAnchorEl, router.asPath]);
+  }, [activePage, pages, onClose, t, router.asPath]);
 
   return (
     <nav className={className} aria-label={t('mainNavigation')}>

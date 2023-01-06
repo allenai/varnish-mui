@@ -4,6 +4,7 @@ const path = require('path');
 const errorCodesPath = path.resolve(__dirname, './public/static/error-codes.json');
 
 const alias = {
+  '@allenai/varnish': '../packages/varnish/src',
   '@mui/material': '../packages/mui-material/src',
   '@mui/docs': '../packages/mui-docs/src',
   '@mui/icons-material': '../packages/mui-icons-material/lib',

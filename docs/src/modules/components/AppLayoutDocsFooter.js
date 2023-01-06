@@ -8,12 +8,7 @@ import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
-import ThumbUpIcon from '@mui/icons-material/ThumbUpAlt';
-import ThumbDownIcon from '@mui/icons-material/ThumbDownAlt';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Snackbar from '@mui/material/Snackbar';
@@ -44,18 +39,6 @@ const PageLinkButton = styled(Button)(({ theme }) => {
     textTransform: 'none',
     fontWeight: 500,
     color: theme.palette.mode === 'dark' ? theme.palette.primary[300] : theme.palette.primary[500],
-  };
-});
-
-const FeedbackGrid = styled(Grid)(({ theme }) => {
-  return {
-    width: 'auto',
-    color: theme.palette.text.secondary,
-    [theme.breakpoints.down('sm')]: {
-      order: 3,
-      marginTop: 40,
-      width: '100%',
-    },
   };
 });
 
@@ -114,7 +97,7 @@ async function postFeedbackOnSlack(data) {
   /**
    Not used because I ignore how to encode that with:
       'content-type': 'application/x-www-form-urlencoded'
-   
+
    const complexSlackMessage = {
      blocks: [
        {
@@ -310,19 +293,6 @@ export default function AppLayoutDocsFooter(props) {
     setSnackbarOpen(true);
   }
 
-  const handleClickThumb = (vote) => async () => {
-    if (vote !== rating) {
-      setRating(vote);
-      setCommentOpen(true);
-    }
-
-    // Manualy move focus if commment is already open.
-    // If the comment is closed, onEntered will call focus itself;
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
-
   const handleChangeTextfield = (event) => {
     setComment(event.target.value);
   };
@@ -401,35 +371,6 @@ export default function AppLayoutDocsFooter(props) {
               ) : (
                 <div />
               )}
-              <FeedbackGrid
-                container
-                role="group"
-                justifyContent="center"
-                alignItems="center"
-                aria-labelledby="feedback-message"
-              >
-                <Typography
-                  align="center"
-                  component="div"
-                  id="feedback-message"
-                  variant="body2"
-                  sx={{ mx: 2 }}
-                >
-                  {t('feedbackMessage')}
-                </Typography>
-                <div>
-                  <Tooltip title={t('feedbackYes')}>
-                    <IconButton onClick={handleClickThumb(1)} aria-pressed={rating === 1}>
-                      <ThumbUpIcon fontSize="small" color={rating === 1 ? 'primary' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title={t('feedbackNo')}>
-                    <IconButton onClick={handleClickThumb(0)} aria-pressed={rating === 0}>
-                      <ThumbDownIcon fontSize="small" color={rating === 0 ? 'error' : undefined} />
-                    </IconButton>
-                  </Tooltip>
-                </div>
-              </FeedbackGrid>
               {nextPage !== null ? (
                 <PageLinkButton
                   component={Link}

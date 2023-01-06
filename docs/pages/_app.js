@@ -189,6 +189,7 @@ function AppWrapper(props) {
           </CodeVariantProvider>
         </CodeCopyProvider>
       </UserLanguageProvider>
+      <script src="https://stats.allenai.org/init.min.js" data-spa="true" async />
     </React.Fragment>
   );
 }

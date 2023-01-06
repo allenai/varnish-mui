@@ -1,5 +1,5 @@
 {
-  "name": "@mui/monorepo",
+  "name": "@allenai.org/varnish",
   "version": "5.11.0",
   "private": true,
   "scripts": {

@@ -9,6 +9,7 @@ function resolveAliasPath(relativeToBabelConf) {
 }
 
 const defaultAlias = {
+  '@allenai/varnish': resolveAliasPath('./packages/varnish/src'),
   '@mui/material': resolveAliasPath('./packages/mui-material/src'),
   '@mui/docs': resolveAliasPath('./packages/mui-docs/src'),
   '@mui/icons-material': resolveAliasPath('./packages/mui-icons-material/lib'),
