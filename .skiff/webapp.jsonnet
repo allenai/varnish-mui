@@ -212,7 +212,8 @@ function(image, cause, sha, env='prod', branch='', repo='', buildId='')
                             image: image,
                             readinessProbe: {
                                 httpGet: {
-                                    path: '/?check=rdy'
+                                    path: '/?check=rdy',
+                                    port: port
                                 }
                             },
                             resources: {

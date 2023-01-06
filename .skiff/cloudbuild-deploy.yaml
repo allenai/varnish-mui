@@ -2,16 +2,21 @@ steps:
 - id: build
   name: gcr.io/cloud-builders/docker
   args:
-  - build,
+  - build
   - --tag
   - gcr.io/$PROJECT_ID/$REPO_NAME:latest
   - --tag
   - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
   - --cache-from
-  - gcr.io/$PROJECT_ID/$REPO_NAME:latest,
+  - gcr.io/$PROJECT_ID/$REPO_NAME:latest
   - --build-arg
   - BUILDKIT_INLINE_CACHE=1
   - .
+- id: push
+  name: gcr.io/cloud-builders/docker
+  args:
+  - push
+  - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 - id: config
   name: gcr.io/ai2-reviz/jsonnet
   args:
@@ -43,7 +48,7 @@ steps:
 substitutions:
   _ENV: prod
 images:
-- gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA,
+- gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 - gcr.io/$PROJECT_ID/$REPO_NAME:latest
 artifacts:
   objects:
@@ -53,3 +58,5 @@ artifacts:
 options:
   env:
   - DOCKER_BUILDKIT=1
+  machineType: N1_HIGHCPU_8
+
