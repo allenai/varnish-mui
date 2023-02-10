@@ -14,6 +14,7 @@ import { OverridableComponent } from '@mui/types';
 import styled from '../styles/styled';
 import useThemeProps from '../styles/useThemeProps';
 import useSlot from '../utils/useSlot';
+import ColorInversion, { useColorInversion } from '../styles/ColorInversion';
 import { getTooltipUtilityClass } from './tooltipClasses';
 import { TooltipProps, TooltipOwnerState, TooltipTypeMap } from './TooltipProps';
 
@@ -147,7 +148,7 @@ const TooltipArrow = styled('span', {
       borderTopColor: variantStyle?.backgroundColor ?? theme.vars.palette.background.surface,
       borderRightColor: variantStyle?.backgroundColor ?? theme.vars.palette.background.surface,
       borderRadius: `0px 2px 0px 0px`,
-      boxShadow: `var(--variant-borderWidth) calc(-1 * var(--variant-borderWidth)) 0px 0px ${variantStyle.borderColor}`,
+      boxShadow: `var(--variant-borderWidth, 0px) calc(-1 * var(--variant-borderWidth, 0px)) 0px 0px ${variantStyle.borderColor}`,
       transformOrigin: 'center center',
       transform: 'rotate(calc(-45deg + 90deg * var(--unstable_Tooltip-arrow-rotation)))',
     },
@@ -171,6 +172,7 @@ const TooltipArrow = styled('span', {
 
 let hystersisOpen = false;
 let hystersisTimer: ReturnType<typeof setTimeout> | null = null;
+let cursorPosition = { x: 0, y: 0 };
 
 export function testReset() {
   hystersisOpen = false;
@@ -234,11 +236,13 @@ const Tooltip = React.forwardRef(function Tooltip(inProps, ref) {
     modifiers: modifiersProp,
     placement = 'bottom',
     title,
-    color = 'neutral',
+    color: colorProp = 'neutral',
     variant = 'solid',
     size = 'md',
     ...other
   } = props;
+  const { getColor } = useColorInversion(variant);
+  const color = disablePortal ? getColor(inProps.color, colorProp) : colorProp;
 
   const [childNode, setChildNode] = React.useState<HTMLElement>();
   const [arrowRef, setArrowRef] = React.useState<HTMLSpanElement | null>(null);
@@ -460,7 +464,6 @@ const Tooltip = React.forwardRef(function Tooltip(inProps, ref) {
     open = false;
   }
 
-  const positionRef = React.useRef({ x: 0, y: 0 });
   const popperRef = React.useRef(null);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
@@ -469,7 +472,7 @@ const Tooltip = React.forwardRef(function Tooltip(inProps, ref) {
       childrenProps.onMouseMove(event);
     }
 
-    positionRef.current = { x: event.clientX, y: event.clientY };
+    cursorPosition = { x: event.clientX, y: event.clientY };
 
     if (popperRef.current) {
       (popperRef.current as { update: () => void }).update();
@@ -562,10 +565,10 @@ const Tooltip = React.forwardRef(function Tooltip(inProps, ref) {
         ? {
             getBoundingClientRect: () =>
               ({
-                top: positionRef.current.y,
-                left: positionRef.current.x,
-                right: positionRef.current.x,
-                bottom: positionRef.current.y,
+                top: cursorPosition.y,
+                left: cursorPosition.x,
+                right: cursorPosition.x,
+                bottom: cursorPosition.y,
                 width: 0,
                 height: 0,
               } as DOMRect),
@@ -613,18 +616,27 @@ const Tooltip = React.forwardRef(function Tooltip(inProps, ref) {
           offset: [0, 10],
         },
       },
-      ...(modifiersProp || []),
+      ...(rootProps.modifiers || []),
     ],
-    [arrowRef, modifiersProp],
+    [arrowRef, rootProps.modifiers],
+  );
+
+  const result = (
+    <SlotRoot {...rootProps} modifiers={modifiers}>
+      {title}
+      {arrow ? <SlotArrow {...arrowProps} /> : null}
+    </SlotRoot>
   );
 
   return (
     <React.Fragment>
       {React.isValidElement(children) && React.cloneElement(children, childrenProps)}
-      <SlotRoot {...rootProps} modifiers={modifiers}>
-        {title}
-        {arrow ? <SlotArrow {...arrowProps} /> : null}
-      </SlotRoot>
+      {disablePortal ? (
+        result
+      ) : (
+        // For portal popup, the children should not inherit color inversion from the upper parent.
+        <ColorInversion.Provider value={undefined}>{result}</ColorInversion.Provider>
+      )}
     </React.Fragment>
   );
 }) as OverridableComponent<TooltipTypeMap>;

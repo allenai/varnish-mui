@@ -1,0 +1,5 @@
+{colorsToRender.map((c) => (
+  <ColorDiv key={c} col={c}>
+    {c} {color[c].useContrastText ? '(white)' : null}
+  </ColorDiv>
+))}
