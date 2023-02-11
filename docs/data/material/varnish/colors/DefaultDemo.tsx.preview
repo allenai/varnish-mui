@@ -1,0 +1,5 @@
+{colorsToRender.map((color) => (
+  <ColorDiv key={color} col={color}>
+    {color}
+  </ColorDiv>
+))}

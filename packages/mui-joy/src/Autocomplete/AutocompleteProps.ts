@@ -9,7 +9,7 @@ import {
 } from '@mui/base/AutocompleteUnstyled';
 import { PopperUnstyledOwnProps } from '@mui/base/PopperUnstyled';
 import { OverridableStringUnion } from '@mui/types';
-import { ColorPaletteProp, SxProps, VariantProp } from '../styles/types';
+import { ColorPaletteProp, SxProps, VariantProp, ApplyColorInversion } from '../styles/types';
 import { CreateSlotsAndSlotProps, SlotProps } from '../utils/types';
 
 export type AutocompleteSlot =
@@ -284,6 +284,14 @@ type AutocompleteOwnProps<
     variant?: OverridableStringUnion<VariantProp, AutocompletePropsVariantOverrides>;
   };
 
+/**
+ * AutocompleteProps signature:
+ * @template T
+ * @param {string | object} T The option structure, must be a string or an object (by default, only accepts objects with { label: string } )
+ * @param {boolean | undefined} Multiple If your component is set with property multiple as true
+ * @param {boolean | undefined} DisableClearable If your component is set with property disableClearable as true
+ * @param {boolean | undefined} FreeSolo If your component is set with property freeSolo as true
+ */
 export interface AutocompleteProps<
   T,
   Multiple extends boolean | undefined,
@@ -305,7 +313,7 @@ export interface AutocompleteOwnerState<
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
-> extends AutocompleteOwnProps<T, Multiple, DisableClearable, FreeSolo> {
+> extends ApplyColorInversion<AutocompleteOwnProps<T, Multiple, DisableClearable, FreeSolo>> {
   focused?: boolean;
   hasClearIcon?: boolean;
   hasPopupIcon?: boolean;
