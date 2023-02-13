@@ -17,4 +17,20 @@ expected. It must be present on every page of your application.
 
 ## Examples
 
-{{"demo": "FooterDemo.tsx"}}
+### Default
+
+The Footer provides sensible defaults and can be used out of the box without any changes.
+
+{{"demo": "FooterDemo.js"}}
+
+### Dark Variant
+
+Dark Variant of the Footer.
+
+{{"demo": "FooterDarkDemo.js"}}
+
+### Custom Footer
+
+Footer with custom content.
+
+{{"demo": "FooterCustomDemo.js"}}
