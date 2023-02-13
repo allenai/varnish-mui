@@ -6,14 +6,12 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Link from 'docs/src/modules/components/Link';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
-import { openLinkInNewTab } from 'docs/src/modules/components/MarkdownLinks';
+import { shoudHandleLinkClick } from 'docs/src/modules/components/MarkdownLinks';
+import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
 
 const Nav = styled('nav')(({ theme }) => ({
   top: 0,
-  order: 1,
-  width: 'var(--MuiDocs-toc-width)',
   paddingLeft: 2, // Fix truncated focus outline style
-  flexShrink: 0,
   position: 'sticky',
   height: '100vh',
   overflowY: 'auto',
@@ -21,7 +19,7 @@ const Nav = styled('nav')(({ theme }) => ({
   paddingBottom: theme.spacing(4),
   paddingRight: theme.spacing(4), // We can't use `padding` as stylis-plugin-rtl doesn't swap it
   display: 'none',
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('md')]: {
     display: 'block',
   },
 }));
@@ -118,7 +116,6 @@ function flatten(headings) {
 export default function AppTableOfContents(props) {
   const { toc } = props;
   const t = useTranslate();
-
   const items = React.useMemo(() => flatten(toc), [toc]);
   const [activeState, setActiveState] = React.useState(null);
   const clickedRef = React.useRef(false);
@@ -166,7 +163,7 @@ export default function AppTableOfContents(props) {
 
   const handleClick = (hash) => (event) => {
     // Ignore click for new tab/new window behavior
-    if (openLinkInNewTab(event)) {
+    if (shoudHandleLinkClick(event)) {
       return;
     }
 

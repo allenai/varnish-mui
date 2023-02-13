@@ -182,7 +182,7 @@ function DemoSandbox(props) {
 
   return (
     <DemoErrorBoundary name={name} onResetDemoClick={onResetDemoClick} t={t}>
-      {canonicalAs.startsWith('/joy-ui') ? (
+      {canonicalAs.startsWith('/joy-ui/') ? (
         children
       ) : (
         <StylesProvider jss={jss}>

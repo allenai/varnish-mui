@@ -1,0 +1,6 @@
+<ChartingGrid id="lightCategoricalColor">
+  <ColorValues
+    colorGroupDict={lightCategoricalColorGroup}
+    themeProp="lightCategoricalColor"
+  />
+</ChartingGrid>

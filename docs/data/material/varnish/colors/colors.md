@@ -22,7 +22,7 @@ is.
 You can use a Varnish color via the theme.
 eg: `theme.color.B6`
 
-{{"demo": "DefaultDemo.tsx", "bg": true}}
+{{"demo": "DefaultDemo.js", "bg": true}}
 
 ### Palette Usage
 
@@ -30,32 +30,32 @@ You can also access common Varnish colors via the MUI theme palette.
 
 eg: `theme.palette.primary.main`
 
-{{"demo": "PaletteDemo.tsx", "bg": true}}
+{{"demo": "PaletteDemo.js", "bg": true}}
 
 ### Text Contrast
 
 Each color defined by Varnish has a `useContrastText` boolean attached to it. If `true`, and the
 color is used as the `background` of an element, we suggest inverting the text color for readability.
 
-{{"demo": "ContrastDemo.tsx", "bg": true}}
+{{"demo": "ContrastDemo.js", "bg": true}}
 
 ## Primary Colors
 
-{{"demo": "PrimaryColorValues.tsx", "bg": true, "hideToolbar": true}}
+{{"demo": "PrimaryColorValues.js", "bg": true, "hideToolbar": true}}
 
 ## Extended Colors
 
-{{"demo": "ExtendedColorValues.tsx", "bg": true, "hideToolbar": true}}
+{{"demo": "ExtendedColorValues.js", "bg": true, "hideToolbar": true}}
 
 ## Charting Colors
 
 When designing charts on a `light` background, use the following colors for data series.
 
-{{"demo": "LightCategoricalColorValues.tsx", "bg": true, "hideToolbar": true}}
+{{"demo": "LightCategoricalColorValues.js", "bg": true, "hideToolbar": true}}
 
 When designing charts on a `dark` background, use the following colors for data series.
 
-{{"demo": "DarkCategoricalColorValues.tsx", "bg": true, "hideToolbar": true}}
+{{"demo": "DarkCategoricalColorValues.js", "bg": true, "hideToolbar": true}}
 
 ## Color API
 

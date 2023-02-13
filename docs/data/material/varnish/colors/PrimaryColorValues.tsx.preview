@@ -1,0 +1,5 @@
+<PrimaryGrid>
+  {[color.B8, color.B7, color.B6, color.O6].map((c: Color) => (
+    <PrimaryColor key={c.displayName} color={c} />
+  ))}
+</PrimaryGrid>

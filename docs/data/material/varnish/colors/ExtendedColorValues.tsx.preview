@@ -1,0 +1,3 @@
+<ExtendedGrid id="color">
+  <ColorValues colorGroupDict={colorGroups} themeProp="color" />
+</ExtendedGrid>
