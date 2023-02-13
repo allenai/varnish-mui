@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Link from 'docs/src/modules/components/Link';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { shoudHandleLinkClick } from 'docs/src/modules/components/MarkdownLinks';
-import TableOfContentsBanner from 'docs/src/components/banner/TableOfContentsBanner';
 
 const Nav = styled('nav')(({ theme }) => ({
   top: 0,
