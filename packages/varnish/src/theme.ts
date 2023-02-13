@@ -21,6 +21,26 @@ type Mode = 'light' | 'dark';
 
 const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   return {
+    typography: {
+      fontFamily: [
+        '"Lato"',
+        '"Lucida Grande"',
+        '"Tahoma"',
+        '"Helvetica Neue"',
+        '"Helvetica"',
+        '"-apple-system"',
+        '"BlinkMacSystemFont"',
+        '"Segoe UI"',
+        '"PingFang SC"',
+        '"Hiragino Sans GB"',
+        '"Microsoft YaHei"',
+        '"Arial"',
+        '"sans-serif"',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
     palette: {
       primary: {
         light: mode === 'light' ? color.B3.hex : color.B2.hex,

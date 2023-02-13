@@ -49,7 +49,7 @@ const PrimaryGrid = styled('div')(
       }
       ${theme.breakpoints.down('sm')} {
         grid-template-columns: 1fr;
-      } ;
+      }
     `,
 );
 

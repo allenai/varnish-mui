@@ -1,6 +1,6 @@
 {
-    "appName": "varnish-mui",
-    "contact": "jonathanb",
-    "team": "reviz",
-    "replicas": { "prod": 1 }
+  "appName": "varnish-mui",
+  "contact": "jonathanb",
+  "team": "reviz",
+  "replicas": { "prod": 1 }
 }
