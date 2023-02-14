@@ -16,7 +16,6 @@ interface Props {
 }
 
 export class Footer extends React.PureComponent<Props> {
-
     render() {
         const contrast = this.props.variant === 'dark';
         // TODO: Update Contrast color palettes
