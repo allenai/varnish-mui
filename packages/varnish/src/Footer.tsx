@@ -1,5 +1,6 @@
-import { Link } from '@mui/material';
+import { css, Link } from '@mui/material';
 import * as React from 'react';
+import styled from 'styled-components';
 
 import { Color, color as varnishColor } from './colors';
 
@@ -15,36 +16,43 @@ interface Props {
     className?: string;
 }
 
-export class Footer extends React.PureComponent<Props> {
-    render() {
-        const contrast = this.props.variant === 'dark';
-        // TODO: Update Contrast color palettes
-        const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
+export const Footer = (props: Props) => {
+    const contrast = props.variant === 'dark';
+    // TODO: Update Contrast color palettes
+    const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
 
-        // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO)
-        const defaultLinkColor = varnishColor.B6.toString();
-        const contrastLinkColor = varnishColor.B3.toString();
+    // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO)
+    const defaultLinkColor = varnishColor.B6.toString();
+    const contrastLinkColor = varnishColor.B3.toString();
 
-        const linkColor = contrast ? contrastLinkColor : defaultLinkColor;
-        const background = contrast ? varnishColor.B10.toString() : varnishColor.white.toString();
+    const linkColor = contrast ? contrastLinkColor : defaultLinkColor;
+    const background = props.backgroundColor ? props.backgroundColor.toString() : (contrast ? varnishColor.B10.toString() : varnishColor.white.toString());
 
-        // TODO: Make custom styles for elements that have standardized padding
-        return (
-            <footer className={this.props.className} style={{ padding: '24px', color: textColor, backgroundColor: this.props.backgroundColor ? this.props.backgroundColor.toString() : background }}>
-                {this.props.children ? (
-                    this.props.children
-                ) : (<span color={textColor}>
-                    <Link color={linkColor} href="https://allenai.org">
-                        © The Allen Institute for Artificial Intelligence
-                    </Link>{' '}
-                    - All Rights Reserved |{' '}
-                    <Link color={linkColor} href="https://allenai.org/privacy-policy">Privacy Policy</Link> |{' '}
-                    <Link color={linkColor} href="https://allenai.org/terms">Terms of Use</Link> |{' '}
-                    <Link color={linkColor} href="https://allenai.org/business-code-of-conduct">
-                        Business Code of Conduct
-                    </Link>
-                </span>)}
-            </footer>
-        )
-    }
+    // TODO: Make custom styles for elements that have standardized padding across AI2
+    return (
+        <StyledFooter className={props.className} textColor={textColor} background={background}>
+            {props.children ? (
+                props.children
+            ) : (<span>
+                <Link color={linkColor} href="https://allenai.org">
+                    © The Allen Institute for Artificial Intelligence
+                </Link>{' '}
+                - All Rights Reserved |{' '}
+                <Link color={linkColor} href="https://allenai.org/privacy-policy">Privacy Policy</Link> |{' '}
+                <Link color={linkColor} href="https://allenai.org/terms">Terms of Use</Link> |{' '}
+                <Link color={linkColor} href="https://allenai.org/business-code-of-conduct">
+                    Business Code of Conduct
+                </Link>
+            </span>)}
+        </StyledFooter>
+    )
 }
+
+const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...rest} />)<{
+    textColor: string;
+    background: string;
+}>`
+  padding: 24px;
+  color: ${props => props.textColor};
+  background-color: ${props => props.background};
+`;
