@@ -5,6 +5,8 @@ export * from './theme';
 
 export { default as CopyToClipboardButton } from './CopyToClipboardButton';
 
+export * from './Footer';
+
 export * from './colors';
 
 export * from './util';
