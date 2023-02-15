@@ -28,3 +28,11 @@ Doing so will also produce a .tsx.preview file.
 
 For an example, look at the demo components referenced in the [Colors Markdown File](docs/data/material/varnish/colors/colors.md).
 
+## Coding Style
+
+Please follow the coding style of the project. MUI uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
+
+- `yarn prettier` reformats the code.
+- `yarn lint` runs the linting rules manually.
+
+
