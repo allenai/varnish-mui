@@ -21,7 +21,7 @@ export const Footer = (props: Props) => {
     // TODO: Update Contrast color palettes
     const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
 
-    // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO)
+    // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO, tracked in Issue #12 in varnish-mui repo)
     const defaultLinkColor = varnishColor.B6.toString();
     const contrastLinkColor = varnishColor.B3.toString();
 
@@ -53,6 +53,6 @@ const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...
     background: string;
 }>`
   padding: 24px;
-  color: ${props => props.textColor};
-  background-color: ${props => props.background};
+  color: ${({textColor}) => textColor};
+  background-color: ${({background}) => background};
 `;
