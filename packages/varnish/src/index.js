@@ -7,6 +7,8 @@ export { default as CopyToClipboardButton } from './CopyToClipboardButton';
 
 export * from './Footer';
 
+export * from './logos';
+
 export * from './colors';
 
 export * from './util';
