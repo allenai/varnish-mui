@@ -1,0 +1,9 @@
+<Header alwaysVisible={true}>
+    <Header.Logo
+        href="http://allenai.org"
+        label={<Header.AppName>Title</Header.AppName>}
+        tagline={<Header.AppTagline>Tagline</Header.AppTagline>}>
+        <logos.AI2Logo includeText={false} />
+    </Header.Logo>
+</Header>
+<div>Content!</div>
