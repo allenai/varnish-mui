@@ -1,8 +1,10 @@
-<Header alwaysVisible={false}>
+<Header bannerAlwaysVisible={false}>
+    <Header.Columns columns="auto 1fr">
         <Header.Logo
             href="http://allenai.org"
             label={<Header.AppName>Title</Header.AppName>}>
             <logos.AI2Logo includeText={false} />
         </Header.Logo>
+    </Header.Columns>
 </Header>
 {getDivs()}

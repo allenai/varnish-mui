@@ -1,59 +1,39 @@
+import { logos, pxToRem } from '@allenai/varnish';
 import { Header } from '@allenai/varnish/header';
 import * as React from 'react';
-// import {color} from '@allenai/varnish'
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { color } from '@allenai/varnish';
+import { AI2Banner } from '@allenai/varnish/header/AI2Banner';
 
-// TODO: Update with Custom DEMO
+const Tagline = {
+  Container: styled.span`
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+  `,
+  Text: styled.em`
+    color: ${color.N1.toString()};
+    font-size: ${pxToRem(13)};
+  `,
+};
 
 export default function Demo() {
-  // const Tagline = {
-  //     Container: styled.span`
-  //         display: flex;
-  //         align-items: center;
-  //         gap: 1ch;
-  //     `,
-  //     Text: styled.em`
-  //         color: ${({ theme }) => theme.palette.text.contrast.toString()};
-  //         font-size: ${({ theme }) => theme.typography.textStyles.micro.fontSize};
-  //     `,
-  // };
-
+  const customBanner = (
+    <AI2Banner>
+      <Tagline.Container>
+        <Tagline.Text>A service of</Tagline.Text>
+        <logos.AI2Logo size="micro" color="white" />
+      </Tagline.Container>
+      ;
+    </AI2Banner>
+  );
   return (
     <div style={{ width: '100%' }}>
-      <Header.AI2Banner />
+      <Header customBanner={customBanner} bannerAlwaysVisible={true}>
+        <Header.Columns columns="auto">
+          <logos.AI2Logo />
+        </Header.Columns>
+      </Header>
     </div>
   );
 }
-
-/**
- * 
- * 
- * 
-
-
-const MyCustomHeader = ({ children }) => {
-    const [sticky, banner, topOffset] = useSmartAI2Banner();
-
-    return (
-        <Header.Sticky ref={sticky} style={{ top: `${topOffset}px` }}>
-            <Header.Container>
-                <Header.AI2Banner ref={this.banner}>
-                    <Tagline.Container>
-                        <Tagline.Text>A service of</Tagline.Text>
-                        <logos.AI2Logo size="micro" color="white" />
-                    </Tagline.Container>
-                </Header.AI2Banner>
-                <Header.Content>{children}</Header.Content>
-            </Header.Container>
-        </Header.Sticky>
-    );
-};
-
-render(
-    <MyCustomHeader>
-        <Header.Columns columns="auto">
-            <logos.AI2Logo />
-        </Header.Columns>
-    </MyCustomHeader>
-);
- */

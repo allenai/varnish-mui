@@ -1,3 +1,0 @@
-<Header alwaysVisible={true}>
-    <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
-</Header>

@@ -3,20 +3,27 @@ import { Header } from '@allenai/varnish/header';
 import { logos } from '@allenai/varnish/logos';
 
 export default function Demo() {
+  const getDivs = () => {
+    var divs = [];
+    for (var i = 0; i < 5; i++) {
+      divs.push(<div key={i}>Content!</div>);
+    }
+    return divs;
+  };
+
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', height: '250px', overflow: 'scroll' }}>
       <Header bannerAlwaysVisible={true}>
         <Header.Columns columns="auto 1fr">
           <Header.Logo
             href="http://allenai.org"
             label={<Header.AppName>Title</Header.AppName>}
-            tagline={<Header.AppTagline>Tagline</Header.AppTagline>}
           >
             <logos.AI2Logo includeText={false} />
           </Header.Logo>
         </Header.Columns>
       </Header>
-      <div>Content!</div>
+      {getDivs()}
     </div>
   );
 }

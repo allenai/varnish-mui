@@ -1,3 +1,5 @@
-<Header alwaysVisible={true}>
-    <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
+<Header bannerAlwaysVisible={true}>
+    <Header.Columns columns="auto 1fr">
+        <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
+    </Header.Columns>
 </Header>

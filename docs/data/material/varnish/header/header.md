@@ -10,7 +10,71 @@ githubLabel: 'varnish: header'
 
 ## When To Use
 
+You should put this at the top of the page. It is highly recommended to be present on every page of
+your application.
 
+### API
+
+| Property      | Description                                                         | Type    | Default |
+| ------------- | ------------------------------------------------------------------- | ------- | ------- |
+| bannerAlwaysVisible | Prevents the AI2 banner from disappearing when the page is scrolled | boolean | false   |
+| customBanner | A Custom AI2 banner that you can inject into the header via this prop | JSX / TSX Element; if left undefined, the banner is the default AI2 banner | undefined |
+| scrollTriggerTarget | If you choose to use the AI2 Header with Smart Banner within a div, you can change the scroll target to be the specific div it is in. Note: This should rarely be used, reach out to the team if you find yourself using this often. | HTMLDivElement | undefined |
+
+## Sub Components
+
+### Header.Columns API
+
+| Property | Description              | Type                            | Default |
+| -------- | ------------------------ | ------------------------------- | ------- |
+| columns  | Defines the grid columns | string? (grid-template-columns) | null    |
+
+### Header.Logo
+
+A helper component for placing a logo and `<Header.AppName/>` in the `<Header/>` easier.
+
+```jsx dark
+<Header>
+    <Header.Columns columns="auto 1fr">
+        <Header.Logo
+            label=...>
+            <img src={logoWithText} height={'56px'} alt="Varnish" />
+        </Header.Logo>
+    </Header.Columns>
+</Header>
+```
+
+### Header.AppName
+
+```jsx dark
+<Header>
+    <Header.Columns columns="auto 1fr">
+        <Header.Logo
+            label={
+                <Header.AppName>Varnish</Header.AppName>
+            }>
+            <img ... />
+        </Header.Logo>
+    </Header.Columns>
+</Header
+```
+
+### Header.Tagline
+
+A helper component for styling the App Tagline in the `<Header/>`.
+
+```jsx dark
+<Header>
+    <Header.Columns columns="auto 1fr">
+        <Header.Logo
+            tagline={
+                <Header.Tagline>An awesome app</Header.Tagline>
+            }>
+            <img ... />
+        </Header.Logo>
+    </Header.Columns>
+</Header
+```
 
 ## Examples
 
@@ -20,7 +84,11 @@ The Header provides sensible defaults and can be used out of the box without any
 
 {{"demo": "HeaderDefaultDemo.js"}}
 
+### With Logo and Content
 
+This shows how to render a header with an application logo. Logos make your application more fun, even emojis suffice!
+
+{{"demo": "HeaderWithLogoDemo.js"}}
 
 ### With Tagline
 
@@ -45,3 +113,18 @@ A component that only displays the AI2 Banner.
 Header with custom content.
 
 {{"demo": "HeaderCustomDemo.js"}}
+
+### Smart AI2 Banner 
+
+#### Collapse on Window Scroll
+
+An AI2 Banner at the top of the header that collapses when the page is scrolled. 
+
+{{"demo": "HeaderWithTargetWindowSmartBanner.js"}}
+
+#### Collapse on Target Div Scroll
+
+An AI2 Banner at the top of the header that collapses when the target div is scrolled.
+
+{{"demo": "HeaderWithTargetDivSmartBannerDemo.js"}}
+

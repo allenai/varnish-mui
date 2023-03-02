@@ -4,8 +4,10 @@ import { Header } from '@allenai/varnish/header';
 export default function Demo() {
     return (
         <div style={{ width: '100%' }}>
-            <Header alwaysVisible={true}>
-                <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
+            <Header bannerAlwaysVisible={true}>
+                <Header.Columns columns="auto 1fr">
+                    <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
+                </Header.Columns>
             </Header>
         </div>
     );
