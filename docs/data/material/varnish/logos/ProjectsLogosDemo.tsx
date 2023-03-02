@@ -1,34 +1,51 @@
 import { logos } from '@allenai/varnish';
+import { Box, Paper, Stack, styled } from '@mui/material';
 
 export default function Demo() {
+
+    const Item = styled(Paper)(({ theme }) => ({
+        padding: theme.spacing(1),
+        textAlign: 'center',
+    }));
+
     return (
-        <span>
-            <div>AllenNLP</div>
-            <logos.AllenNLP />
-            <br />
+        <Box>
+            <Stack spacing={2}>
+                <Item>
+                    <div>AllenNLP</div>
+                    <logos.AllenNLP />
+                </Item>
 
-            <div>Aristo</div>
-            <logos.Aristo />
-            <br />
+                <Item>
+                    <div>Aristo</div>
+                    <logos.Aristo />
+                </ Item>
 
-            <div>Mosaic</div>
-            <logos.Mosaic />
-            <br />
+                <Item>
+                    <div>Mosaic</div>
+                    <logos.Mosaic />
+                </Item>
 
-            <div>Prior</div>
-            <logos.Prior />
-            <br />
+                <Item>
+                    <div>Prior</div>
+                    <logos.Prior />
+                </Item>
 
-            <div>Semantic Scholar</div>
-            <logos.SemanticScholar />
-            <br />
+                <Item>
+                    <div>Semantic Scholar</div>
+                    <logos.SemanticScholar />
+                </Item>
 
-            <div>Fairness</div>
-            <logos.Fairness />
-            <br />
+                <Item>
+                    <div>Fairness</div>
+                    <logos.Fairness />
+                </Item>
 
-            <div>Incubator</div>
-            <logos.Incubator />
-        </span>
+                <Item>
+                    <div>Incubator</div>
+                    <logos.Incubator />
+                </Item>
+            </Stack>
+        </Box>
     );
 }

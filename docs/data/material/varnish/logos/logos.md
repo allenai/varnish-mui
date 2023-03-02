@@ -18,7 +18,7 @@ Whenever you need the official AI2 or project logo.
 {{"demo": "LogosDefaultDemo.js"}}
 
 ### Different Sizes
-#### You can change the size of the logo to be one of three values: _micro_, _default_ or _large_.
+#### You can change the size of the logo to be one of three values: _sm_, _md_ or _lg_.
 
 {{"demo": "LogosSizesDemo.js"}}
 
@@ -42,7 +42,7 @@ Whenever you need the official AI2 or project logo.
 
 | Property    | Description                | Type                         | Default   |
 | ----------- | -------------------------- | ---------------------------- | --------- |
-| size        | sets size of logo          | 'micro' \| 'default' \| 'lg' | 'default' |
+| size        | sets size of logo          | 'sm'  \| 'md'    \| 'lg'   | 'md'      |
 | color       | sets color of logo         | 'default' \| 'white'         | 'default' |
 | includeText | display the full org name? | boolean                      | true      |
 

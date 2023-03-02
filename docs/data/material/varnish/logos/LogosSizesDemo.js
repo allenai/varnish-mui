@@ -1,19 +1,31 @@
 import { logos } from '@allenai/varnish';
+import { Box, Paper, Stack, styled } from '@mui/material';
 
 export default function Demo() {
+  const Item = styled(Paper)(({ theme }) => ({
+    padding: theme.spacing(1),
+    textAlign: 'center',
+  }));
+
   return (
-    <div>
-      <div>micro</div>
-      <logos.AI2Logo size="micro" />
-      <br />
-      {/* For default size, no need to set <AI2Logo size="default" />
-        since "default" is the default value of the size property. */}
-      <div>default</div>
-      <logos.AI2Logo />
-      <br />
-      <div>lg</div>
-      <logos.AI2Logo size="lg" />
-      <br />
-    </div>
+    <Box>
+      <Stack spacing={2}>
+        <Item>
+          <div>Small i.e. 'sm'</div>
+          <logos.AI2Logo size="sm" />
+        </Item>
+
+        <Item>
+          {/* For default size, no need to set <AI2Logo size="default" />
+            since "default" is the default value of the size property. */}
+          <div>Medium i.e. 'md'</div>
+          <logos.AI2Logo />
+        </Item>
+        <Item>
+          <div>Large i.e. 'lg'</div>
+          <logos.AI2Logo size="lg" />
+        </Item>
+      </Stack>
+    </Box>
   );
 }
