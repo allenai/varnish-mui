@@ -48,7 +48,7 @@ const AppTagline = styled.h4`
     text-overflow: ellipsis;
     font-size: ${pxToRem(24)};
 
-    @media (max-width: 8px) {
+    @media (max-width: 480px) {
         display: none;
     }
 `;
