@@ -13,7 +13,7 @@ export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ chi
         <BannerContent>
             {children || (
                 <BannerLink href="https://allenai.org">
-                    <AI2Logo color="white" size="micro" />
+                    <AI2Logo color="white" size="sm" />
                 </BannerLink>
             )}
         </BannerContent>

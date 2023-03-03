@@ -22,7 +22,7 @@ export default function Demo() {
     <AI2Banner>
       <Tagline.Container>
         <Tagline.Text>A service of</Tagline.Text>
-        <logos.AI2Logo size="micro" color="white" />
+        <logos.AI2Logo size="sm" color="white" />
       </Tagline.Container>
       ;
     </AI2Banner>
