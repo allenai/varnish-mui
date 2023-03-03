@@ -6,7 +6,7 @@ import { AI2MarkText } from './AI2MarkText';
 import { color as AI2Color, Color} from '../colors';
 
 const dimsBySize = {
-    micro: {
+    sm: {
         height: 16,
         width: {
             mark: 30,
@@ -14,7 +14,7 @@ const dimsBySize = {
             text: 138,
         },
     },
-    default: {
+    md: {
         height: 30,
         width: {
             mark: 64,
@@ -33,7 +33,7 @@ const dimsBySize = {
 };
 
 type ColorVariants = 'default' | 'white';
-type LogoSize = 'micro' | 'default' | 'lg';
+type LogoSize = 'sm' | 'md' | 'lg';
 
 export interface AI2LogoProps {
     color?: ColorVariants;
@@ -46,7 +46,7 @@ export interface AI2LogoProps {
  * Component that renders the AI2 Logo.
  */
 export const AI2Logo = (p: AI2LogoProps) => {
-    const props = Object.assign({ size: 'default', color: 'default', includeText: true }, p);
+    const props = Object.assign({ size: 'md', color: 'default', includeText: true }, p);
     const dims = dimsBySize[props.size];
     const [gradients, color]: [false | undefined, Color | undefined] =
         props.color === 'white' ? [false, AI2Color.N1] : [undefined, undefined];
@@ -63,7 +63,7 @@ export const AI2Logo = (p: AI2LogoProps) => {
     }
 
     // When the logo is small we resize the viewbox of the text so it's more legible.
-    const vw = props.size === 'micro' ? '74 6 190 18' : undefined;
+    const vw = props.size === 'sm' ? '74 6 190 18' : undefined;
     return (
         <LogoGrid gap={dims.width.gap} className={props.className}>
             <AI2Mark
