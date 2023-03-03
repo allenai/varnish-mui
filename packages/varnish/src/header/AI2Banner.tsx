@@ -34,6 +34,6 @@ const BannerContent = styled.div`
 
 const DarkBanner = styled.div`
     background: ${varnishColor.B10.toString()};
-    padding: 4px 0;
+    padding: ${spacing(0.5)} 0;
     line-height: 1;
 `;
