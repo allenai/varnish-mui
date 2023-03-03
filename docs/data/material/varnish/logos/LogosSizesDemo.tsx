@@ -19,7 +19,7 @@ export default function Demo() {
                 <Item>
                     {/* For default size, no need to set <AI2Logo size="default" />
     since "default" is the default value of the size property. */}
-                    <div>Medium i.e. 'md'</div>
+                    <div>Medium ('md')</div>
                     <logos.AI2Logo />
                 </Item>
                 <Item>
