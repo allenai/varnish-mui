@@ -9,7 +9,7 @@ export interface AI2BannerProps {
     children?: React.ReactNode;
 }
 
-const varnishDarkTheme = theme.getTheme('light');
+const varnishDarkTheme = theme.getTheme('dark');
 
 export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ children }) => (
     <DarkBanner>
