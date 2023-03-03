@@ -22,7 +22,7 @@ export default function Demo() {
           <logos.AI2Logo />
         </Item>
         <Item>
-          <div>Large i.e. 'lg'</div>
+          <div>Large ('lg')</div>
           <logos.AI2Logo size="lg" />
         </Item>
       </Stack>
