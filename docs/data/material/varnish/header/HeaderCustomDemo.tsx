@@ -23,7 +23,7 @@ export default function Demo() {
         <Tagline.Container>
             <Tagline.Text>A service of</Tagline.Text>
             <logos.AI2Logo size="sm" color="white" />
-        </Tagline.Container>;
+        </Tagline.Container>
     </AI2Banner>
     return (
         <div style={{ width: '100%' }}>

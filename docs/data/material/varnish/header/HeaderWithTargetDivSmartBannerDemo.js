@@ -6,7 +6,7 @@ export default function Demo() {
   const getDivs = () => {
     var divs = [];
     for (var i = 0; i < 50; i++) {
-      divs.push(<div key={i}>Content!</div>);
+      divs.push(<div key={i}>Content {i}!</div>);
     }
     return divs;
   };

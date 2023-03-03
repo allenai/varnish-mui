@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 import { AI2Logo } from '../logos/AI2Logo';
 import {color as varnishColor } from '../colors';
+import theme from '../theme';
 
 export interface AI2BannerProps {
     children?: React.ReactNode;
 }
+
+const varnishDarkTheme = theme.getTheme('light');
 
 export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ children }) => (
     <DarkBanner>
@@ -28,12 +31,12 @@ export const BannerLink = styled.a`
 const BannerContent = styled.div`
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: ${varnishDarkTheme.spacing(3)};
+    padding-right: ${varnishDarkTheme.spacing(3)};
 `;
 
 const DarkBanner = styled.div`
-    background: ${varnishColor.B10.toString()};
-    padding: ${spacing(0.5)} 0;
+    background: ${varnishDarkTheme.color.B10.toString()};
+    padding: ${varnishDarkTheme.spacing(0.5)} 0;
     line-height: 1;
 `;

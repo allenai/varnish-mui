@@ -24,7 +24,6 @@ export default function Demo() {
         <Tagline.Text>A service of</Tagline.Text>
         <logos.AI2Logo size="sm" color="white" />
       </Tagline.Container>
-      ;
     </AI2Banner>
   );
   return (
