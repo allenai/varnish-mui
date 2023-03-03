@@ -12,7 +12,7 @@ export default function Demo() {
         <Box>
             <Stack spacing={2}>
                 <Item>
-                    <div>Small i.e. 'sm'</div>
+                    <div>Small ('sm')</div>
                     <logos.AI2Logo size="sm" />
                 </Item>
 
