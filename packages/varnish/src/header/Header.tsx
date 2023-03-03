@@ -191,7 +191,7 @@ const MenuColumn = styled.div`
             text-decoration: none;
         }
         ul {
-            margin: -12px 0;
+            margin: -${varnishLightTheme.spacing(1.5)} 0;
         }
     }
 `;
