@@ -17,3 +17,5 @@ export * from './components/Content';
 export * from './components/ErrorBoundary';
 export * from './components/VarnishApp';
 export * from './components/VarnishContext';
+
+export * from './header';

@@ -1,0 +1,3 @@
+<VarnishApp  theme={theme}>
+    <Header.AI2Banner />
+</VarnishApp>

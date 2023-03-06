@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from '@mui/material';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import { LayoutVariant, DefaultAppLayoutProvider} from './VarnishContext';
 import {  ErrorBoundary } from './ErrorBoundary';
@@ -23,6 +24,7 @@ interface Props {
 export const VarnishApp = ({ layout, theme, children }: Props) => {
     const mergedTheme = VarnishTheme.getTheme('light', theme);
     return (
+        <StyledThemeProvider theme={mergedTheme}>
         <ThemeProvider theme={mergedTheme}>
             <ErrorBoundary>
                 <DefaultAppLayoutProvider layout={layout || 'center-aligned'}>
@@ -30,5 +32,6 @@ export const VarnishApp = ({ layout, theme, children }: Props) => {
                 </DefaultAppLayoutProvider>
             </ErrorBoundary>
         </ThemeProvider>
+        </StyledThemeProvider>
     );
 };

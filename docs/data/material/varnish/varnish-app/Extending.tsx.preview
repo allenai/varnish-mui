@@ -1,0 +1,3 @@
+<VarnishApp  theme={theme2}>
+    <CoolH1>🥶 Brrrr....</CoolH1>
+</VarnishApp>

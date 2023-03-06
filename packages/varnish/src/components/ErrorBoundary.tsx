@@ -17,6 +17,7 @@ interface State {
  * https://reactjs.org/docs/error-boundaries.html
  */
 export class ErrorBoundary extends React.PureComponent<Props, State> {
+
     state: State = {};
     static getDerivedStateFromError(error: Error): State {
         return { error };

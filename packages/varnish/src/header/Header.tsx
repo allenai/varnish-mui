@@ -127,7 +127,7 @@ interface ScrollProps {
 
 // This is the function that enables 'smart scroll'. It hides any component(s) passed in via the children props
 // in a Collapse Transition component, and on scroll of the trigger target (default is window), the children will
-// get hidden. 
+// get hidden.
 function HideOnScroll(props: ScrollProps) {
     const { children, triggerTarget } = props;
     const trigger = triggerTarget ? useScrollTrigger({ target: triggerTarget }) : useScrollTrigger();
@@ -144,7 +144,7 @@ interface HeaderProps {
     bannerAlwaysVisible?: boolean;
     customBanner?: React.ReactNode;
 
-    // Note: Only modify this if you want the smart AI2 banner to be hidden on scroll of 
+    // Note: Only modify this if you want the smart AI2 banner to be hidden on scroll of
     // a container OTHER than the main window
     scrollTriggerTarget?: HTMLDivElement;
 }
@@ -165,7 +165,7 @@ function HeaderComponent({ children, customBanner, bannerAlwaysVisible, scrollTr
                     </div>
                 </HideOnScroll>
             }
-            {children ? 
+            {children ?
             <Toolbar>
                 <MaxWidthDiv>{children}</MaxWidthDiv>
             </Toolbar> : null}
@@ -206,6 +206,7 @@ const MenuColumn = styled.div`
  *  </Header>
  */
 export const Header = Object.assign(HeaderComponent, {
+    AI2Banner,
     AppName,
     AppTagline,
     Columns,
