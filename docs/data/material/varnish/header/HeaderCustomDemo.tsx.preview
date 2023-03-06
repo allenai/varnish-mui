@@ -1,0 +1,5 @@
+<Header customBanner={customBanner} bannerAlwaysVisible={true}>
+    <Header.Columns columns="auto">
+        <logos.AI2Logo />
+    </Header.Columns>
+</Header>
