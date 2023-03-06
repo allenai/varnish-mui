@@ -1,4 +1,6 @@
 import { ThemeOptions, createTheme } from '@mui/material/styles';
+import { deepmerge } from '@mui/utils';
+
 import { color, Color } from './colors';
 import { Dictionary } from './util';
 
@@ -99,8 +101,9 @@ const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   };
 };
 
-const getTheme = (mode: Mode) => {
-  return createTheme(getVarnishDesignTokens(mode));
+const getTheme = (mode: Mode = 'light', overrides: any = {}) => {
+  const mergedTheme = deepmerge(getVarnishDesignTokens(mode), overrides);
+  return createTheme(mergedTheme);
 };
 
 export default { getVarnishDesignTokens, getTheme };
