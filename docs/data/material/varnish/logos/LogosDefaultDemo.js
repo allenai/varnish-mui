@@ -1,4 +1,5 @@
-import { logos } from '@allenai/varnish';
+import logos from '@allenai/varnish/logos';
+import * as React from 'react';
 
 export default function Demo() {
   return (

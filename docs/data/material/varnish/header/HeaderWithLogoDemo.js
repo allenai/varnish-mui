@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { Header } from '@allenai/varnish/header';
-import { logos } from '@allenai/varnish/logos';
+import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
   const getDivs = () => {
-    var divs = [];
-    for (var i = 0; i < 5; i++) {
-      divs.push(<div key={i}>Content (i)!</div>);
+    const divs = [];
+    for (let i = 0; i < 5; i += 1) {
+      divs.push(<div key={i}>Content {i}!</div>);
     }
     return divs;
   };
 
   return (
     <div style={{ width: '100%', height: '250px', overflow: 'scroll' }}>
-      <Header bannerAlwaysVisible={true}>
+      <Header bannerAlwaysVisible>
         <Header.Columns columns="auto 1fr">
           <Header.Logo
             href="http://allenai.org"

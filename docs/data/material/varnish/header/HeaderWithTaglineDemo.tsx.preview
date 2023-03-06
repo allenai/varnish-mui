@@ -1,4 +1,4 @@
-<Header bannerAlwaysVisible={true}>
+<Header bannerAlwaysVisible>
     <Header.Columns columns="auto 1fr">
         <Header.Logo
             href="http://allenai.org"

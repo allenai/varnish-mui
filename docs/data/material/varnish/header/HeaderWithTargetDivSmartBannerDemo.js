@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Header } from '@allenai/varnish/header';
-import { logos } from '@allenai/varnish/logos';
+import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
   const getDivs = () => {
-    var divs = [];
-    for (var i = 0; i < 50; i++) {
+    const divs = [];
+    for (let i = 0; i < 50; i += 1) {
       divs.push(<div key={i}>Content {i}!</div>);
     }
     return divs;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Header } from '@allenai/varnish/header';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { logos } from '@allenai/varnish';
+import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,7 +20,7 @@ export default function Demo() {
 
   return (
     <div style={{ width: '100%' }}>
-      <Header bannerAlwaysVisible={true}>
+      <Header bannerAlwaysVisible>
         <Header.Columns columns="auto 1fr auto">
           <Header.Logo
             href="http://allenai.org"
