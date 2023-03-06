@@ -4,7 +4,9 @@ import { VarnishApp, Header } from '@allenai/varnish';
 export default function Demo() {
   return (
     <VarnishApp>
-      <Header.AI2Banner />
+      <div style={{ width: '100%' }}>
+        <Header.AI2Banner />
+      </div>
     </VarnishApp>
   );
 }

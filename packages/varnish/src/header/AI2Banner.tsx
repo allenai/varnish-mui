@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
 import { AI2Logo } from '../logos/AI2Logo';
 
 export interface AI2BannerProps {

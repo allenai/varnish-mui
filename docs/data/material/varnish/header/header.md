@@ -1,5 +1,5 @@
 ---
-title: Varnish Header
+title: AI2 Varnish Header
 githubLabel: 'varnish: header'
 ---
 
@@ -14,25 +14,25 @@ your application.
 
 ### API
 
-| Property            | Description                                                                                                                                                                                                                          | Type                                                                       | Default   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | --------- |
-| bannerAlwaysVisible | Prevents the AI2 banner from disappearing when the page is scrolled                                                                                                                                                                  | boolean                                                                    | false     |
-| customBanner        | A Custom AI2 banner that you can inject into the header via this prop                                                                                                                                                                | JSX / TSX Element; if left undefined, the banner is the default AI2 banner | undefined |
-| scrollTriggerTarget | If you choose to use the AI2 Header with Smart Banner within a div, you can change the scroll target to be the specific div it is in. Note: This should rarely be used, reach out to the team if you find yourself using this often. | HTMLDivElement                                                             | undefined |
+| Property            | Type                                                                       | Default   | Description                                                                                                                                                                                                                          |
+| :------------------ | :------------------------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| bannerAlwaysVisible | boolean                                                                    | false     | Prevents the AI2 banner from disappearing when the page is scrolled                                                                                                                                                                  |
+| customBanner        | JSX / TSX Element; if left undefined, the banner is the default AI2 banner | undefined | A Custom AI2 banner that you can inject into the header via this prop                                                                                                                                                                |
+| scrollTriggerTarget | HTMLDivElement                                                             | undefined | If you choose to use the AI2 Header with Smart Banner within a div, you can change the scroll target to be the specific div it is in. Note: This should rarely be used, reach out to the team if you find yourself using this often. |
 
 ## Sub Components
 
 ### Header.Columns API
 
-| Property | Description              | Type                            | Default |
-| -------- | ------------------------ | ------------------------------- | ------- |
-| columns  | Defines the grid columns | string? (grid-template-columns) | null    |
+| Property | Type                            | Default | Description              |
+| :------- | :------------------------------ | :------ | :----------------------- |
+| columns  | string? (grid-template-columns) | null    | Defines the grid columns |
 
 ### Header.Logo
 
 A helper component for placing a logo and `<Header.AppName/>` in the `<Header/>` easier.
 
-```jsx dark
+```jsx
 <Header>
     <Header.Columns columns="auto 1fr">
         <Header.Logo
@@ -45,7 +45,7 @@ A helper component for placing a logo and `<Header.AppName/>` in the `<Header/>`
 
 ### Header.AppName
 
-```jsx dark
+```jsx
 <Header>
     <Header.Columns columns="auto 1fr">
         <Header.Logo
@@ -62,7 +62,7 @@ A helper component for placing a logo and `<Header.AppName/>` in the `<Header/>`
 
 A helper component for styling the App Tagline in the `<Header/>`.
 
-```jsx dark
+```jsx
 <Header>
     <Header.Columns columns="auto 1fr">
         <Header.Logo

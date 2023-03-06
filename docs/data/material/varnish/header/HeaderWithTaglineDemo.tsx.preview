@@ -9,4 +9,6 @@
     </Header.Logo>
   </Header.Columns>
 </Header>
-<div>Content!</div>
+<Content main>
+  <div>Content!</div>
+</Content>

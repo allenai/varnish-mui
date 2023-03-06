@@ -1,10 +1,8 @@
 import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
-
+import { LayoutVariant } from './components/VarnishContext';
 import { Color, color as varnishColor } from './colors';
-
-export type LayoutVariant = 'left-aligned' | 'center-aligned';
 
 export type FooterVariant = 'default' | 'dark';
 
@@ -13,7 +11,7 @@ export type FooterVariant = 'default' | 'dark';
 interface Props {
   variant?: FooterVariant;
   children?: React.ReactNode | React.ReactNode[];
-  // layout?: LayoutVariant; // TODO: Add layout understanding to new footer (Investigate Grid?)
+  layout?: LayoutVariant;
   backgroundColor?: Color;
   className?: string;
 }
@@ -24,6 +22,7 @@ const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...
 }>`
   padding: 24px;
   color: ${({ textColor }) => textColor};
+  text-align: ${({ layout }) => (layout !== 'left-aligned' ? 'center' : null)};
   background-color: ${({ background }) => background};
 `;
 

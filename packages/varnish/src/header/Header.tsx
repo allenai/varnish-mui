@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
 import { pxToRem } from '../util';
 
-// TODO: Layout and Content need to be determined with Varnish-Context additions
 // TODO: Any theming constants (font-size of  headings, box shadow coloring, z-index) needs to be updated
 
 /* eslint-disable no-nested-ternary */

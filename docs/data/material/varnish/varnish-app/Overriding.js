@@ -11,7 +11,9 @@ export default function Demo() {
 
   return (
     <VarnishApp theme={extendedTheme}>
-      <Header.AI2Banner />
+      <div style={{ width: '100%' }}>
+        <Header.AI2Banner />
+      </div>
     </VarnishApp>
   );
 }

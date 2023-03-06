@@ -1,5 +1,5 @@
 ---
-title: Varnish Footer
+title: AI2 Varnish Footer
 githubLabel: 'varnish: footer'
 ---
 

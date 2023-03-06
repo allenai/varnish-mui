@@ -8,4 +8,4 @@
     </Header.Logo>
   </Header.Columns>
 </Header>
-{getDivs()}
+<Content main>{getDivs()}</Content>

@@ -15,7 +15,7 @@ probably won't compile, or if it does things probably won't work.
 
 ## Example Usage
 
-```js
+```jsx
 import React from 'react';
 import { VarnishApp } from '@allenai/varnish';
 
@@ -44,9 +44,6 @@ You can override theme values by setting the property you'd like to change.
 The overrides are deeply merged with the default Varnish theme, which
 means that defaults are used for unspecified values.
 
-Generally speaking you'll want to verify the `palette`. Changing other values
-might have weird side-effects.
-
 {{"demo": "Overriding.js", "bg": true}}
 
 ### Extending
@@ -61,4 +58,4 @@ styles.
 | Property | Type                               | Default          | Description                                                                                             |
 | :------- | :--------------------------------- | :--------------- | :------------------------------------------------------------------------------------------------------ |
 | layout   | 'left-aligned' \| 'center-aligned' | 'center-aligned' | Changes the top level layout, which right now only impacts the horizontal alignment of your application |
-| theme    | '{}'                               | (Optional)       | Modifications to the VarnishTheme, which are deep-merged with the defaults.                             |
+| theme    | {}                                 | (Optional)       | Modifications to the VarnishTheme, which are deep-merged with the defaults.                             |

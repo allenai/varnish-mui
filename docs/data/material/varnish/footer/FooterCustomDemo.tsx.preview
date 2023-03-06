@@ -1,3 +1,3 @@
-<Footer backgroundColor={color.G4}>
+<Footer backgroundColor={theme.color.G4}>
   Custom footer content - 🦶🏻 🦶🏼 🦶🏽 🦶🏾 🦶🏿
 </Footer>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { pxToRem, color, Header } from '@allenai/varnish';
+import { pxToRem, Header } from '@allenai/varnish';
 import logos from '@allenai/varnish/logos';
 import styled from 'styled-components';
 
@@ -10,7 +10,7 @@ const Tagline = {
     gap: 1ch;
   `,
   Text: styled.em`
-    color: ${color.N1.toString()};
+    color: ${({ theme }) => theme.color.N1.toString()};
     font-size: ${pxToRem(13)};
   `,
 };

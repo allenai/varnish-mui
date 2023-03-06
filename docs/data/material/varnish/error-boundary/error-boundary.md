@@ -9,7 +9,7 @@ githubLabel: 'varnish: error-boundary'
 
 By default, `VarnishApp` is wrapped in this ErrorBoundary component, so all runtime errors will be caught.
 
-```js
+```jsx
 import React from 'react';
 import { VarnishApp } from '@allenai/varnish';
 
@@ -24,7 +24,7 @@ const App = () => (
 However you can also use it directly. This is helpful if you want to have a sub section of a page
 catch without affecting other sections.
 
-```js
+```jsx
 import React from 'react';
 import { VarnishApp, ErrorBoundary } from '@allenai/varnish';
 
