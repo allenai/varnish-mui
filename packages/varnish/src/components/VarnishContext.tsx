@@ -15,8 +15,8 @@ export type LayoutVariant = 'left-aligned' | 'center-aligned';
  * Information captured about the current layout.
  */
 export interface AppSettings {
-    /* The current, active variant. */
-    layout: LayoutVariant;
+  /* The current, active variant. */
+  layout: LayoutVariant;
 }
 
 /**
@@ -27,12 +27,12 @@ export interface AppSettings {
  * per page. More complex scenarios, however, might necessitate using multiple.
  */
 export const VarnishContext = React.createContext<AppSettings>({
-    layout: 'center-aligned',
+  layout: 'center-aligned',
 });
 
 interface VarnishContextProviderProps {
-    layout: LayoutVariant;
-    children: React.ReactNode | React.ReactNodeArray;
+  layout: LayoutVariant;
+  children: React.ReactNode | React.ReactNodeArray;
 }
 
 /**
@@ -40,13 +40,14 @@ interface VarnishContextProviderProps {
  *
  * Most of the time you should use this.
  */
-export const DefaultAppLayoutProvider = ({ layout, children }: VarnishContextProviderProps) => {
-    return (
-        <VarnishContext.Provider
-            value={{
-                layout
-            }}>
-            {children}
-        </VarnishContext.Provider>
-    );
-};
+export function DefaultAppLayoutProvider({ layout, children }: VarnishContextProviderProps) {
+  return (
+    <VarnishContext.Provider
+      value={{
+        layout,
+      }}
+    >
+      {children}
+    </VarnishContext.Provider>
+  );
+}

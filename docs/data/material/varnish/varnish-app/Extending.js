@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import { VarnishApp, Color } from '@allenai/varnish';
 
 export default function Demo() {
-  const theme2 = {
+  const extendedTheme = {
     color: {
-      B100: new Color('Mr. Freeze', '#bbccff', false),
+      Freeze: new Color('Mr. Freeze', '#bbccff', false),
     },
   };
 
   const CoolH1 = styled.h1`
-    color: ${({ theme }) => theme.color.B100};
+    color: ${({ theme }) => theme.color.Freeze};
   `;
 
   return (
-    <VarnishApp theme={theme2}>
+    <VarnishApp theme={extendedTheme}>
       <CoolH1>🥶 Brrrr....</CoolH1>
     </VarnishApp>
   );

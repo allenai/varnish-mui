@@ -18,6 +18,7 @@ import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import { getDesignTokens } from 'docs/src/modules/brandingTheme';
 import { highDensity } from 'docs/src/modules/components/ThemeContext';
 import { deepmerge } from '@mui/utils';
+import { VarnishApp } from '@allenai/varnish';
 
 function FramedDemo(props) {
   const { children, document } = props;
@@ -186,7 +187,9 @@ function DemoSandbox(props) {
         children
       ) : (
         <StylesProvider jss={jss}>
-          <ThemeProvider theme={(outerTheme) => getTheme(outerTheme)}>{children}</ThemeProvider>
+          <VarnishApp>
+            <ThemeProvider theme={(outerTheme) => getTheme(outerTheme)}>{children}</ThemeProvider>
+          </VarnishApp>
         </StylesProvider>
       )}
     </DemoErrorBoundary>

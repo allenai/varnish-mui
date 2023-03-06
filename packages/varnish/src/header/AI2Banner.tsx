@@ -15,13 +15,13 @@ export const BannerLink = styled.a`
 const BannerContent = styled.div`
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: ${({theme}) => theme.spacing(3)};
-  padding-right: ${({theme}) => theme.spacing(3)};
+  padding-left: ${({ theme }) => theme.spacing(3)};
+  padding-right: ${({ theme }) => theme.spacing(3)};
 `;
 
 const DarkBanner = styled.div`
-  background: ${({theme}) => theme.color.B10.toString()};
-  padding: ${({theme}) => theme.spacing(0.5)} 0;
+  background: ${({ theme }) => theme.color.B10.toString()};
+  padding: ${({ theme }) => theme.spacing(0.5)} 0;
   line-height: 1;
 `;
 

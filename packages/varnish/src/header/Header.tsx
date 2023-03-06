@@ -50,7 +50,7 @@ const LogoGrid = styled.span`
   display: grid;
   grid-template-columns: repeat(4, auto);
   align-items: center;
-  gap: ${varnishLightTheme.spacing(1)};
+  gap: ${({ theme }) => theme.spacing(1)};
 
   &:hover ${AppNameText} {
     text-decoration: none;
@@ -61,10 +61,10 @@ const LogoGrid = styled.span`
 const DecorationlessAnchor = styled(Link)`
   &&:hover {
     text-decoration: none;
-    color: ${varnishLightTheme.color.N9.toString()};
+    color: ${({ theme }) => theme.color.N9.toString()};
   }
   text-decoration: none;
-  color: ${varnishLightTheme.color.N9.toString()};
+  color: ${({ theme }) => theme.color.N9.toString()};
 `;
 
 // Wraps the header logo with an ahref if href is passed in
@@ -114,11 +114,11 @@ const MaxWidthDiv = styled.div`
 
 const StyledAppBar = styled(AppBar)`
   background-color: white;
-  color: ${({theme}) => theme.color.N9.toString()};
+  color: ${({ theme }) => theme.color.N9.toString()};
   size: 22pt;
   top: 0;
   width: 100%;
-  box-shadow: 0px ${({theme}) => theme.spacing(0.5)} ${({theme}) => theme.spacing(2)}
+  box-shadow: 0px ${({ theme }) => theme.spacing(0.5)} ${({ theme }) => theme.spacing(2)}
     rgba(10, 41, 57, 0.08);
   transition: top 200ms ease-in-out;
 `;
@@ -182,11 +182,11 @@ function HeaderComponent({
 const Columns = styled.div<ColumnsProps>`
   display: grid;
   grid-template-columns: ${({ columns }) => columns};
-  grid-column-gap: ${({theme}) => theme.spacing(2)};
-  grid-row-gap: ${({theme}) => theme.spacing(2)};
+  grid-column-gap: ${({ theme }) => theme.spacing(2)};
+  grid-row-gap: ${({ theme }) => theme.spacing(2)};
   width: 100%;
   align-items: center;
-  padding: ${({theme}) => theme.spacing(1.5)} 0;
+  padding: ${({ theme }) => theme.spacing(1.5)} 0;
 `;
 
 const MenuColumn = styled.div`
@@ -197,7 +197,7 @@ const MenuColumn = styled.div`
       text-decoration: none;
     }
     ul {
-      margin: -${({theme}) => theme.spacing(1.5)} 0;
+      margin: -${({ theme }) => theme.spacing(1.5)} 0;
     }
   }
 `;

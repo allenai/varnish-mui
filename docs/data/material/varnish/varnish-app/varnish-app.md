@@ -20,9 +20,9 @@ import React from 'react';
 import { VarnishApp } from '@allenai/varnish';
 
 const App = () => (
-    <VarnishApp layout="left-aligned">
-        <MainApp />
-    </VarnishApp>
+  <VarnishApp layout="left-aligned">
+    <MainApp />
+  </VarnishApp>
 );
 
 // Render
@@ -58,7 +58,7 @@ styles.
 
 ## API
 
-| Property | Type                               | Default          | Description
+| Property | Type                               | Default          | Description                                                                                             |
 | :------- | :--------------------------------- | :--------------- | :------------------------------------------------------------------------------------------------------ |
 | layout   | 'left-aligned' \| 'center-aligned' | 'center-aligned' | Changes the top level layout, which right now only impacts the horizontal alignment of your application |
 | theme    | '{}'                               | (Optional)       | Modifications to the VarnishTheme, which are deep-merged with the defaults.                             |

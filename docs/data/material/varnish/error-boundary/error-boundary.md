@@ -15,9 +15,9 @@ import { VarnishApp } from '@allenai/varnish';
 
 // Varnish app includes an ErrorBoundary
 const App = () => (
-    <VarnishApp>
-        <YourApp />
-    </VarnishApp>
+  <VarnishApp>
+    <YourApp />
+  </VarnishApp>
 );
 ```
 
@@ -29,13 +29,13 @@ import React from 'react';
 import { VarnishApp, ErrorBoundary } from '@allenai/varnish';
 
 const App = () => (
-    <VarnishApp>
-        <ErrorBoundary>
-            <YourComponentA />
-        </ErrorBoundary>
-        <ErrorBoundary>
-            <YourComponentB />
-        </ErrorBoundary>
-    </VarnishApp>
+  <VarnishApp>
+    <ErrorBoundary>
+      <YourComponentA />
+    </ErrorBoundary>
+    <ErrorBoundary>
+      <YourComponentB />
+    </ErrorBoundary>
+  </VarnishApp>
 );
 ```

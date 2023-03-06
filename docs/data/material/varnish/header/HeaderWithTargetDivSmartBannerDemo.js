@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header } from '@allenai/varnish/header';
+import { Header } from '@allenai/varnish';
 import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
