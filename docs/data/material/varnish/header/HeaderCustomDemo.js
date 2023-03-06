@@ -1,8 +1,8 @@
-import { logos, pxToRem } from '@allenai/varnish';
+import { pxToRem, color } from '@allenai/varnish';
+import logos from '@allenai/varnish/logos';
 import { Header } from '@allenai/varnish/header';
 import * as React from 'react';
 import styled from 'styled-components';
-import { color } from '@allenai/varnish';
 import { AI2Banner } from '@allenai/varnish/header/AI2Banner';
 
 const Tagline = {
@@ -28,7 +28,7 @@ export default function Demo() {
   );
   return (
     <div style={{ width: '100%' }}>
-      <Header customBanner={customBanner} bannerAlwaysVisible={true}>
+      <Header customBanner={customBanner} bannerAlwaysVisible>
         <Header.Columns columns="auto">
           <logos.AI2Logo />
         </Header.Columns>
