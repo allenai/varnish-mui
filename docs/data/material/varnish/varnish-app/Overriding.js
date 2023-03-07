@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import { Color, Header } from '@allenai/varnish';
 import { VarnishApp } from '@allenai/varnish/components/VarnishApp';

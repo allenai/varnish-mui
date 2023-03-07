@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import { pxToRem, Header } from '@allenai/varnish';
 import logos from '@allenai/varnish/logos';

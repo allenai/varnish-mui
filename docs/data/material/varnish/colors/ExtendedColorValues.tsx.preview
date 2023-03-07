@@ -1,3 +1,4 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
 <ExtendedGrid id="color">
   <ColorValues colorGroupDict={colorGroups} themeProp="color" />
 </ExtendedGrid>

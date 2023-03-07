@@ -1,3 +1,4 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
 <PrimaryGrid>
   {[color.B8, color.B7, color.B6, color.O6].map((c: Color) => (
     <PrimaryColor key={c.displayName} color={c} />
