@@ -3,7 +3,7 @@ import * as AI2Projects from './AI2Projects';
 import { AI2Mark } from './AI2Mark';
 import { AI2MarkText } from './AI2MarkText';
 
-const logos = {
+export const logos = {
   ...AI2Logo,
   ...AI2Projects,
   AI2Mark,

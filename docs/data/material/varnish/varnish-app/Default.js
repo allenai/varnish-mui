@@ -3,8 +3,7 @@
  */
 
 import * as React from 'react';
-import { Header } from '@allenai/varnish';
-import { VarnishApp } from '@allenai/varnish/components/VarnishApp';
+import { Header, VarnishApp } from '@allenai/varnish';
 
 export default function Demo() {
   return (

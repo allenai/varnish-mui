@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import logos from '@allenai/varnish/logos';
+import { logos } from '@allenai/varnish';
 import { Box, Paper, Stack, styled } from '@mui/material';
 
 export default function Demo() {

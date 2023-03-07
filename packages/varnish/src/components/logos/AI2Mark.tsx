@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { color as AI2Color, Color } from '../colors';
+import { color as AI2Color, Color } from '../../theme/colors';
 
 interface GradientStop {
   offset: number;

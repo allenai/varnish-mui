@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import { getTheme } from '../theme';
+import { getTheme } from '../theme/theme';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
 

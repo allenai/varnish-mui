@@ -3,8 +3,7 @@
  */
 
 import * as React from 'react';
-import { Header, Content } from '@allenai/varnish';
-import logos from '@allenai/varnish/logos';
+import { Header, Content, logos } from '@allenai/varnish';
 
 export default function Demo() {
   const getDivs = () => {

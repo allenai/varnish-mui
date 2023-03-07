@@ -3,10 +3,9 @@
  */
 
 import * as React from 'react';
-import { Header } from '@allenai/varnish';
+import { Header, logos } from '@allenai/varnish';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
   const [anchorEl, setAnchorEl] = React.useState(null);

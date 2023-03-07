@@ -90,7 +90,7 @@ export default function babelPluginJsxPreview() {
           );
         }
 
-        if (deindentedPreviewLines.length <= (maxLines + (isVarnish ? 1 : 0))) {
+        if (deindentedPreviewLines.length <= maxLines + (isVarnish ? 1 : 0)) {
           fs.writeFileSync(outputFilename, deindentedPreviewLines.join('\n'));
           hasPreview = true;
         }

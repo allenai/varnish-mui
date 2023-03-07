@@ -3,8 +3,7 @@
  */
 
 import * as React from 'react';
-import { pxToRem, Header } from '@allenai/varnish';
-import logos from '@allenai/varnish/logos';
+import { pxToRem, Header, logos } from '@allenai/varnish';
 import styled from 'styled-components';
 
 const Tagline = {
