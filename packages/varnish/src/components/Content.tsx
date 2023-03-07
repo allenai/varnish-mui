@@ -15,17 +15,7 @@ export interface ContentProps {
   bgcolor?: string;
 }
 
-export function Content({ children, className, ...basicProps }: ContentProps) {
-  return (
-    <VarnishContext.Consumer>
-      {({ layout }) => (
-        <InternalContent layout={layout} className={className} {...basicProps}>
-          {children}
-        </InternalContent>
-      )}
-    </VarnishContext.Consumer>
-  );
-}
+/* eslint-disable no-nested-ternary */
 
 const contentCSS = css<{ layout?: LayoutVariant; bgcolor?: string }>`
   max-width: ${({ theme, layout }) =>
@@ -53,3 +43,15 @@ const InternalContent = styled(({ main, layout, bgcolor, ...rest }) => (
 }>`
   ${contentCSS}
 `;
+
+export default function Content({ children, className, ...basicProps }: ContentProps) {
+  return (
+    <VarnishContext.Consumer>
+      {({ layout }) => (
+        <InternalContent layout={layout} className={className} {...basicProps}>
+          {children}
+        </InternalContent>
+      )}
+    </VarnishContext.Consumer>
+  );
+}

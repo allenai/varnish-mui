@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 import Alert from '@mui/material/Alert';
 
@@ -13,10 +13,24 @@ interface State {
   error?: Error;
 }
 
+const DebugInfo = styled.code`
+  ${({ theme }) => `
+        display: block;
+        padding: ${theme.spacing(2)};
+        margin: ${theme.spacing(1.5)} 0 0;
+        overflow: auto;
+        pre {
+            margin: 0;
+            padding: 0;
+            overflow: initial;
+        }
+    `}
+`;
+
 /**
  * https://reactjs.org/docs/error-boundaries.html
  */
-export class ErrorBoundary extends React.PureComponent<Props, State> {
+export default class ErrorBoundary extends React.PureComponent<Props, State> {
   state: State = {};
 
   static getDerivedStateFromError(error: Error): State {
@@ -50,17 +64,3 @@ export class ErrorBoundary extends React.PureComponent<Props, State> {
     );
   }
 }
-
-const DebugInfo = styled.code`
-  ${({ theme }) => `
-        display: block;
-        padding: ${theme.spacing(2)};
-        margin: ${theme.spacing(1.5)} 0 0;
-        overflow: auto;
-        pre {
-            margin: 0;
-            padding: 0;
-            overflow: initial;
-        }
-    `}
-`;

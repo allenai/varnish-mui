@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 /**
  * Different variants represent different application level layouts:
@@ -41,13 +41,15 @@ interface VarnishContextProviderProps {
  * Most of the time you should use this.
  */
 export function DefaultAppLayoutProvider({ layout, children }: VarnishContextProviderProps) {
-  return (
-    <VarnishContext.Provider
-      value={{
-        layout,
-      }}
-    >
-      {children}
-    </VarnishContext.Provider>
-  );
+  React.useMemo(() => {
+    return (
+      <VarnishContext.Provider
+        value={{
+          layout,
+        }}
+      >
+        {children}
+      </VarnishContext.Provider>
+    );
+  }, [layout, children]);
 }

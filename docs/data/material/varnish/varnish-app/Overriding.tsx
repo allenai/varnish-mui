@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { VarnishApp, Color, Header } from '@allenai/varnish';
+import { Color, Header } from '@allenai/varnish';
+import VarnishApp from '@allenai/varnish/components/VarnishApp';
 
 export default function Demo() {
   const extendedTheme = {
