@@ -4,12 +4,12 @@ import Alert from '@mui/material/Alert';
 
 import { Content } from './Content';
 
-interface Props {
+export interface ErrorBoundaryProps {
   defaultErrorMessage?: string;
   children: React.ReactNode | JSX.Element;
 }
 
-interface State {
+interface ErrorBoundaryState {
   error?: Error;
 }
 
@@ -30,10 +30,10 @@ const DebugInfo = styled.code`
 /**
  * https://reactjs.org/docs/error-boundaries.html
  */
-export class ErrorBoundary extends React.PureComponent<Props, State> {
-  state: State = {};
+export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = {};
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { error };
   }
 
