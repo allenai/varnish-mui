@@ -1,10 +1,12 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
 <Header bannerAlwaysVisible>
-    <Header.Columns columns="auto 1fr">
-        <Header.Logo
-            href="http://allenai.org"
-            label={<Header.AppName>Title</Header.AppName>}>
-            <logos.AI2Logo includeText={false} />
-        </Header.Logo>
-    </Header.Columns>
+  <Header.Columns columns="auto 1fr">
+    <Header.Logo
+      href="http://allenai.org"
+      label={<Header.AppName>Title</Header.AppName>}
+    >
+      <logos.AI2Logo includeText={false} />
+    </Header.Logo>
+  </Header.Columns>
 </Header>
-{getDivs()}
+<Content main>{getDivs()}</Content>

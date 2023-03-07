@@ -1,5 +1,5 @@
 ---
-  title: Varnish AI2 Logos
+  title: AI2 Logos
   githubLabel: 'varnish: logos'
 ---
 
@@ -18,16 +18,19 @@ Whenever you need the official AI2 or project logo.
 {{"demo": "LogosDefaultDemo.js"}}
 
 ### Different Sizes
+
 #### You can change the size of the logo to be one of three values: _sm_, _md_ or _lg_.
 
 {{"demo": "LogosSizesDemo.js"}}
 
 ### Altered Text
+
 #### Depending on the context, you may or may not want to display the full organization name text.
 
 {{"demo": "LogosTextDemo.js"}}
 
 ### White Logo
+
 #### If you're using the logo against a dark background, you will want to set the component's `color` value to `white`.
 
 {{"demo": "LogosWhiteDemo.js"}}
@@ -40,15 +43,15 @@ Whenever you need the official AI2 or project logo.
 
 ### AI2 Logo
 
-| Property    | Description                | Type                         | Default   |
-| ----------- | -------------------------- | ---------------------------- | --------- |
-| size        | sets size of logo          | 'sm'  \| 'md'    \| 'lg'   | 'md'      |
-| color       | sets color of logo         | 'default' \| 'white'         | 'default' |
-| includeText | display the full org name? | boolean                      | true      |
+| Property    | Type                 | Default   | Description                |
+| :---------- | :------------------- | :-------- | :------------------------- |
+| size        | 'sm' \| 'md' \| 'lg' | 'md'      | sets size of logo          |
+| color       | 'default' \| 'white' | 'default' | sets color of logo         |
+| includeText | boolean              | true      | display the full org name? |
 
 ### AI2 Project Logos
 
-| Property | Description      | Type   | Default |
-| -------- | ---------------- | ------ | ------- |
-| width    | sets icon width  | number | 32      |
-| height   | sets icon height | number | 32      |
+| Property | Type   | Default | Description      |
+| :------- | :----- | :------ | :--------------- |
+| width    | number | 32      | sets icon width  |
+| height   | number | 32      | sets icon height |

@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import logos from '@allenai/varnish/logos';
 import * as React from 'react';
 

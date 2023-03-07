@@ -1,5 +1,9 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
-import { Header } from '@allenai/varnish/header';
+import { Header, Content } from '@allenai/varnish';
 import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
@@ -16,7 +20,9 @@ export default function Demo() {
           </Header.Logo>
         </Header.Columns>
       </Header>
-      <div>Content!</div>
+      <Content main>
+        <div>Content!</div>
+      </Content>
     </div>
   );
 }

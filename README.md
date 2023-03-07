@@ -15,8 +15,8 @@ _DO NOT USE NPM, use Yarn to install the dependencies._
 
 ## Repository Structure
 
-All Varnish components can be found under packages/varnish/src. The corresponding demos for these Varnish components can be found under docs/data/material/varnish. 
-When you add a new component, create a demo page for the component in the docs to test locally. 
+All Varnish components can be found under packages/varnish/src. The corresponding demos for these Varnish components can be found under docs/data/material/varnish.
+When you add a new component, create a demo page for the component in the docs to test locally.
 
 **Note:** .tsx demos will need to provide .js equivalents to reference in the .md demo pages; if you are developing in TypeScript, you will need to run this script to produce the corresponding .js files:
 
@@ -24,7 +24,7 @@ When you add a new component, create a demo page for the component in the docs t
 yarn docs:typescript:formatted
 ```
 
-Doing so will also produce a .tsx.preview file. 
+Doing so will also produce a .tsx.preview file.
 
 For an example, look at the demo components referenced in the [Colors Markdown File](docs/data/material/varnish/colors/colors.md).
 
@@ -34,5 +34,3 @@ Please follow the coding style of the project. MUI uses prettier and eslint, so 
 
 - `yarn prettier` reformats the code.
 - `yarn lint` runs the linting rules manually.
-
-

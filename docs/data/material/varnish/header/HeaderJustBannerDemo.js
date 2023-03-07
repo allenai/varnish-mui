@@ -1,5 +1,9 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
-import { Header } from '@allenai/varnish/header';
+import { Header } from '@allenai/varnish';
 
 export default function Demo() {
   // By default, the header with no children props has just the default AI2 banner

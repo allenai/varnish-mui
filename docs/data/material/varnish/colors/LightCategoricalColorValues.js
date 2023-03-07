@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import { lightCategoricalColor, dictionaryToArray } from '@allenai/varnish';
 import { ChartingGrid, ColorValues } from './ColorValues';

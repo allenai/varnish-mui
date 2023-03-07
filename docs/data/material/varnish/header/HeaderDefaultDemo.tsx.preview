@@ -1,5 +1,6 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
 <Header bannerAlwaysVisible>
-    <Header.Columns columns="auto 1fr">
-        <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
-    </Header.Columns>
+  <Header.Columns columns="auto 1fr">
+    <Header.Logo label={<Header.AppName>Title</Header.AppName>} />
+  </Header.Columns>
 </Header>

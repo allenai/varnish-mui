@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled, css } from '@mui/material/styles';

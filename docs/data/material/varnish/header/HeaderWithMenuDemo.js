@@ -1,5 +1,9 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
-import { Header } from '@allenai/varnish/header';
+import { Header } from '@allenai/varnish';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import logos from '@allenai/varnish/logos';

@@ -1,5 +1,6 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
 <Header customBanner={customBanner} bannerAlwaysVisible>
-    <Header.Columns columns="auto">
-        <logos.AI2Logo />
-    </Header.Columns>
+  <Header.Columns columns="auto">
+    <logos.AI2Logo />
+  </Header.Columns>
 </Header>

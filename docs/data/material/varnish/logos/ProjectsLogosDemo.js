@@ -1,3 +1,7 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import logos from '@allenai/varnish/logos';
 import { Box, Paper, Stack, styled } from '@mui/material';

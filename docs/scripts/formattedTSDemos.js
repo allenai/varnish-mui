@@ -106,13 +106,22 @@ async function transpileFile(tsxPath, program) {
     });
     const codeWithPropTypes = typescriptToProptypes.inject(propTypesAST, code);
 
+    const header = !tsxPath.includes('material/varnish/')
+      ? ''
+      : `/**
+  * This file has been auto-generated. Please don't edit nor review.
+  */
+
+`;
+    const codeWithHeader = `${header}${codeWithPropTypes}`;
+
     const prettierConfig = prettier.resolveConfig.sync(jsPath, {
       config: path.join(workspaceRoot, 'prettier.config.js'),
     });
     const prettierFormat = (jsSource) =>
       prettier.format(jsSource, { ...prettierConfig, filepath: jsPath });
 
-    const prettified = prettierFormat(codeWithPropTypes);
+    const prettified = prettierFormat(codeWithHeader);
     const formatted = fixBabelGeneratorIssues(prettified);
     const correctedLineEndings = fixLineEndings(source, formatted);
 

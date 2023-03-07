@@ -1,0 +1,6 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+<VarnishApp>
+  <div style={{ width: '100%' }}>
+    <Header.AI2Banner />
+  </div>
+</VarnishApp>

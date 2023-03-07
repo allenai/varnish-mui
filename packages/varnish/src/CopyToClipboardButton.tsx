@@ -9,7 +9,7 @@ interface Props {
   autoHideDuration?: number;
   children: NonNullable<React.ReactNode>;
 }
-function CopyToClipboardButton({ text, autoHideDuration, children }: Props) {
+export function CopyToClipboardButton({ text, autoHideDuration, children }: Props) {
   const [open, setOpen] = useState(false);
   const value = text ? (text as string) : children.toString();
   const handleClick = () => {

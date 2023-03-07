@@ -4,8 +4,21 @@ import styled from 'styled-components';
 import { AI2Mark } from './AI2Mark';
 import { AI2MarkText } from './AI2MarkText';
 import { color as AI2Color, Color } from '../colors';
+import { Indexable, Dictionary } from '../util';
 
-const dimsBySize = {
+type ColorVariants = 'default' | 'white';
+type LogoSize = 'sm' | 'md' | 'lg';
+
+interface DimData {
+  height: number;
+  width: {
+    mark: number;
+    gap: number;
+    text: number;
+  };
+}
+
+const dimsBySize: Indexable<Dictionary<DimData>> = {
   sm: {
     height: 16,
     width: {
@@ -37,9 +50,6 @@ const LogoGrid = styled.span<{ gap: number }>`
   grid-template-columns: repeat(2, min-content);
   gap: ${({ gap }) => gap}px;
 `;
-
-type ColorVariants = 'default' | 'white';
-type LogoSize = 'sm' | 'md' | 'lg';
 
 export interface AI2LogoProps {
   color?: ColorVariants;

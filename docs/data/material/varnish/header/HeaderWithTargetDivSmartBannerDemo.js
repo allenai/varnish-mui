@@ -1,5 +1,9 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
-import { Header } from '@allenai/varnish/header';
+import { Header, Content } from '@allenai/varnish';
 import logos from '@allenai/varnish/logos';
 
 export default function Demo() {
@@ -15,7 +19,7 @@ export default function Demo() {
 
   return (
     <div
-      style={{ width: '100%', height: '250px', overflow: 'scroll' }}
+      style={{ width: '100%', height: '250px', overflowY: 'scroll' }}
       ref={(node) => {
         if (node) {
           setScrollTarget(node);
@@ -32,7 +36,7 @@ export default function Demo() {
           </Header.Logo>
         </Header.Columns>
       </Header>
-      {getDivs()}
+      <Content main>{getDivs()}</Content>
     </div>
   );
 }

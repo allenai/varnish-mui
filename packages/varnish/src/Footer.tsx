@@ -1,10 +1,8 @@
 import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
-
+import { LayoutVariant, VarnishContext } from './components/VarnishContext';
 import { Color, color as varnishColor } from './colors';
-
-export type LayoutVariant = 'left-aligned' | 'center-aligned';
 
 export type FooterVariant = 'default' | 'dark';
 
@@ -13,7 +11,6 @@ export type FooterVariant = 'default' | 'dark';
 interface Props {
   variant?: FooterVariant;
   children?: React.ReactNode | React.ReactNode[];
-  // layout?: LayoutVariant; // TODO: Add layout understanding to new footer (Investigate Grid?)
   backgroundColor?: Color;
   className?: string;
 }
@@ -21,9 +18,11 @@ interface Props {
 const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...rest} />)<{
   textColor: string;
   background: string;
+  layout?: LayoutVariant;
 }>`
   padding: 24px;
   color: ${({ textColor }) => textColor};
+  text-align: ${({ layout }) => (layout !== 'left-aligned' ? 'center' : null)};
   background-color: ${({ background }) => background};
 `;
 
@@ -45,28 +44,37 @@ export function Footer(props: Props) {
 
   // TODO: Make custom styles for elements that have standardized padding across AI2
   return (
-    <StyledFooter className={props.className} textColor={textColor} background={background}>
-      {props.children ? (
-        props.children
-      ) : (
-        <span>
-          <Link color={linkColor} href="https://allenai.org">
-            © The Allen Institute for Artificial Intelligence
-          </Link>{' '}
-          - All Rights Reserved |{' '}
-          <Link color={linkColor} href="https://allenai.org/privacy-policy">
-            Privacy Policy
-          </Link>{' '}
-          |{' '}
-          <Link color={linkColor} href="https://allenai.org/terms">
-            Terms of Use
-          </Link>{' '}
-          |{' '}
-          <Link color={linkColor} href="https://allenai.org/business-code-of-conduct">
-            Business Code of Conduct
-          </Link>
-        </span>
+    <VarnishContext.Consumer>
+      {({ layout }) => (
+        <StyledFooter
+          className={props.className}
+          layout={layout}
+          textColor={textColor}
+          background={background}
+        >
+          {props.children ? (
+            props.children
+          ) : (
+            <span>
+              <Link color={linkColor} href="https://allenai.org">
+                © The Allen Institute for Artificial Intelligence
+              </Link>{' '}
+              - All Rights Reserved |{' '}
+              <Link color={linkColor} href="https://allenai.org/privacy-policy">
+                Privacy Policy
+              </Link>{' '}
+              |{' '}
+              <Link color={linkColor} href="https://allenai.org/terms">
+                Terms of Use
+              </Link>{' '}
+              |{' '}
+              <Link color={linkColor} href="https://allenai.org/business-code-of-conduct">
+                Business Code of Conduct
+              </Link>
+            </span>
+          )}
+        </StyledFooter>
       )}
-    </StyledFooter>
+    </VarnishContext.Consumer>
   );
 }

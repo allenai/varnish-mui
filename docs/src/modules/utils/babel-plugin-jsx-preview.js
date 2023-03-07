@@ -83,7 +83,14 @@ export default function babelPluginJsxPreview() {
           return line.slice(indendation);
         });
 
-        if (deindentedPreviewLines.length <= maxLines) {
+        const isVarnish = outputFilename.includes('material/varnish/');
+        if (isVarnish) {
+          deindentedPreviewLines.unshift(
+            "{/* This file has been auto-generated. Please don't edit nor review. */}",
+          );
+        }
+
+        if (deindentedPreviewLines.length <= (maxLines + (isVarnish ? 1 : 0))) {
           fs.writeFileSync(outputFilename, deindentedPreviewLines.join('\n'));
           hasPreview = true;
         }
