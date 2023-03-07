@@ -30,7 +30,7 @@ const DebugInfo = styled.code`
 /**
  * https://reactjs.org/docs/error-boundaries.html
  */
-export default class ErrorBoundary extends React.PureComponent<Props, State> {
+export class ErrorBoundary extends React.PureComponent<Props, State> {
   state: State = {};
 
   static getDerivedStateFromError(error: Error): State {
@@ -64,3 +64,5 @@ export default class ErrorBoundary extends React.PureComponent<Props, State> {
     );
   }
 }
+
+export default ErrorBoundary;

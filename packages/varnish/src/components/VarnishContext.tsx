@@ -30,7 +30,7 @@ export const VarnishContext = React.createContext<AppSettings>({
   layout: 'center-aligned',
 });
 
-interface VarnishContextProviderProps {
+export interface VarnishContextProviderProps {
   layout: LayoutVariant;
   children: React.ReactNode | React.ReactNodeArray;
 }
@@ -41,7 +41,7 @@ interface VarnishContextProviderProps {
  * Most of the time you should use this.
  */
 export function DefaultAppLayoutProvider({ layout, children }: VarnishContextProviderProps) {
-  React.useMemo(() => {
+  return React.useMemo(() => {
     return (
       <VarnishContext.Provider
         value={{
@@ -53,3 +53,5 @@ export function DefaultAppLayoutProvider({ layout, children }: VarnishContextPro
     );
   }, [layout, children]);
 }
+
+export default DefaultAppLayoutProvider;

@@ -21,7 +21,7 @@ declare module '@mui/material/styles' {
 
 type Mode = 'light' | 'dark';
 
-const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
+export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   return {
     typography: {
       fontFamily: [
@@ -101,7 +101,7 @@ const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   };
 };
 
-const getTheme = (mode: Mode = 'light', overrides: any = {}) => {
+export const getTheme = (mode: Mode = 'light', overrides: any = {}) => {
   const mergedTheme = deepmerge(getVarnishDesignTokens(mode), overrides);
   return createTheme(mergedTheme);
 };

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import Box from '@mui/material/Box';
+
 import { LayoutVariant, VarnishContext } from './VarnishContext';
 
 export interface ContentProps {
@@ -44,7 +45,7 @@ const InternalContent = styled(({ main, layout, bgcolor, ...rest }) => (
   ${contentCSS}
 `;
 
-export default function Content({ children, className, ...basicProps }: ContentProps) {
+export function Content({ children, className, ...basicProps }: ContentProps) {
   return (
     <VarnishContext.Consumer>
       {({ layout }) => (
@@ -55,3 +56,5 @@ export default function Content({ children, className, ...basicProps }: ContentP
     </VarnishContext.Consumer>
   );
 }
+
+export default Content;
