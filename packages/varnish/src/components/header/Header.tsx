@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
-import { pxToRem } from '../util';
+import { pxToRem } from '../../utils/base';
 
 // TODO: Any theming constants (font-size of  headings, box shadow coloring, z-index) needs to be updated
 

@@ -1,4 +1,4 @@
-import { Dictionary, Indexable } from './util';
+import { Dictionary, Indexable } from '../utils/base';
 
 export class RGB {
   constructor(public r: number, public g: number, public b: number) {}

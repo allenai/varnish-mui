@@ -13,7 +13,7 @@ import {
   getThemedComponents,
   getMetaThemeColor,
 } from 'docs/src/modules/brandingTheme';
-import { Theme as VarnishTheme } from '@allenai/varnish';
+import { getTheme } from '@allenai/varnish';
 
 const languageMap = {
   en: enUS,
@@ -247,7 +247,7 @@ export function ThemeProvider(props) {
   }, [theme]);
 
   // bring in varnish overrides
-  const vTheme = VarnishTheme.getTheme(paletteMode);
+  const vTheme = getTheme(paletteMode);
   const varnishTheme = deepmerge(theme, vTheme);
 
   return (

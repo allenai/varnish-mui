@@ -2,7 +2,7 @@ import { ThemeOptions, createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
 import { color, Color } from './colors';
-import { Dictionary } from './util';
+import { Dictionary } from '../utils/base';
 
 interface VarnishMuiTheme {
   color: Dictionary<Color>;

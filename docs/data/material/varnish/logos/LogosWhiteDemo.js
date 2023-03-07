@@ -2,7 +2,7 @@
  * This file has been auto-generated. Please don't edit nor review.
  */
 
-import logos from '@allenai/varnish/logos';
+import { logos } from '@allenai/varnish';
 import * as React from 'react';
 
 export default function Demo() {

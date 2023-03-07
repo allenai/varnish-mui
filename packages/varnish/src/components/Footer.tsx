@@ -1,8 +1,8 @@
 import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
-import { LayoutVariant, VarnishContext } from './components/VarnishContext';
-import { Color, color as varnishColor } from './colors';
+import { LayoutVariant, VarnishContext } from './VarnishContext';
+import { Color, color as varnishColor } from '../theme/colors';
 
 export type FooterVariant = 'default' | 'dark';
 
