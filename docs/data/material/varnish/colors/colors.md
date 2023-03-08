@@ -15,7 +15,7 @@ a semantic name attached to the `palette` API, i.e. `theme.palette.primary.main`
 it means your UI will be updated if AI2's broader brand guidelines and change what the `primary` cluster
 is.
 
-## Color2
+## Upgrading color to color2
 
 AI2 colors have changed.
 We are moving from `color` with 10 values per color to `color2` with 5 values per color.

@@ -17,7 +17,7 @@ export default function Demo() {
       `,
   );
 
-  const colorsToRender = ['B4', 'B3', 'B2', 'O4', 'O3', 'O2'];
+  const colorsToRender = ['B4', 'B3', 'B2', 'P4', 'P3', 'P2'];
 
   return (
     <Stack spacing={1} style={{ width: '100%' }}>
