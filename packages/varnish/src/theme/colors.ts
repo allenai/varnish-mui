@@ -1,39 +1,26 @@
+import hexRgb from 'hex-rgb';
 import { Dictionary, Indexable } from '../utils/base';
 
-export class RGB {
-  constructor(public r: number, public g: number, public b: number) {}
+export class RGBA {
+  constructor(public r: number, public g: number, public b: number, public a: number) {}
 
   toString() {
-    return `rgb(${this.r},${this.g},${this.b})`;
+    return `rgba(${this.r},${this.g},${this.b},${this.a})`;
   }
 }
 
-// convert a hex color string to a RGB
-export function hexToRgb(hex: string): RGB {
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  const expandShortHex = (shortHex: string): string => {
-    return [shortHex[0], shortHex[0], shortHex[1], shortHex[1], shortHex[2], shortHex[2]].join('');
-  };
-
-  hex = hex[0] === '#' ? hex.slice(1) : hex;
-  const isShorthand = hex.length < 6;
-  const expandedHex = isShorthand ? expandShortHex(hex) : hex;
-  if (expandedHex.length !== 6) {
-    throw Error(`invalid hex value: ${hex}`);
-  }
-  return new RGB(
-    parseInt(expandedHex.slice(0, 2), 16),
-    parseInt(expandedHex.slice(2, 4), 16),
-    parseInt(expandedHex.slice(4, 6), 16),
-  );
+// convert a hex color string to a RGBA
+export function hexToRgb(hex: string): RGBA {
+  const rgba = hexRgb(hex);
+  return new RGBA(rgba.red, rgba.green, rgba.blue, rgba.alpha);
 }
 
 export class Color {
-  public rgb: RGB;
+  public rgba: RGBA;
 
   constructor(public displayName: string, public hex: string, public useContrastText?: boolean) {
     this.hex = hex.toUpperCase();
-    this.rgb = hexToRgb(hex);
+    this.rgba = hexToRgb(hex);
   }
 
   toString() {

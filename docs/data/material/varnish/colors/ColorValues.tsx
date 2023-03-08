@@ -97,13 +97,12 @@ function ColorRow(props: ColorRowProps) {
       <ColorHex>
         <CopyToClipboardButton>{props.color.hex}</CopyToClipboardButton>
       </ColorHex>
-      {props.color.rgb ? (
+      {props.color.rgba ? (
         <ColorRgb>
-          <CopyToClipboardButton
-            text={`rgb(${props.color.rgb.r}, ${props.color.rgb.g}, ${props.color.rgb.b})`}
-          >
+          <CopyToClipboardButton text={props.color.rgba.toString()}>
             <span>
-              {props.color.rgb.r}, {props.color.rgb.g}, {props.color.rgb.b}
+              {props.color.rgba.r}, {props.color.rgba.g}, {props.color.rgba.b},{' '}
+              {props.color.rgba.a}
             </span>
           </CopyToClipboardButton>
         </ColorRgb>

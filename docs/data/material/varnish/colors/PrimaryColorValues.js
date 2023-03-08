@@ -28,7 +28,8 @@ PrimaryColor.propTypes = {
   color: PropTypes.shape({
     displayName: PropTypes.string.isRequired,
     hex: PropTypes.string.isRequired,
-    rgb: PropTypes.shape({
+    rgba: PropTypes.shape({
+      a: PropTypes.number.isRequired,
       b: PropTypes.number.isRequired,
       g: PropTypes.number.isRequired,
       r: PropTypes.number.isRequired,

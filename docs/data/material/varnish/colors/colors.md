@@ -66,9 +66,9 @@ When designing charts on a `dark` background, use the following colors for data 
 
 ## Color API
 
-| Name            | Type                              | Default | Description                                |
-| :-------------- | :-------------------------------- | :------ | :----------------------------------------- |
-| useContrastText | boolean                           | false   | True if you should use contrast text color |
-| displayName     | string                            |         | Name of color                              |
-| hex             | string                            |         | Hex value of color                         |
-| rgb             | {r: number, g: number, b: number} |         | RGB object of color                        |
+| Name            | Type                                         | Default | Description                                |
+| :-------------- | :------------------------------------------- | :------ | :----------------------------------------- |
+| useContrastText | boolean                                      | false   | True if you should use contrast text color |
+| displayName     | string                                       |         | Name of color                              |
+| hex             | string                                       |         | Hex value of color                         |
+| rgba            | {r: number, g: number, b: number, a: number} |         | RGBA object of color                       |
