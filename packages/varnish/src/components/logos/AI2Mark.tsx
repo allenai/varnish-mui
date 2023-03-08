@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { color as AI2Color, Color } from '../../theme/colors';
+import { color2, Color } from '../../theme/colors';
 
 interface GradientStop {
   offset: number;
@@ -26,13 +26,13 @@ export interface AI2MarkProps {
 
 const defaultGradients: GradientDef = {
   ALeftUp: [
-    { offset: 0.177, color: AI2Color.A6 },
+    { offset: 0.177, color: color2.A3 },
     { offset: 0.3061, color: '#06C1F4' },
     { offset: 0.5618, color: '#148BD7' },
-    { offset: 0.9012, color: AI2Color.B7 },
+    { offset: 0.9012, color: color2.B4 },
   ],
   ABar: [
-    { offset: 0.3803, color: AI2Color.A6 },
+    { offset: 0.3803, color: color2.A3 },
     { offset: 0.4684, color: '#02CFFD' },
     { offset: 0.5906, color: '#08BDF6' },
     { offset: 0.7327, color: '#129FEB' },
@@ -45,7 +45,7 @@ const defaultGradients: GradientDef = {
   ],
   TwoTail: [
     { offset: 0, color: '#2B55CF' },
-    { offset: 1, color: AI2Color.B7 },
+    { offset: 1, color: color2.B4 },
   ],
 };
 
@@ -57,7 +57,7 @@ let lastId = 0;
 export function AI2Mark(props: AI2MarkProps) {
   const gradients =
     props.gradients !== false ? { ...defaultGradients, ...(props.gradients || {}) } : false;
-  const color = `${props.color || AI2Color.B6}`;
+  const color = `${props.color || color2.B3}`;
 
   // Increment by one so the ids are all unique. See line 52.
   const uid = lastId;

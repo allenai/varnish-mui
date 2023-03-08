@@ -1,6 +1,6 @@
 {/* This file has been auto-generated. Please don't edit nor review. */}
 {colorsToRender.map((c) => (
   <ColorDiv key={c} col={c}>
-    {c} {color[c].useContrastText ? '(white)' : null}
+    {c} {color2[c].useContrastText ? '(white)' : null}
   </ColorDiv>
 ))}

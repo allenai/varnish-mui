@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, css } from '@mui/material/styles';
-import { color } from '@allenai/varnish';
+import { Stack } from '@mui/material';
+import { color2 } from '@allenai/varnish';
 
 export default function Demo() {
   const ColorDiv = styled('div', {
@@ -14,37 +15,26 @@ export default function Demo() {
         width: 100%;
         height: ${theme.spacing(3)};
         margin-bottom: ${theme.spacing(0.5)};
-        color: ${theme.color[col].useContrastText
+        color: ${theme.color2[col].useContrastText
           ? theme.palette.common.white
           : theme.palette.text.primary};
-        background: ${theme.color[col].toString()};
+        background: ${theme.color2[col].toString()};
         border: 1px solid
-          ${theme.color[col].useContrastText
+          ${theme.color2[col].useContrastText
             ? theme.palette.common.white
             : theme.palette.text.primary};
       `,
   );
 
-  const colorsToRender = [
-    'B1',
-    'B2',
-    'B3',
-    'B4',
-    'B5',
-    'B6',
-    'B7',
-    'B8',
-    'B9',
-    'B10',
-  ];
+  const colorsToRender = ['B1', 'B2', 'B3', 'B4', 'B5'];
 
   return (
-    <div style={{ width: '100%' }}>
+    <Stack spacing={1} style={{ width: '100%' }}>
       {colorsToRender.map((c) => (
         <ColorDiv key={c} col={c}>
-          {c} {color[c].useContrastText ? '(white)' : null}
+          {c} {color2[c].useContrastText ? '(white)' : null}
         </ColorDiv>
       ))}
-    </div>
+    </Stack>
   );
 }

@@ -4,13 +4,13 @@ import { Color, VarnishApp } from '@allenai/varnish';
 
 export default function Demo() {
   const extendedTheme = {
-    color: {
+    color2: {
       Freeze: new Color('Mr. Freeze', '#bbccff', false),
     },
   };
 
   const CoolH1 = styled.h1`
-    color: ${({ theme }) => theme.color.Freeze};
+    color2: ${({ theme }) => theme.color2.Freeze};
   `;
 
   return (

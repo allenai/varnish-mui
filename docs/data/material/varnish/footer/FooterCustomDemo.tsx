@@ -7,7 +7,7 @@ export default function Demo() {
 
   return (
     <div style={{ width: '100%' }}>
-      <Footer backgroundColor={theme.color.G4}>
+      <Footer backgroundColor={theme.color2.G2}>
         Custom footer content - 🦶🏻 🦶🏼 🦶🏽 🦶🏾 🦶🏿
       </Footer>
     </div>

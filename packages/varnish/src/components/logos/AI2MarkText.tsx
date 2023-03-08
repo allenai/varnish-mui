@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { color as AI2Color, Color } from '../../theme/colors';
+import { color2, Color } from '../../theme/colors';
 
 export interface AI2MarkTextProps {
   width?: string | number;
@@ -15,7 +15,7 @@ export interface AI2MarkTextProps {
  * TODO (@codeviking): If this uses Lato, we should just render the text.
  */
 export function AI2MarkText(props: AI2MarkTextProps) {
-  const color = `${props.color || AI2Color.B6}`;
+  const color = `${props.color || color2.B3}`;
   const viewBox = props.viewBox || '74 0 190 30';
   return (
     <svg

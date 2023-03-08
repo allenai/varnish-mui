@@ -22,7 +22,7 @@ export interface VarnishAppProps {
  * and those not provided will use the defaults.
  */
 export function VarnishApp({ layout, theme, children }: VarnishAppProps) {
-  const mergedTheme = getTheme('light', theme);
+  const mergedTheme = getTheme(theme);
   return (
     <StyledThemeProvider theme={mergedTheme}>
       <ThemeProvider theme={mergedTheme}>

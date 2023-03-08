@@ -9,7 +9,7 @@ const Tagline = {
     gap: 1ch;
   `,
   Text: styled.em`
-    color: ${({ theme }) => theme.color.N1.toString()};
+    color: ${({ theme }) => theme.color2.N1.toString()};
     font-size: ${pxToRem(13)};
   `,
 };
