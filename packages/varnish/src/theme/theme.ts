@@ -41,7 +41,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiLink: {
         styleOverrides: {
           // `ownerState` contains the component props and internal state
-          root: ({ ownerState, theme }) => ({
+          root: ({ ownerState }) => ({
             ...(ownerState.variant === 'dark' ? {
               color: color2.B2.toString()
             } : {
