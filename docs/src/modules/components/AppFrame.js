@@ -12,11 +12,9 @@ import IconButton from '@mui/material/IconButton';
 import SvgHamburgerMenu from 'docs/src/icons/SvgHamburgerMenu';
 import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
-import SettingsIcon from '@mui/icons-material/SettingsOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import NProgressBar from '@mui/docs/NProgressBar';
 import AppNavDrawer from 'docs/src/modules/components/AppNavDrawer';
-import AppSettingsDrawer from 'docs/src/modules/components/AppSettingsDrawer';
 import MarkdownLinks from 'docs/src/modules/components/MarkdownLinks';
 import SkipLink from 'docs/src/modules/components/SkipLink';
 import PageContext from 'docs/src/modules/components/PageContext';
@@ -24,7 +22,6 @@ import { useTranslate } from 'docs/src/modules/utils/i18n';
 import { debounce } from '@mui/material/utils';
 import NextLink from 'next/link';
 import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
-import AppFrameBanner from 'docs/src/components/banner/AppFrameBanner';
 
 const nProgressStart = debounce(() => {
   NProgress.start();
@@ -157,7 +154,6 @@ export default function AppFrame(props) {
   const t = useTranslate();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [settingsOpen, setSettingsOpen] = React.useState(false);
 
   const { activePage } = React.useContext(PageContext);
 
@@ -199,21 +195,13 @@ export default function AppFrame(props) {
           </NextLink>
           <GrowingDiv />
           <Stack direction="row" spacing="10px">
-            <AppFrameBanner />
             <Tooltip title={t('appFrame.github')} enterDelay={300}>
               <IconButton
                 component="a"
                 color="primary"
-                href={process.env.SOURCE_CODE_REPO}
-                data-ga-event-category="header"
-                data-ga-event-action="github"
+                href="https://github.com/allenai/varnish-mui"
               >
                 <GitHubIcon fontSize="small" />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title={t('appFrame.toggleSettings')} enterDelay={300}>
-              <IconButton color="primary" onClick={() => setSettingsOpen(true)} sx={{ px: '8px' }}>
-                <SettingsIcon fontSize="small" />
               </IconButton>
             </Tooltip>
           </Stack>
@@ -226,7 +214,6 @@ export default function AppFrame(props) {
         mobileOpen={mobileOpen}
       />
       {children}
-      <AppSettingsDrawer onClose={() => setSettingsOpen(false)} open={settingsOpen} />
     </RootDiv>
   );
 }

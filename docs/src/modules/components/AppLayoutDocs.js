@@ -8,7 +8,6 @@ import NoSsr from '@mui/material/NoSsr';
 import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import Head from 'docs/src/modules/components/Head';
 import AppFrame from 'docs/src/modules/components/AppFrame';
-import EditPage from 'docs/src/modules/components/EditPage';
 import AppContainer from 'docs/src/modules/components/AppContainer';
 import AppTableOfContents from 'docs/src/modules/components/AppTableOfContents';
 import AdManager from 'docs/src/modules/components/AdManager';
@@ -59,26 +58,9 @@ const StyledAppContainer = styled(AppContainer, {
   };
 });
 
-const ActionsDiv = styled('div')(({ theme }) => ({
-  display: 'flex',
-  marginTop: -10,
-  marginBottom: -15,
-  [theme.breakpoints.up('lg')]: {
-    justifyContent: 'flex-end',
-  },
-}));
-
 function AppLayoutDocs(props) {
   const router = useRouter();
-  const {
-    children,
-    description,
-    disableAd = false,
-    disableToc = false,
-    location,
-    title,
-    toc,
-  } = props;
+  const { children, description, disableAd = false, disableToc = false, title, toc } = props;
 
   if (description === undefined) {
     throw new Error('Missing description in the page');
@@ -122,9 +104,6 @@ function AppLayoutDocs(props) {
             See https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/ for more details.
           */}
           <StyledAppContainer disableAd={disableAd}>
-            <ActionsDiv>
-              <EditPage markdownLocation={location} />
-            </ActionsDiv>
             {children}
             <NoSsr>
               <AppLayoutDocsFooter tableOfContents={toc} />
@@ -143,7 +122,6 @@ AppLayoutDocs.propTypes = {
   description: PropTypes.string.isRequired,
   disableAd: PropTypes.bool.isRequired,
   disableToc: PropTypes.bool.isRequired,
-  location: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   toc: PropTypes.array.isRequired,
 };

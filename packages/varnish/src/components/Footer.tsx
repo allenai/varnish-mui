@@ -2,7 +2,7 @@ import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
 import { LayoutVariant, VarnishContext } from './VarnishContext';
-import { Color, color as varnishColor } from '../theme/colors';
+import { Color, color2 } from '../theme/colors';
 
 export type FooterVariant = 'default' | 'dark';
 
@@ -30,13 +30,13 @@ export function Footer(props: Props) {
   const contrast = props.variant === 'dark';
   
   // TODO: Update Contrast color palettes
-  const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
+  const textColor = contrast ? color2.white.toString() : color2.black.toString();
 
   const background = props.backgroundColor
     ? props.backgroundColor.toString()
     : contrast
-    ? varnishColor.B10.toString()
-    : varnishColor.white.toString();
+    ? color2.B5.toString()
+    : color2.white.toString();
 
   // TODO: Make custom styles for elements that have standardized padding across AI2
   return (

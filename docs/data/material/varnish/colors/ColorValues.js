@@ -59,7 +59,8 @@ ColorGroup.propTypes = {
     PropTypes.shape({
       displayName: PropTypes.string.isRequired,
       hex: PropTypes.string.isRequired,
-      rgb: PropTypes.shape({
+      rgba: PropTypes.shape({
+        a: PropTypes.number.isRequired,
         b: PropTypes.number.isRequired,
         g: PropTypes.number.isRequired,
         r: PropTypes.number.isRequired,
@@ -107,13 +108,12 @@ function ColorRow(props) {
       <ColorHex>
         <CopyToClipboardButton>{props.color.hex}</CopyToClipboardButton>
       </ColorHex>
-      {props.color.rgb ? (
+      {props.color.rgba ? (
         <ColorRgb>
-          <CopyToClipboardButton
-            text={`rgb(${props.color.rgb.r}, ${props.color.rgb.g}, ${props.color.rgb.b})`}
-          >
+          <CopyToClipboardButton text={props.color.rgba.toString()}>
             <span>
-              x{props.color.rgb.r}, {props.color.rgb.g}, {props.color.rgb.b}
+              {props.color.rgba.r}, {props.color.rgba.g}, {props.color.rgba.b},{' '}
+              {props.color.rgba.a}
             </span>
           </CopyToClipboardButton>
         </ColorRgb>
@@ -128,7 +128,8 @@ ColorRow.propTypes = {
   color: PropTypes.shape({
     displayName: PropTypes.string.isRequired,
     hex: PropTypes.string.isRequired,
-    rgb: PropTypes.shape({
+    rgba: PropTypes.shape({
+      a: PropTypes.number.isRequired,
       b: PropTypes.number.isRequired,
       g: PropTypes.number.isRequired,
       r: PropTypes.number.isRequired,
@@ -146,20 +147,20 @@ export const ExtendedGrid = styled('div')`
   align-items: center;
   width: 100%;
   grid-template-rows:
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto)
-    75px repeat(22, auto);
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto)
+    75px repeat(12, auto);
   margin-top: ${({ theme }) => theme.spacing(0.5).toString()};
   margin-bottom: ${({ theme }) => theme.spacing(3).toString()};
 `;
 
 export const ChartingGrid = styled(ExtendedGrid)`
-  grid-template-rows: 75px repeat(9, auto);
+  grid-template-rows: 75px repeat(18, auto);
 `;
 
 const ExtendedHeadRow = styled('div')`

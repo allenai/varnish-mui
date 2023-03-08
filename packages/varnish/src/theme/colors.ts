@@ -1,39 +1,26 @@
+import hexRgb from 'hex-rgb';
 import { Dictionary, Indexable } from '../utils/base';
 
-export class RGB {
-  constructor(public r: number, public g: number, public b: number) {}
+export class RGBA {
+  constructor(public r: number, public g: number, public b: number, public a: number) {}
 
   toString() {
-    return `rgb(${this.r},${this.g},${this.b})`;
+    return `rgba(${this.r},${this.g},${this.b},${this.a})`;
   }
 }
 
-// convert a hex color string to a RGB
-export function hexToRgb(hex: string): RGB {
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  const expandShortHex = (shortHex: string): string => {
-    return [shortHex[0], shortHex[0], shortHex[1], shortHex[1], shortHex[2], shortHex[2]].join('');
-  };
-
-  hex = hex[0] === '#' ? hex.slice(1) : hex;
-  const isShorthand = hex.length < 6;
-  const expandedHex = isShorthand ? expandShortHex(hex) : hex;
-  if (expandedHex.length !== 6) {
-    throw Error(`invalid hex value: ${hex}`);
-  }
-  return new RGB(
-    parseInt(expandedHex.slice(0, 2), 16),
-    parseInt(expandedHex.slice(2, 4), 16),
-    parseInt(expandedHex.slice(4, 6), 16),
-  );
+// convert a hex color string to a RGBA
+export function hexToRgb(hex: string): RGBA {
+  const rgba = hexRgb(hex);
+  return new RGBA(rgba.red, rgba.green, rgba.blue, rgba.alpha);
 }
 
 export class Color {
-  public rgb: RGB;
+  public rgba: RGBA;
 
   constructor(public displayName: string, public hex: string, public useContrastText?: boolean) {
     this.hex = hex.toUpperCase();
-    this.rgb = hexToRgb(hex);
+    this.rgba = hexToRgb(hex);
   }
 
   toString() {
@@ -41,123 +28,177 @@ export class Color {
   }
 }
 
-export type ColorType = Indexable<typeof color>;
-
-export const color: Dictionary<Color> = {
-  R1: new Color('R1', '#FFF2F2'),
-  R2: new Color('R2', '#FFE1E0'),
-  R3: new Color('R3', '#FDC1C0'),
-  R4: new Color('R4', '#FF9F9E'),
-  R5: new Color('R5', '#F9807F'),
-  R6: new Color('R6', '#F7605F', true),
-  R7: new Color('R7', '#E7504F', true),
-  R8: new Color('R8', '#D63F3F', true),
-  R9: new Color('R9', '#BF2D2D', true),
-  R10: new Color('R10', '#932222', true),
-  O1: new Color('O1', '#FFF9E8'),
-  O2: new Color('O2', '#FFF1C4'),
-  O3: new Color('O3', '#FFE394'),
-  O4: new Color('O4', '#FFD45D'),
-  O5: new Color('O5', '#FFC72E'),
-  O6: new Color('O6', '#FFBB00', true),
-  O7: new Color('O7', '#FFA200', true),
-  O8: new Color('O8', '#FF9100', true),
-  O9: new Color('O9', '#DD6502', true),
-  O10: new Color('O10', '#A94006', true),
-  G1: new Color('G1', '#E4FFF7'),
-  G2: new Color('G2', '#C1F7E6'),
-  G3: new Color('G3', '#98EAD0'),
-  G4: new Color('G4', '#70DDBA'),
-  G5: new Color('G5', '#47CFA4'),
-  G6: new Color('G6', '#1EC28E', true),
-  G7: new Color('G7', '#14A87D', true),
-  G8: new Color('G8', '#0A8F6B', true),
-  G9: new Color('G9', '#00755A', true),
-  G10: new Color('G10', '#005340', true),
+// latest and greatest colors.  color will eventually be depricated.
+export const color2: Dictionary<Color> = {
+  R1: new Color('R1', '#FFE1E0'),
+  R2: new Color('R2', '#FF9F9E'),
+  R3: new Color('R3', '#F7605F', true),
+  R4: new Color('R4', '#D63F3F', true),
+  R5: new Color('R5', '#932222', true),
+  O1: new Color('O1', '#FFF1C4'),
+  O2: new Color('O2', '#FFD45D'),
+  O3: new Color('O3', '#FFBB00', true),
+  O4: new Color('O4', '#FF9100', true),
+  O5: new Color('O5', '#DD6502', true),
+  G1: new Color('G1', '#C1F7E6'),
+  G2: new Color('G2', '#70DDBA'),
+  G3: new Color('G3', '#1EC28E', true),
+  G4: new Color('G4', '#0A8F6B', true),
+  G5: new Color('G5', '#005340', true),
   T1: new Color('T1', '#E6FDFE'),
-  T2: new Color('T2', '#C6F3F6'),
-  T3: new Color('T3', '#9AE7EC'),
-  T4: new Color('T4', '#6EDCE3'),
-  T5: new Color('T5', '#42D0D9'),
-  T6: new Color('T6', '#16C4CF', true),
-  T7: new Color('T7', '#0FA9B6', true),
-  T8: new Color('T8', '#078E9E', true),
-  T9: new Color('T9', '#007385', true),
-  T10: new Color('T10', '#004752', true),
+  T2: new Color('T2', '#9AE7EC'),
+  T3: new Color('T3', '#16C4CF', true),
+  T4: new Color('T4', '#078E9E', true),
+  T5: new Color('T5', '#004752', true),
   A1: new Color('A1', '#F2FCFF'),
-  A2: new Color('A2', '#E0F9FF'),
-  A3: new Color('A3', '#B5F0FF'),
-  A4: new Color('A4', '#85E9FF'),
-  A5: new Color('A5', '#4DE1FF'),
-  A6: new Color('A6', '#00D5FF', true),
-  A7: new Color('A7', '#00C1E8', true),
-  A8: new Color('A8', '#01A2CA', true),
-  A9: new Color('A9', '#0278A7', true),
-  A10: new Color('A10', '#054976', true),
+  A2: new Color('A2', '#B5F0FF'),
+  A3: new Color('A3', '#4DE1FF', true),
+  A4: new Color('A4', '#01A2CA', true),
+  A5: new Color('A5', '#054976', true),
   B1: new Color('B1', '#F0F7FF'),
-  B2: new Color('B2', '#D5EAFE'),
-  B3: new Color('B3', '#80BDFF'),
-  B4: new Color('B4', '#2F85F7'),
-  B5: new Color('B5', '#2376E5'),
-  B6: new Color('B6', '#265ED4', true),
-  B7: new Color('B7', '#1A4CAE', true),
-  B8: new Color('B8', '#1B4596', true),
-  B9: new Color('B9', '#1D3D7E', true),
-  B10: new Color('B10', '#223367', true),
-  P1: new Color('P1', '#F8F7FD'),
-  P2: new Color('P2', '#E6E3F7'),
-  P3: new Color('P3', '#CFC9F1'),
-  P4: new Color('P4', '#B7AFEB'),
-  P5: new Color('P5', '#A094E4'),
-  P6: new Color('P6', '#887ADE', true),
-  P7: new Color('P7', '#7265C1', true),
-  P8: new Color('P8', '#5C50A4', true),
-  P9: new Color('P9', '#463B87', true),
-  P10: new Color('P10', '#271F55', true),
-  M1: new Color('M1', '#FDF7FC'),
-  M2: new Color('M2', '#F6DFF3'),
-  M3: new Color('M3', '#EFC0E8'),
-  M4: new Color('M4', '#E7A2DE'),
-  M5: new Color('M5', '#E083D3'),
-  M6: new Color('M6', '#D864C9', true),
-  M7: new Color('M7', '#BE54B0', true),
-  M8: new Color('M8', '#A44397', true),
-  M9: new Color('M9', '#8A337E', true),
-  M10: new Color('M10', '#65295D', true),
-  N1: new Color('N1', '#FFFFFF'),
-  N2: new Color('N2', '#F8F9FA'),
-  N3: new Color('N3', '#F0F4F7'),
-  N4: new Color('N4', '#E8ECF2'),
-  N5: new Color('N5', '#D5DAE3'),
-  N6: new Color('N6', '#AEB7C4', true),
-  N7: new Color('N7', '#8C96A3', true),
-  N8: new Color('N8', '#616C7A', true),
-  N9: new Color('N9', '#47515C', true),
-  N10: new Color('N10', '#303945', true),
+  B2: new Color('B2', '#80BDFF'),
+  B3: new Color('B3', '#265ED4', true),
+  B4: new Color('B4', '#1B4596', true),
+  B5: new Color('B5', '#223367', true),
+  P1: new Color('P1', '#E6E3F7'),
+  P2: new Color('P2', '#B7AFEB'),
+  P3: new Color('P3', '#7446F2', true),
+  P4: new Color('P4', '#5C50A4', true),
+  P5: new Color('P5', '#271F55', true),
+  F1: new Color('F1', '#FDF7FC'),
+  F2: new Color('F2', '#E7A2DE'),
+  F3: new Color('F3', '#D864C9', true),
+  F4: new Color('F4', '#A44397', true),
+  F5: new Color('F5', '#65295D', true),
+  N1: new Color('N1', '#F8F9FA'),
+  N2: new Color('N2', '#E8ECF2'),
+  N3: new Color('N3', '#AEB7C4', true),
+  N4: new Color('N4', '#616C7A', true),
+  N5: new Color('N5', '#47515C', true),
   black: new Color('Black', '#000', true),
   white: new Color('White', '#FFF'),
 };
 
+export type Color2Type = Indexable<typeof color2>;
+
+// temp: use this to lookup new color from old
+export const color: Dictionary<Color> = {
+  R1: color2.R1,
+  R2: color2.R1,
+  R3: color2.R2,
+  R4: color2.R2,
+  R5: color2.R3,
+  R6: color2.R3,
+  R7: color2.R4,
+  R8: color2.R4,
+  R9: color2.R5,
+  R10: color2.R5,
+  O1: color2.O1,
+  O2: color2.O1,
+  O3: color2.O2,
+  O4: color2.O2,
+  O5: color2.O3,
+  O6: color2.O3,
+  O7: color2.O4,
+  O8: color2.O4,
+  O9: color2.O5,
+  O10: color2.O5,
+  G1: color2.G1,
+  G2: color2.G1,
+  G3: color2.G2,
+  G4: color2.G2,
+  G5: color2.G3,
+  G6: color2.G3,
+  G7: color2.G4,
+  G8: color2.G4,
+  G9: color2.G5,
+  G10: color2.G5,
+  T1: color2.T1,
+  T2: color2.T1,
+  T3: color2.T2,
+  T4: color2.T2,
+  T5: color2.T3,
+  T6: color2.T3,
+  T7: color2.T4,
+  T8: color2.T4,
+  T9: color2.T5,
+  T10: color2.T5,
+  A1: color2.A1,
+  A2: color2.A1,
+  A3: color2.A2,
+  A4: color2.A2,
+  A5: color2.A3,
+  A6: color2.A3,
+  A7: color2.A4,
+  A8: color2.A4,
+  A9: color2.A5,
+  A10: color2.A15,
+  B1: color2.B1,
+  B2: color2.B1,
+  B3: color2.B2,
+  B4: color2.B2,
+  B5: color2.B3,
+  B6: color2.B3,
+  B7: color2.B4,
+  B8: color2.B4,
+  B9: color2.B5,
+  B10: color2.B5,
+  P1: color2.P1,
+  P2: color2.P1,
+  P3: color2.P2,
+  P4: color2.P2,
+  P5: color2.P3,
+  P6: color2.P3,
+  P7: color2.P4,
+  P8: color2.P4,
+  P9: color2.P5,
+  P10: color2.P5,
+  M1: color2.F1,
+  M2: color2.F1,
+  M3: color2.F2,
+  M4: color2.F2,
+  M5: color2.F3,
+  M6: color2.F3,
+  M7: color2.F4,
+  M8: color2.F4,
+  M9: color2.F5,
+  M10: color2.F5,
+  N1: color2.N1,
+  N2: color2.N1,
+  N3: color2.N2,
+  N4: color2.N2,
+  N5: color2.N3,
+  N6: color2.N3,
+  N7: color2.N4,
+  N8: color2.N4,
+  N9: color2.N5,
+  N10: color2.N5,
+  black: color2.Black,
+  white: color2.White,
+};
+
+export type ColorType = Indexable<typeof color>;
+
 export const lightCategoricalColor = {
-  Red: { ...color.R9, displayName: 'Red' },
-  Orange: { ...color.O9, displayName: 'Orange' },
-  Aqua: { ...color.A10, displayName: 'Aqua' },
-  Teal: { ...color.T8, displayName: 'Teal' },
-  Blue: { ...color.B6, displayName: 'Blue' },
-  Magenta: { ...color.M10, displayName: 'Magenta' },
-  Purple: { ...color.P7, displayName: 'Purple' },
-  Green: { ...color.G9, displayName: 'Green' },
+  Red: { ...color2.R5, displayName: 'Red' },
+  Orange: { ...color2.O5, displayName: 'Orange' },
+  Aqua: { ...color2.A5, displayName: 'Aqua' },
+  Teal: { ...color2.T4, displayName: 'Teal' },
+  Blue: { ...color2.B3, displayName: 'Blue' },
+  Fuchsia: { ...color2.F5, displayName: 'Fuchsia' },
+  Purple: { ...color2.P4, displayName: 'Purple' },
+  Green: { ...color2.G5, displayName: 'Green' },
 };
 
 export const darkCategoricalColor = {
-  Red: { ...color.R4, displayName: 'Red' },
-  Orange: { ...color.O5, displayName: 'Orange' },
-  Aqua: { ...color.A3, displayName: 'Aqua' },
-  Teal: { ...color.T4, displayName: 'Teal' },
-  Blue: { ...color.B4, displayName: 'Blue' },
-  Magenta: { ...color.M3, displayName: 'Magenta' },
-  Purple: { ...color.P5, displayName: 'Purple' },
-  Green: { ...color.G4, displayName: 'Green' },
+  Red: { ...color2.R2, displayName: 'Red' },
+  Orange: { ...color2.O2, displayName: 'Orange' },
+  Aqua: { ...color2.A2, displayName: 'Aqua' },
+  Teal: { ...color2.T2, displayName: 'Teal' },
+  Blue: { ...color2.B2, displayName: 'Blue' },
+  Fuchsia: { ...color2.F2, displayName: 'Fuchsia' },
+  Purple: { ...color2.P2, displayName: 'Purple' },
+  Green: { ...color2.G2, displayName: 'Green' },
 };
 
 // use to convert a set of color ids top their hex values

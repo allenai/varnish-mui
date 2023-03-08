@@ -1,15 +1,21 @@
 import { ThemeOptions, createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
-import { color, Color } from './colors';
+import { color, Color, color2, darkCategoricalColor, lightCategoricalColor } from './colors';
 import { Dictionary } from '../utils/base';
 
 interface VarnishMuiTheme {
   color: Dictionary<Color>;
+  color2: Dictionary<Color>;
+  darkCategoricalColor: Dictionary<Color>;
+  lightCategoricalColor: Dictionary<Color>;
 }
 
 interface VarnishMuiThemeOptions {
   color?: Dictionary<Color>;
+  color2?: Dictionary<Color>;
+  darkCategoricalColor?: Dictionary<Color>;
+  lightCategoricalColor?: Dictionary<Color>;
 }
 
 // Update the Typography's variant prop options
@@ -29,10 +35,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-type Mode = 'light' | 'dark';
-
-
-export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
+export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     components: {
       MuiLink: {
@@ -40,9 +43,9 @@ export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
           // `ownerState` contains the component props and internal state
           root: ({ ownerState, theme }) => ({
             ...(ownerState.variant === 'dark' ? {
-              color: theme.color.B3.toString()
+              color: color2.B2.toString()
             } : {
-              color: 'theme.color.B6.toString()'
+              color: color2.B3.toString()
             })
           }),
         },
@@ -70,64 +73,67 @@ export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
     },
     palette: {
       primary: {
-        light: mode === 'light' ? color.B3.hex : color.B2.hex,
-        main: mode === 'light' ? color.B6.hex : color.B3.hex,
-        dark: mode === 'light' ? color.B8.hex : color.B5.hex,
-        contrastText: color.N1.hex,
+        light: color2.B2.hex,
+        main: color2.B3.hex,
+        dark: color2.B4.hex,
+        contrastText: color2.white.hex,
       },
       secondary: {
-        light: mode === 'light' ? color.O4.hex : color.O2.hex,
-        main: mode === 'light' ? color.O7.hex : color.O4.hex,
-        dark: mode === 'light' ? color.O9.hex : color.O6.hex,
-        contrastText: color.N1.hex,
+        light: color2.P2.hex,
+        main: color2.P3.hex,
+        dark: color2.P4.hex,
+        contrastText: color2.white.hex,
       },
       error: {
-        light: mode === 'light' ? color.R1.hex : color.R1.hex,
-        main: mode === 'light' ? color.R4.hex : color.R2.hex,
-        dark: mode === 'light' ? color.R7.hex : color.R4.hex,
-        contrastText: color.N1.hex,
+        light: color2.R2.hex,
+        main: color2.R4.hex,
+        dark: color2.R5.hex,
+        contrastText: color2.white.hex,
       },
       warning: {
-        light: mode === 'light' ? color.O1.hex : color.O1.hex,
-        main: mode === 'light' ? color.O4.hex : color.O2.hex,
-        dark: mode === 'light' ? color.O7.hex : color.O4.hex,
-        contrastText: color.N1.hex,
+        light: color2.F2.hex,
+        main: color2.F4.hex,
+        dark: color2.F5.hex,
+        contrastText: color2.white.hex,
       },
       info: {
-        light: mode === 'light' ? color.B1.hex : color.B1.hex,
-        main: mode === 'light' ? color.B4.hex : color.B2.hex,
-        dark: mode === 'light' ? color.B7.hex : color.B4.hex,
-        contrastText: color.N1.hex,
+        light: color2.B2.hex,
+        main: color2.B3.hex,
+        dark: color2.B4.hex,
+        contrastText: color2.white.hex,
       },
       success: {
-        light: mode === 'light' ? color.G1.hex : color.G1.hex,
-        main: mode === 'light' ? color.G4.hex : color.G2.hex,
-        dark: mode === 'light' ? color.G7.hex : color.G4.hex,
-        contrastText: color.N1.hex,
+        light: color2.G3.hex,
+        main: color2.G4.hex,
+        dark: color2.G5.hex,
+        contrastText: color2.white.hex,
       },
       grey: {
-        50: color.N1.hex,
-        100: color.N2.hex,
-        200: color.N3.hex,
-        300: color.N4.hex,
-        400: color.N5.hex,
-        500: color.N6.hex,
-        600: color.N7.hex,
-        700: color.N8.hex,
-        800: color.N9.hex,
-        900: color.N10.hex,
-        A100: color.N2.hex,
-        A200: color.N3.hex,
-        A400: color.N5.hex,
-        A700: color.N8.hex,
+        50: color2.N1.hex,
+        100: color2.N1.hex,
+        200: color2.N2.hex,
+        300: color2.N2.hex,
+        400: color2.N3.hex,
+        500: color2.N3.hex,
+        600: color2.N4.hex,
+        700: color2.N4.hex,
+        800: color2.N5.hex,
+        900: color2.N5.hex,
+        A100: color2.N1.hex,
+        A200: color2.N2.hex,
+        A400: color2.N3.hex,
+        A700: color2.N4.hex,
       },
     },
     color,
+    color2,
+    darkCategoricalColor,
+    lightCategoricalColor,
   };
 };
 
-export const getTheme = (mode: Mode = 'light', overrides: any = {}) => {
-  const mergedTheme = deepmerge(getVarnishDesignTokens(mode), overrides);
+export const getTheme = (overrides: any = {}) => {
+  const mergedTheme = deepmerge(getVarnishDesignTokens(), overrides);
   return createTheme(mergedTheme);
 };
 

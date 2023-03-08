@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { AI2Mark } from './AI2Mark';
 import { AI2MarkText } from './AI2MarkText';
-import { color as AI2Color, Color } from '../../theme/colors';
+import { color2, Color } from '../../theme/colors';
 import { Indexable, Dictionary } from '../../utils/base';
 
 type ColorVariants = 'default' | 'white';
@@ -65,7 +65,7 @@ export function AI2Logo(p: AI2LogoProps) {
   const props = { size: 'md', color: 'default', includeText: true, ...p };
   const dims = dimsBySize[props.size];
   const [gradients, color]: [false | undefined, Color | undefined] =
-    props.color === 'white' ? [false, AI2Color.N1] : [undefined, undefined];
+    props.color === 'white' ? [false, color2.N1] : [undefined, undefined];
   if (!props.includeText) {
     return (
       <AI2Mark
