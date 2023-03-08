@@ -28,14 +28,10 @@ const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...
 
 export function Footer(props: Props) {
   const contrast = props.variant === 'dark';
+  
   // TODO: Update Contrast color palettes
   const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
 
-  // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO, tracked in Issue #12 in varnish-mui repo)
-  const defaultLinkColor = varnishColor.B6.toString();
-  const contrastLinkColor = varnishColor.B3.toString();
-
-  const linkColor = contrast ? contrastLinkColor : defaultLinkColor;
   const background = props.backgroundColor
     ? props.backgroundColor.toString()
     : contrast
@@ -56,19 +52,19 @@ export function Footer(props: Props) {
             props.children
           ) : (
             <span>
-              <Link color={linkColor} href="https://allenai.org">
+              <Link variant={props.variant} href="https://allenai.org">
                 © The Allen Institute for Artificial Intelligence
               </Link>{' '}
               - All Rights Reserved |{' '}
-              <Link color={linkColor} href="https://allenai.org/privacy-policy">
+              <Link variant={props.variant} href="https://allenai.org/privacy-policy">
                 Privacy Policy
               </Link>{' '}
               |{' '}
-              <Link color={linkColor} href="https://allenai.org/terms">
+              <Link variant={props.variant} href="https://allenai.org/terms">
                 Terms of Use
               </Link>{' '}
               |{' '}
-              <Link color={linkColor} href="https://allenai.org/business-code-of-conduct">
+              <Link variant={props.variant} href="https://allenai.org/business-code-of-conduct">
                 Business Code of Conduct
               </Link>
             </span>
