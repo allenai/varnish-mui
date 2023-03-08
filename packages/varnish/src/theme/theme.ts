@@ -27,12 +27,10 @@ declare module "@mui/material/Typography" {
 }
 
 declare module '@mui/material/styles' {
-  interface Theme extends VarnishMuiTheme {
-  }
+  interface Theme extends VarnishMuiTheme {}
 
   // allow configuration using `createTheme`
-  interface ThemeOptions extends VarnishMuiThemeOptions {
-  }
+  interface ThemeOptions extends VarnishMuiThemeOptions {}
 }
 
 export const getVarnishDesignTokens = (): ThemeOptions => {
