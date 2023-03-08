@@ -25,9 +25,7 @@ declare module '@mui/material/styles' {
   interface ThemeOptions extends VarnishMuiThemeOptions {}
 }
 
-type Mode = 'light' | 'dark';
-
-export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
+export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     typography: {
       fontFamily: [
@@ -51,39 +49,39 @@ export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
     },
     palette: {
       primary: {
-        light: mode === 'light' ? color2.B2.hex : color2.B1.hex,
-        main: mode === 'light' ? color2.B3.hex : color2.B2.hex,
-        dark: mode === 'light' ? color2.B4.hex : color2.B3.hex,
+        light: color2.B2.hex,
+        main: color2.B3.hex,
+        dark: color2.B4.hex,
         contrastText: color2.white.hex,
       },
       secondary: {
-        light: mode === 'light' ? color2.P2.hex : color2.P1.hex,
-        main: mode === 'light' ? color2.P3.hex : color2.P2.hex,
-        dark: mode === 'light' ? color2.P4.hex : color2.P3.hex,
+        light: color2.P2.hex,
+        main: color2.P3.hex,
+        dark: color2.P4.hex,
         contrastText: color2.white.hex,
       },
       error: {
-        light: mode === 'light' ? color2.R2.hex : color2.R1.hex,
-        main: mode === 'light' ? color2.R4.hex : color2.R3.hex,
-        dark: mode === 'light' ? color2.R5.hex : color2.R4.hex,
+        light: color2.R2.hex,
+        main: color2.R4.hex,
+        dark: color2.R5.hex,
         contrastText: color2.white.hex,
       },
       warning: {
-        light: mode === 'light' ? color2.F2.hex : color2.F1.hex,
-        main: mode === 'light' ? color2.F4.hex : color2.F3.hex,
-        dark: mode === 'light' ? color2.F5.hex : color2.F4.hex,
+        light: color2.F2.hex,
+        main: color2.F4.hex,
+        dark: color2.F5.hex,
         contrastText: color2.white.hex,
       },
       info: {
-        light: mode === 'light' ? color2.B2.hex : color2.B1.hex,
-        main: mode === 'light' ? color2.B3.hex : color2.B2.hex,
-        dark: mode === 'light' ? color2.B4.hex : color2.B3.hex,
+        light: color2.B2.hex,
+        main: color2.B3.hex,
+        dark: color2.B4.hex,
         contrastText: color2.white.hex,
       },
       success: {
-        light: mode === 'light' ? color2.G3.hex : color2.G2.hex,
-        main: mode === 'light' ? color2.G4.hex : color2.G3.hex,
-        dark: mode === 'light' ? color2.G5.hex : color2.G4.hex,
+        light: color2.G3.hex,
+        main: color2.G4.hex,
+        dark: color2.G5.hex,
         contrastText: color2.white.hex,
       },
       grey: {
@@ -110,8 +108,8 @@ export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
   };
 };
 
-export const getTheme = (mode: Mode = 'light', overrides: any = {}) => {
-  const mergedTheme = deepmerge(getVarnishDesignTokens(mode), overrides);
+export const getTheme = (overrides: any = {}) => {
+  const mergedTheme = deepmerge(getVarnishDesignTokens(), overrides);
   return createTheme(mergedTheme);
 };
 

@@ -9,7 +9,7 @@ const colorGroups: ColorGroupDict = {
   greens: [color2.G5, color2.G4, color2.G3, color2.G2, color2.G1],
   oranges: [color2.O5, color2.O4, color2.O3, color2.O2, color2.O1],
   reds: [color2.R5, color2.R4, color2.R3, color2.R2, color2.R1],
-  magentas: [color2.F5, color2.F4, color2.F3, color2.F2, color2.F1],
+  fuchsias: [color2.F5, color2.F4, color2.F3, color2.F2, color2.F1],
   purples: [color2.P5, color2.P4, color2.P3, color2.P2, color2.P1],
   neutrals: [color2.N5, color2.N4, color2.N3, color2.N2, color2.N1],
 };

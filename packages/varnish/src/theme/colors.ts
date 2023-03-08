@@ -198,7 +198,7 @@ export const lightCategoricalColor = {
   Aqua: { ...color2.A5, displayName: 'Aqua' },
   Teal: { ...color2.T4, displayName: 'Teal' },
   Blue: { ...color2.B3, displayName: 'Blue' },
-  Magenta: { ...color2.F5, displayName: 'Fuchsia' },
+  Fuchsia: { ...color2.F5, displayName: 'Fuchsia' },
   Purple: { ...color2.P4, displayName: 'Purple' },
   Green: { ...color2.G5, displayName: 'Green' },
 };
@@ -209,7 +209,7 @@ export const darkCategoricalColor = {
   Aqua: { ...color2.A2, displayName: 'Aqua' },
   Teal: { ...color2.T2, displayName: 'Teal' },
   Blue: { ...color2.B2, displayName: 'Blue' },
-  Magenta: { ...color2.F2, displayName: 'Fuchsia' },
+  Fuchsia: { ...color2.F2, displayName: 'Fuchsia' },
   Purple: { ...color2.P2, displayName: 'Purple' },
   Green: { ...color2.G2, displayName: 'Green' },
 };
