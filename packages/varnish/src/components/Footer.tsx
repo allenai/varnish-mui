@@ -2,7 +2,7 @@ import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
 import { LayoutVariant, VarnishContext } from './VarnishContext';
-import { Color, color as varnishColor } from '../theme/colors';
+import { Color, color2 } from '../theme/colors';
 
 export type FooterVariant = 'default' | 'dark';
 
@@ -29,18 +29,18 @@ const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...
 export function Footer(props: Props) {
   const contrast = props.variant === 'dark';
   // TODO: Update Contrast color palettes
-  const textColor = contrast ? varnishColor.white.toString() : varnishColor.black.toString();
+  const textColor = contrast ? color2.white.toString() : color2.black.toString();
 
   // TODO: Add Link Theming and Typography (following 2 lines will be refactored after this TODO, tracked in Issue #12 in varnish-mui repo)
-  const defaultLinkColor = varnishColor.B6.toString();
-  const contrastLinkColor = varnishColor.B3.toString();
+  const defaultLinkColor = color2.B3.toString();
+  const contrastLinkColor = color2.B2.toString();
 
   const linkColor = contrast ? contrastLinkColor : defaultLinkColor;
   const background = props.backgroundColor
     ? props.backgroundColor.toString()
     : contrast
-    ? varnishColor.B10.toString()
-    : varnishColor.white.toString();
+    ? color2.B5.toString()
+    : color2.white.toString();
 
   // TODO: Make custom styles for elements that have standardized padding across AI2
   return (

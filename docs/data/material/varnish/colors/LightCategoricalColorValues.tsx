@@ -3,7 +3,7 @@ import { lightCategoricalColor, dictionaryToArray } from '@allenai/varnish';
 import { ChartingGrid, ColorValues, ColorGroupDict } from './ColorValues';
 
 const lightCategoricalColorGroup: ColorGroupDict = {
-  darkCategorical: dictionaryToArray(lightCategoricalColor),
+  lightCategorical: dictionaryToArray(lightCategoricalColor),
 };
 
 export default function LightCategoricalColorValues() {

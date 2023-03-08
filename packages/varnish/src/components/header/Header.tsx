@@ -60,10 +60,10 @@ const LogoGrid = styled.span`
 const DecorationlessAnchor = styled(Link)`
   &&:hover {
     text-decoration: none;
-    color: ${({ theme }) => theme.color.N9.toString()};
+    color: ${({ theme }) => theme.color2.N5.toString()};
   }
   text-decoration: none;
-  color: ${({ theme }) => theme.color.N9.toString()};
+  color: ${({ theme }) => theme.color2.N5.toString()};
 `;
 
 // Wraps the header logo with an ahref if href is passed in
@@ -113,7 +113,7 @@ const MaxWidthDiv = styled.div`
 
 const StyledAppBar = styled(AppBar)`
   background-color: white;
-  color: ${({ theme }) => theme.color.N9.toString()};
+  color: ${({ theme }) => theme.color2.N5.toString()};
   size: 22pt;
   top: 0;
   width: 100%;

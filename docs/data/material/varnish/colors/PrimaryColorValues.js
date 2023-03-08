@@ -6,14 +6,14 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled, css } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { color, CopyToClipboardButton } from '@allenai/varnish';
+import { color2, CopyToClipboardButton } from '@allenai/varnish';
 
 function PrimaryColor(props) {
   return (
     <PrimaryColorGrid>
       <PrimaryColorBox color={props.color.hex} />
       <PrimaryColorName>
-        <CopyToClipboardButton text={`theme.color.${props.color.displayName}`}>
+        <CopyToClipboardButton text={`theme.color2.${props.color.displayName}`}>
           {props.color.displayName}{' '}
         </CopyToClipboardButton>
       </PrimaryColorName>
@@ -41,11 +41,20 @@ PrimaryColor.propTypes = {
 
 export default function PrimaryColorValues() {
   return (
-    <PrimaryGrid>
-      {[color.B8, color.B7, color.B6, color.O6].map((c) => (
-        <PrimaryColor key={c.displayName} color={c} />
-      ))}
-    </PrimaryGrid>
+    <div>
+      <h3>Primary</h3>
+      <PrimaryGrid>
+        {[color2.B3, color2.B4, color2.B2].map((c) => (
+          <PrimaryColor key={c.displayName} color={c} />
+        ))}
+      </PrimaryGrid>
+      <h3>Secondary</h3>
+      <PrimaryGrid>
+        {[color2.P3, color2.P4, color2.P2].map((c) => (
+          <PrimaryColor key={c.displayName} color={c} />
+        ))}
+      </PrimaryGrid>
+    </div>
   );
 }
 
@@ -58,7 +67,7 @@ const PrimaryGrid = styled('div')(
       align-items: center;
       margin-top: ${theme.spacing(2)};
       margin-bottom: ${theme.spacing(3)};
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 
       ${theme.breakpoints.down('md')} {
         grid-template-columns: 1fr 1fr;

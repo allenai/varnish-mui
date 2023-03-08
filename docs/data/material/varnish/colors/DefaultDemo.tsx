@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { styled, css } from '@mui/material/styles';
+import { Stack } from '@mui/material';
 
 export default function Demo() {
   const ColorDiv = styled('div', {
@@ -12,19 +13,19 @@ export default function Demo() {
         margin-bottom: ${theme.spacing(0.5)};
         color: white;
         text-align: center;
-        background: ${theme.color[col].toString()};
+        background: ${theme.color2[col].toString()};
       `,
   );
 
-  const colorsToRender = ['B8', 'B7', 'B6', 'O8', 'O7', 'O6'];
+  const colorsToRender = ['B4', 'B3', 'B2', 'O4', 'O3', 'O2'];
 
   return (
-    <div style={{ width: '100%' }}>
+    <Stack spacing={1} style={{ width: '100%' }}>
       {colorsToRender.map((color) => (
         <ColorDiv key={color} col={color}>
           {color}
         </ColorDiv>
       ))}
-    </div>
+    </Stack>
   );
 }

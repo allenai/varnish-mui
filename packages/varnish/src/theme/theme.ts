@@ -1,15 +1,21 @@
 import { ThemeOptions, createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
-import { color, Color } from './colors';
+import { color, Color, color2, darkCategoricalColor, lightCategoricalColor } from './colors';
 import { Dictionary } from '../utils/base';
 
 interface VarnishMuiTheme {
   color: Dictionary<Color>;
+  color2: Dictionary<Color>;
+  darkCategoricalColor: Dictionary<Color>;
+  lightCategoricalColor: Dictionary<Color>;
 }
 
 interface VarnishMuiThemeOptions {
   color?: Dictionary<Color>;
+  color2?: Dictionary<Color>;
+  darkCategoricalColor?: Dictionary<Color>;
+  lightCategoricalColor?: Dictionary<Color>;
 }
 
 declare module '@mui/material/styles' {
@@ -45,59 +51,62 @@ export const getVarnishDesignTokens = (mode: Mode): ThemeOptions => {
     },
     palette: {
       primary: {
-        light: mode === 'light' ? color.B3.hex : color.B2.hex,
-        main: mode === 'light' ? color.B6.hex : color.B3.hex,
-        dark: mode === 'light' ? color.B8.hex : color.B5.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.B2.hex : color2.B1.hex,
+        main: mode === 'light' ? color2.B3.hex : color2.B2.hex,
+        dark: mode === 'light' ? color2.B4.hex : color2.B3.hex,
+        contrastText: color2.white.hex,
       },
       secondary: {
-        light: mode === 'light' ? color.O4.hex : color.O2.hex,
-        main: mode === 'light' ? color.O7.hex : color.O4.hex,
-        dark: mode === 'light' ? color.O9.hex : color.O6.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.P2.hex : color2.P1.hex,
+        main: mode === 'light' ? color2.P3.hex : color2.P2.hex,
+        dark: mode === 'light' ? color2.P4.hex : color2.P3.hex,
+        contrastText: color2.white.hex,
       },
       error: {
-        light: mode === 'light' ? color.R1.hex : color.R1.hex,
-        main: mode === 'light' ? color.R4.hex : color.R2.hex,
-        dark: mode === 'light' ? color.R7.hex : color.R4.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.R2.hex : color2.R1.hex,
+        main: mode === 'light' ? color2.R4.hex : color2.R3.hex,
+        dark: mode === 'light' ? color2.R5.hex : color2.R4.hex,
+        contrastText: color2.white.hex,
       },
       warning: {
-        light: mode === 'light' ? color.O1.hex : color.O1.hex,
-        main: mode === 'light' ? color.O4.hex : color.O2.hex,
-        dark: mode === 'light' ? color.O7.hex : color.O4.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.F2.hex : color2.F1.hex,
+        main: mode === 'light' ? color2.F4.hex : color2.F3.hex,
+        dark: mode === 'light' ? color2.F5.hex : color2.F4.hex,
+        contrastText: color2.white.hex,
       },
       info: {
-        light: mode === 'light' ? color.B1.hex : color.B1.hex,
-        main: mode === 'light' ? color.B4.hex : color.B2.hex,
-        dark: mode === 'light' ? color.B7.hex : color.B4.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.B2.hex : color2.B1.hex,
+        main: mode === 'light' ? color2.B3.hex : color2.B2.hex,
+        dark: mode === 'light' ? color2.B4.hex : color2.B3.hex,
+        contrastText: color2.white.hex,
       },
       success: {
-        light: mode === 'light' ? color.G1.hex : color.G1.hex,
-        main: mode === 'light' ? color.G4.hex : color.G2.hex,
-        dark: mode === 'light' ? color.G7.hex : color.G4.hex,
-        contrastText: color.N1.hex,
+        light: mode === 'light' ? color2.G3.hex : color2.G2.hex,
+        main: mode === 'light' ? color2.G4.hex : color2.G3.hex,
+        dark: mode === 'light' ? color2.G5.hex : color2.G4.hex,
+        contrastText: color2.white.hex,
       },
       grey: {
-        50: color.N1.hex,
-        100: color.N2.hex,
-        200: color.N3.hex,
-        300: color.N4.hex,
-        400: color.N5.hex,
-        500: color.N6.hex,
-        600: color.N7.hex,
-        700: color.N8.hex,
-        800: color.N9.hex,
-        900: color.N10.hex,
-        A100: color.N2.hex,
-        A200: color.N3.hex,
-        A400: color.N5.hex,
-        A700: color.N8.hex,
+        50: color2.N1.hex,
+        100: color2.N1.hex,
+        200: color2.N2.hex,
+        300: color2.N2.hex,
+        400: color2.N3.hex,
+        500: color2.N3.hex,
+        600: color2.N4.hex,
+        700: color2.N4.hex,
+        800: color2.N5.hex,
+        900: color2.N5.hex,
+        A100: color2.N1.hex,
+        A200: color2.N2.hex,
+        A400: color2.N3.hex,
+        A700: color2.N4.hex,
       },
     },
     color,
+    color2,
+    darkCategoricalColor,
+    lightCategoricalColor,
   };
 };
 

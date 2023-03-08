@@ -1,4 +1,4 @@
 {/* This file has been auto-generated. Please don't edit nor review. */}
-<Footer backgroundColor={theme.color.G4}>
+<Footer backgroundColor={theme.color2.G2}>
   Custom footer content - 🦶🏻 🦶🏼 🦶🏽 🦶🏾 🦶🏿
 </Footer>

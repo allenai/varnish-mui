@@ -3,124 +3,25 @@
  */
 
 import * as React from 'react';
-import { color } from '@allenai/varnish';
+import { color2 } from '@allenai/varnish';
 import { ColorValues, ExtendedGrid } from './ColorValues';
 
 const colorGroups = {
-  blues: [
-    color.B10,
-    color.B9,
-    color.B8,
-    color.B7,
-    color.B6,
-    color.B5,
-    color.B4,
-    color.B3,
-    color.B2,
-    color.B1,
-  ],
-  aqua: [
-    color.A10,
-    color.A9,
-    color.A8,
-    color.A7,
-    color.A6,
-    color.A5,
-    color.A4,
-    color.A3,
-    color.A2,
-    color.A1,
-  ],
-  teals: [
-    color.T10,
-    color.T9,
-    color.T8,
-    color.T7,
-    color.T6,
-    color.T5,
-    color.T4,
-    color.T3,
-    color.T2,
-    color.T1,
-  ],
-  greens: [
-    color.G10,
-    color.G9,
-    color.G8,
-    color.G7,
-    color.G6,
-    color.G5,
-    color.G4,
-    color.G3,
-    color.G2,
-    color.G1,
-  ],
-  oranges: [
-    color.O10,
-    color.O9,
-    color.O8,
-    color.O7,
-    color.O6,
-    color.O5,
-    color.O4,
-    color.O3,
-    color.O2,
-    color.O1,
-  ],
-  reds: [
-    color.R10,
-    color.R9,
-    color.R8,
-    color.R7,
-    color.R6,
-    color.R5,
-    color.R4,
-    color.R3,
-    color.R2,
-    color.R1,
-  ],
-  magentas: [
-    color.M10,
-    color.M9,
-    color.M8,
-    color.M7,
-    color.M6,
-    color.M5,
-    color.M4,
-    color.M3,
-    color.M2,
-    color.M1,
-  ],
-  purples: [
-    color.P10,
-    color.P9,
-    color.P8,
-    color.P7,
-    color.P6,
-    color.P5,
-    color.P4,
-    color.P3,
-    color.P2,
-    color.P1,
-  ],
-  neutrals: [
-    color.N10,
-    color.N9,
-    color.N8,
-    color.N7,
-    color.N6,
-    color.N5,
-    color.N4,
-    color.N3,
-    color.N2,
-    color.N1,
-  ],
+  blues: [color2.B5, color2.B4, color2.B3, color2.B2, color2.B1],
+  aqua: [color2.A5, color2.A4, color2.A3, color2.A2, color2.A1],
+  teals: [color2.T5, color2.T4, color2.T3, color2.T2, color2.T1],
+  greens: [color2.G5, color2.G4, color2.G3, color2.G2, color2.G1],
+  oranges: [color2.O5, color2.O4, color2.O3, color2.O2, color2.O1],
+  reds: [color2.R5, color2.R4, color2.R3, color2.R2, color2.R1],
+  magentas: [color2.F5, color2.F4, color2.F3, color2.F2, color2.F1],
+  purples: [color2.P5, color2.P4, color2.P3, color2.P2, color2.P1],
+  neutrals: [color2.N5, color2.N4, color2.N3, color2.N2, color2.N1],
 };
 
 export default function ExtendedColorValues() {
   return (
     <ExtendedGrid id="color">
-      <ColorValues colorGroupDict={colorGroups} themeProp="color" />
+      <ColorValues colorGroupDict={colorGroups} themeProp="color2" />
     </ExtendedGrid>
   );
 }

@@ -1,6 +1,13 @@
 {/* This file has been auto-generated. Please don't edit nor review. */}
+<h3>Primary</h3>
 <PrimaryGrid>
-  {[color.B8, color.B7, color.B6, color.O6].map((c: Color) => (
+  {[color2.B3, color2.B4, color2.B2].map((c: Color) => (
+    <PrimaryColor key={c.displayName} color={c} />
+  ))}
+</PrimaryGrid>
+<h3>Secondary</h3>
+<PrimaryGrid>
+  {[color2.P3, color2.P4, color2.P2].map((c: Color) => (
     <PrimaryColor key={c.displayName} color={c} />
   ))}
 </PrimaryGrid>
