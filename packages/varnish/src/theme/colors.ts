@@ -65,7 +65,7 @@ export const color2: Dictionary<Color> = {
   T5: new Color('T5', '#004752', true),
   A1: new Color('A1', '#F2FCFF'),
   A2: new Color('A2', '#B5F0FF'),
-  A3: new Color('A3', '#4DE1FF'),
+  A3: new Color('A3', '#4DE1FF', true),
   A4: new Color('A4', '#01A2CA', true),
   A5: new Color('A5', '#054976', true),
   B1: new Color('B1', '#F0F7FF'),
