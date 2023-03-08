@@ -2,7 +2,7 @@ import Link from '@mui/material/Link';
 import * as React from 'react';
 import styled from 'styled-components';
 import { LayoutVariant, VarnishContext } from './VarnishContext';
-import { Color, color2 } from '../theme/colors';
+import { Color } from '../theme/colors';
 
 export type FooterVariant = 'default' | 'dark';
 
@@ -15,29 +15,24 @@ interface Props {
   className?: string;
 }
 
-const StyledFooter = styled(({ textColor, background, ...rest }) => <footer {...rest} />)<{
-  textColor: string;
-  background: string;
+const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <footer {...rest} />)<{
+  backgroundColor?: Color;
+  isContrast?: boolean;
   layout?: LayoutVariant;
 }>`
   padding: 24px;
-  color: ${({ textColor }) => textColor};
+  color: ${({ isContrast, theme }) =>
+    isContrast ? theme.palette.common.white : theme.palette.common.black};
   text-align: ${({ layout }) => (layout !== 'left-aligned' ? 'center' : null)};
-  background-color: ${({ background }) => background};
+  background-color: ${({ backgroundColor, isContrast, theme }) =>
+    backgroundColor
+      ? backgroundColor.hex
+      : isContrast
+      ? theme.extended.background.dark.hex
+      : theme.palette.common.white};
 `;
 
 export function Footer(props: Props) {
-  const contrast = props.variant === 'dark';
-  
-  // TODO: Update Contrast color palettes
-  const textColor = contrast ? color2.white.toString() : color2.black.toString();
-
-  const background = props.backgroundColor
-    ? props.backgroundColor.toString()
-    : contrast
-    ? color2.B5.toString()
-    : color2.white.toString();
-
   // TODO: Make custom styles for elements that have standardized padding across AI2
   return (
     <VarnishContext.Consumer>
@@ -45,8 +40,8 @@ export function Footer(props: Props) {
         <StyledFooter
           className={props.className}
           layout={layout}
-          textColor={textColor}
-          background={background}
+          backgroundColor={props.backgroundColor}
+          isContrast={props.variant === 'dark'}
         >
           {props.children ? (
             props.children

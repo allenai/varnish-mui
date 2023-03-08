@@ -1,25 +1,36 @@
 import { ThemeOptions, createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
-import { color, Color, color2, darkCategoricalColor, lightCategoricalColor } from './colors';
-import { Dictionary } from '../utils/base';
+import {
+  color,
+  color2,
+  darkCategoricalColor,
+  lightCategoricalColor,
+  ColorType,
+  Color2Type,
+  LightCategoricalColorType,
+  DarkCategoricalColorType,
+} from './colors';
+import { extended, ExtendedType } from './extended';
 
 interface VarnishMuiTheme {
-  color: Dictionary<Color>;
-  color2: Dictionary<Color>;
-  darkCategoricalColor: Dictionary<Color>;
-  lightCategoricalColor: Dictionary<Color>;
+  extended: ExtendedType;
+  color: ColorType;
+  color2: Color2Type;
+  darkCategoricalColor: DarkCategoricalColorType;
+  lightCategoricalColor: LightCategoricalColorType;
 }
 
 interface VarnishMuiThemeOptions {
-  color?: Dictionary<Color>;
-  color2?: Dictionary<Color>;
-  darkCategoricalColor?: Dictionary<Color>;
-  lightCategoricalColor?: Dictionary<Color>;
+  extended?: ExtendedType;
+  color?: ColorType;
+  color2?: Color2Type;
+  darkCategoricalColor?: DarkCategoricalColorType;
+  lightCategoricalColor?: LightCategoricalColorType;
 }
 
 // Update the Typography's variant prop options
-declare module "@mui/material/Typography" {
+declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     dark: true;
     default: true;
@@ -38,13 +49,51 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
     components: {
       MuiLink: {
         styleOverrides: {
-          // `ownerState` contains the component props and internal state
           root: ({ ownerState }) => ({
-            ...(ownerState.variant === 'dark' ? {
-              color: color2.B2.toString()
-            } : {
-              color: color2.B3.toString()
-            })
+            ...(ownerState.variant === 'dark'
+              ? {
+                  color: color2.B2.hex,
+                }
+              : {
+                  color: color2.B3.hex,
+                }),
+          }),
+        },
+      },
+      MuiAppBar: {
+        styleOverrides: {
+          root: ({ ownerState, theme }) => ({
+            ...(ownerState.color === undefined || ownerState.color === 'default'
+              ? {
+                  color: theme.palette.text.primary,
+                  background: color2.N1.hex,
+                }
+              : {}),
+          }),
+        },
+      },
+      MuiRating: {
+        styleOverrides: {
+          root: {
+            color: color2.B3.hex,
+          },
+        },
+      },
+      MuiSwitch: {
+        styleOverrides: {
+          thumb: ({ ownerState }) => ({
+            ...(ownerState.color === undefined || ownerState.color === 'default'
+              ? {
+                  backgroundColor: color2.B3.hex,
+                }
+              : {}),
+          }),
+          track: ({ ownerState }) => ({
+            ...(ownerState.color === undefined || ownerState.color === 'default'
+              ? {
+                  backgroundColor: color2.A3.hex,
+                }
+              : {}),
           }),
         },
       },
@@ -122,7 +171,26 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         A400: color2.N3.hex,
         A700: color2.N4.hex,
       },
+      text: {
+        primary: color2.N5.hex,
+        secondary: color2.B5.hex,
+        disabled: color2.B2.hex,
+      },
+      divider: color2.N3.hex,
+      background: {
+        paper: color2.N1.hex,
+        default: color2.white.hex,
+      },
+      action: {
+        active: color2.B3.hex,
+        hover: color2.B3.hex,
+        selected: color2.B3.hex,
+        disabled: color2.B3.hex,
+        disabledBackground: color2.N5.hex,
+        focus: color2.B3.hex,
+      },
     },
+    extended,
     color,
     color2,
     darkCategoricalColor,

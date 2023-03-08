@@ -21,16 +21,16 @@ expected. It must be present on every page of your application.
 
 The Footer provides sensible defaults and can be used out of the box without any changes.
 
-{{"demo": "FooterDemo.js"}}
+{{"demo": "FooterDemo.js", "defaultCodeOpen": false}}
 
 ### Dark Variant
 
 Dark Variant of the Footer.
 
-{{"demo": "FooterDarkDemo.js"}}
+{{"demo": "FooterDarkDemo.js", "defaultCodeOpen": false}}
 
 ### Custom Footer
 
 Footer with custom content.
 
-{{"demo": "FooterCustomDemo.js"}}
+{{"demo": "FooterCustomDemo.js", "defaultCodeOpen": false}}
