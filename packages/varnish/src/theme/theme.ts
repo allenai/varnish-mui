@@ -18,6 +18,14 @@ interface VarnishMuiThemeOptions {
   lightCategoricalColor?: Dictionary<Color>;
 }
 
+// Update the Typography's variant prop options
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    dark: true;
+    default: true;
+  }
+}
+
 declare module '@mui/material/styles' {
   interface Theme extends VarnishMuiTheme {}
 
@@ -27,6 +35,20 @@ declare module '@mui/material/styles' {
 
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
+    components: {
+      MuiLink: {
+        styleOverrides: {
+          // `ownerState` contains the component props and internal state
+          root: ({ ownerState }) => ({
+            ...(ownerState.variant === 'dark' ? {
+              color: color2.B2.toString()
+            } : {
+              color: color2.B3.toString()
+            })
+          }),
+        },
+      },
+    },
     typography: {
       fontFamily: [
         '"Lato"',

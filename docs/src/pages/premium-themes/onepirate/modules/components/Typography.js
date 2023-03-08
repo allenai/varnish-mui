@@ -102,6 +102,8 @@ Typography.propTypes = {
     'body2',
     'button',
     'caption',
+    'dark',
+    'default',
     'h1',
     'h2',
     'h3',
