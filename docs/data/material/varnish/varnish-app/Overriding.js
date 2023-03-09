@@ -7,7 +7,7 @@ import { Color, Header, VarnishApp } from '@allenai/varnish';
 
 export default function Demo() {
   const extendedTheme = {
-    extended: {
+    paletteExtended: {
       background: {
         // replacing dark with a new color
         dark: new Color('coolGreen', '#18991A', true),

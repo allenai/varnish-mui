@@ -19,7 +19,7 @@ const BannerContent = styled.div`
 `;
 
 const DarkBanner = styled.div`
-  background: ${({ theme }) => theme.extended.background.dark};
+  background: ${({ theme }) => theme.paletteExtended.background.dark};
   padding: ${({ theme }) => theme.spacing(0.5)} 0;
   line-height: 1;
 `;

@@ -28,7 +28,7 @@ const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <foote
     backgroundColor
       ? backgroundColor.hex
       : isContrast
-      ? theme.extended.background.dark.hex
+      ? theme.paletteExtended.background.dark.hex
       : theme.palette.common.white};
 `;
 
