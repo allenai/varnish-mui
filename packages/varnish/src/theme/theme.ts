@@ -47,15 +47,25 @@ declare module '@mui/material/styles' {
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     components: {
+      MuiCssBaseline: {
+        styleOverrides: () => `
+          a {
+            color: ${extended.link.default};
+          }
+          .linkContrast {
+            color: ${extended.link.contrast};
+          }
+        `,
+      },
       MuiLink: {
         styleOverrides: {
           root: ({ ownerState }) => ({
             ...(ownerState.variant === 'dark'
               ? {
-                  color: color2.B2.hex,
+                  color: extended.link.contrast,
                 }
               : {
-                  color: color2.B3.hex,
+                  color: extended.link.default,
                 }),
           }),
         },

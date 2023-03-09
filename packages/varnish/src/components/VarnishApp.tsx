@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
+import CssBaseline from '@mui/material/CssBaseline';
 import { getTheme } from '../theme/theme';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
@@ -26,6 +27,7 @@ export function VarnishApp({ layout, theme, children }: VarnishAppProps) {
   return (
     <StyledThemeProvider theme={mergedTheme}>
       <ThemeProvider theme={mergedTheme}>
+        <CssBaseline />
         <ErrorBoundary>
           <DefaultAppLayoutProvider layout={layout || 'center-aligned'}>
             {children}
