@@ -7,9 +7,11 @@ import { Color, Header, VarnishApp } from '@allenai/varnish';
 
 export default function Demo() {
   const extendedTheme = {
-    color: {
-      // replacing B10 with a new color
-      B10: new Color('coolBlack', '#18191A', true),
+    extended: {
+      background: {
+        // replacing dark with a new color
+        dark: new Color('coolGreen', '#18991A', true),
+      },
     },
   };
 

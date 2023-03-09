@@ -15,29 +15,29 @@ Whenever you need the official AI2 or project logo.
 
 ### Basic Usage
 
-{{"demo": "LogosDefaultDemo.js"}}
+{{"demo": "LogosDefaultDemo.js", "bg": true, "defaultCodeOpen": false}}
 
 ### Different Sizes
 
 #### You can change the size of the logo to be one of three values: _sm_, _md_ or _lg_.
 
-{{"demo": "LogosSizesDemo.js"}}
+{{"demo": "LogosSizesDemo.js", "bg": false, "defaultCodeOpen": false}}
 
 ### Altered Text
 
 #### Depending on the context, you may or may not want to display the full organization name text.
 
-{{"demo": "LogosTextDemo.js"}}
+{{"demo": "LogosTextDemo.js", "defaultCodeOpen": false}}
 
 ### White Logo
 
 #### If you're using the logo against a dark background, you will want to set the component's `color` value to `white`.
 
-{{"demo": "LogosWhiteDemo.js"}}
+{{"demo": "LogosWhiteDemo.js", "defaultCodeOpen": false}}
 
 ### Canonical logos for AI2's projects.
 
-{{"demo": "ProjectsLogosDemo.js"}}
+{{"demo": "ProjectsLogosDemo.js", "defaultCodeOpen": false}}
 
 ## API
 

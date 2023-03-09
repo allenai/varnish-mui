@@ -14,7 +14,7 @@ export default function Demo() {
   };
 
   const CoolH1 = styled.h1`
-    color2: ${({ theme }) => theme.color2.Freeze};
+    color: ${({ theme }) => theme.color2.Freeze};
   `;
 
   return (

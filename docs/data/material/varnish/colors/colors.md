@@ -29,7 +29,7 @@ e.g. `color.B6` -> `color2.B3`, `color.R9` -> `color2.R5`.
 You can use a Varnish color via the theme.
 eg: `theme.color2.B3`
 
-{{"demo": "DefaultDemo.js", "bg": false, "defaultCodeOpen":false}}
+{{"demo": "DefaultDemo.js", "bg": false, "defaultCodeOpen": false}}
 
 ### Palette Usage
 
@@ -37,14 +37,14 @@ You can also access common Varnish colors via the MUI theme palette.
 
 eg: `theme.palette.error.light`
 
-{{"demo": "PaletteDemo.js", "bg": false, "defaultCodeOpen":false}}
+{{"demo": "PaletteDemo.js", "bg": false, "defaultCodeOpen": false}}
 
 ### Text Contrast
 
 Each color defined by Varnish has a `useContrastText` boolean attached to it. If `true`, and the
 color is used as the `background` of an element, we suggest inverting the text color for readability.
 
-{{"demo": "ContrastDemo.js", "bg": false, "defaultCodeOpen":false}}
+{{"demo": "ContrastDemo.js", "bg": false, "defaultCodeOpen": false}}
 
 ## Main Colors
 

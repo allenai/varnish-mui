@@ -77,6 +77,7 @@ export const color2: Dictionary<Color> = {
   N5: new Color('N5', '#47515C', true),
   black: new Color('Black', '#000', true),
   white: new Color('White', '#FFF'),
+  transparent: new Color('Transparent', '#00000000'),
 };
 
 export type Color2Type = Indexable<typeof color2>;
@@ -190,6 +191,8 @@ export const lightCategoricalColor = {
   Green: { ...color2.G5, displayName: 'Green' },
 };
 
+export type LightCategoricalColorType = Indexable<typeof color>;
+
 export const darkCategoricalColor = {
   Red: { ...color2.R2, displayName: 'Red' },
   Orange: { ...color2.O2, displayName: 'Orange' },
@@ -200,6 +203,8 @@ export const darkCategoricalColor = {
   Purple: { ...color2.P2, displayName: 'Purple' },
   Green: { ...color2.G2, displayName: 'Green' },
 };
+
+export type DarkCategoricalColorType = Indexable<typeof color>;
 
 // use to convert a set of color ids top their hex values
 // e.g. SequenceColors = ColorsIdsToHexVals(['N1', 'N3', 'N5', 'N7', 'N9']);

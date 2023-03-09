@@ -23,7 +23,7 @@ module.exports = withDocsInfra({
     return [
       {
         source: '/',
-        destination: '/material-ui/getting-started/overview/',
+        destination: '/material-ui/varnish/varnish-app/',
         permanent: true,
       },
     ];
