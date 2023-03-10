@@ -59,7 +59,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       },
       MuiLink: {
         styleOverrides: {
-          root: ({ ownerState }) => ({
+          root: ({ ownerState, theme }) => ({
             ...(ownerState.variant === 'dark'
               ? {
                   color: extended.link.contrast,
