@@ -62,7 +62,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           root: ({ ownerState, theme }) => ({
             ...(ownerState.variant === 'dark'
               ? {
-                  color: extended.link.contrast,
+                  color: theme.extended.link.contrast,
                 }
               : {
                   color: theme.extended.link.default,
