@@ -11,10 +11,10 @@ import {
   LightCategoricalColorType,
   DarkCategoricalColorType,
 } from './colors';
-import { extended, ExtendedType } from './extended';
+import { paletteExtended, PaletteExtendedType } from './paletteExtended';
 
 interface VarnishMuiTheme {
-  extended: ExtendedType;
+  paletteExtended: PaletteExtendedType;
   color: ColorType;
   color2: Color2Type;
   darkCategoricalColor: DarkCategoricalColorType;
@@ -22,7 +22,7 @@ interface VarnishMuiTheme {
 }
 
 interface VarnishMuiThemeOptions {
-  extended?: ExtendedType;
+  paletteExtended?: PaletteExtendedType;
   color?: ColorType;
   color2?: Color2Type;
   darkCategoricalColor?: DarkCategoricalColorType;
@@ -43,6 +43,29 @@ declare module '@mui/material/styles' {
   // allow configuration using `createTheme`
   interface ThemeOptions extends VarnishMuiThemeOptions {}
 }
+
+const fontFamily = [
+  '"Lato"',
+  '"Lucida Grande"',
+  '"Tahoma"',
+  '"Helvetica Neue"',
+  '"Helvetica"',
+  '"-apple-system"',
+  '"BlinkMacSystemFont"',
+  '"Segoe UI"',
+  '"PingFang SC"',
+  '"Hiragino Sans GB"',
+  '"Microsoft YaHei"',
+  '"Arial"',
+  '"sans-serif"',
+  '"Apple Color Emoji"',
+  '"Segoe UI Emoji"',
+  '"Segoe UI Symbol"',
+].join(',');
+const fontWeightLight = 300;
+const fontWeightRegular = 400;
+const fontWeightMedium = 500;
+const fontWeightBold = 700;
 
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
@@ -70,18 +93,6 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           }),
         },
       },
-      MuiAppBar: {
-        styleOverrides: {
-          root: ({ ownerState, theme }) => ({
-            ...(ownerState.color === undefined || ownerState.color === 'default'
-              ? {
-                  color: theme.palette.text.primary,
-                  background: color2.N1.hex,
-                }
-              : {}),
-          }),
-        },
-      },
       MuiRating: {
         styleOverrides: {
           root: {
@@ -89,44 +100,113 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           },
         },
       },
-      MuiSwitch: {
-        styleOverrides: {
-          thumb: ({ ownerState }) => ({
-            ...(ownerState.color === undefined || ownerState.color === 'default'
-              ? {
-                  backgroundColor: color2.B3.hex,
-                }
-              : {}),
-          }),
-          track: ({ ownerState }) => ({
-            ...(ownerState.color === undefined || ownerState.color === 'default'
-              ? {
-                  backgroundColor: color2.A3.hex,
-                }
-              : {}),
-          }),
-        },
-      },
     },
     typography: {
-      fontFamily: [
-        '"Lato"',
-        '"Lucida Grande"',
-        '"Tahoma"',
-        '"Helvetica Neue"',
-        '"Helvetica"',
-        '"-apple-system"',
-        '"BlinkMacSystemFont"',
-        '"Segoe UI"',
-        '"PingFang SC"',
-        '"Hiragino Sans GB"',
-        '"Microsoft YaHei"',
-        '"Arial"',
-        '"sans-serif"',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(','),
+      fontFamily,
+      fontWeightLight, // 300
+      fontWeightRegular, // 400
+      fontWeightMedium, // 500
+      fontWeightBold, // 700
+      h1: {
+        color: color2.B3.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '2.875rem',
+        lineHeight: 1.3,
+        letterSpacing: '0.025em',
+      },
+      h2: {
+        color: color2.B3.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '2.25rem',
+        lineHeight: 1.3,
+        letterSpacing: '0.025em',
+      },
+      h3: {
+        color: color2.B3.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1.875rem',
+        lineHeight: 1.17,
+        letterSpacing: '0.01875em',
+      },
+      h4: {
+        color: color2.B3.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1.5rem',
+        lineHeight: 1.3,
+        letterSpacing: '0.03125em',
+      },
+      h5: {
+        color: color2.B5.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1.25rem',
+        lineHeight: 1.2,
+        letterSpacing: '0.03125em',
+      },
+      h6: {
+        color: color2.B5.hex,
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1.125rem',
+        lineHeight: 1.3,
+        letterSpacing: '0.01875em',
+      },
+      subtitle1: {
+        fontFamily,
+        fontWeight: fontWeightRegular,
+        fontSize: '0.875rem',
+        lineHeight: 1.5,
+        letterSpacing: '0.015625em',
+      },
+      subtitle2: {
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '0.875rem',
+        lineHeight: 1.5,
+        letterSpacing: '0.015625em',
+      },
+      body1: {
+        fontFamily,
+        fontWeight: fontWeightRegular,
+        fontSize: '1rem',
+        lineHeight: 1.45,
+        letterSpacing: '0.0175em',
+      },
+      body2: {
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1rem',
+        lineHeight: 1.45,
+        letterSpacing: '0.0175em',
+      },
+      button: {
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1rem',
+        lineHeight: 1.5,
+        letterSpacing: '0.01875em',
+        textTransform: 'none',
+      },
+      caption: {
+        color: color2.B5.hex,
+        fontFamily,
+        fontWeight: fontWeightRegular,
+        fontSize: '0.875rem',
+        lineHeight: 1.4,
+        letterSpacing: '0.015625em',
+      },
+      overline: {
+        fontFamily,
+        fontWeight: fontWeightBold,
+        fontSize: '1.25rem',
+        lineHeight: 2,
+        letterSpacing: '0.03125em',
+        textTransform: 'none',
+      },
     },
     palette: {
       primary: {
@@ -200,7 +280,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         focus: color2.B3.hex,
       },
     },
-    extended,
+    paletteExtended,
     color,
     color2,
     darkCategoricalColor,

@@ -1,8 +1,8 @@
 import { Indexable } from '../utils/base';
 import { color2 } from './colors';
 
-// add
-export const extended = {
+// add colors here that should be uses as part of a palette that dont exist in the mui palette
+export const paletteExtended = {
   background: {
     dark: color2.B5,
   },
@@ -12,4 +12,4 @@ export const extended = {
   },
 };
 
-export type ExtendedType = Indexable<typeof extended>;
+export type PaletteExtendedType = Indexable<typeof paletteExtended>;
