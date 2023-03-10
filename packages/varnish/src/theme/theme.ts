@@ -65,7 +65,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
                   color: extended.link.contrast,
                 }
               : {
-                  color: extended.link.default,
+                  color: theme.extended.link.default,
                 }),
           }),
         },
