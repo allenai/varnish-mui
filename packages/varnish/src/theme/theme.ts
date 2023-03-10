@@ -70,15 +70,25 @@ const fontWeightBold = 700;
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     components: {
+      MuiCssBaseline: {
+        styleOverrides: (theme) => `
+          a {
+            color: ${theme.paletteExtended.link.default};
+          }
+          .linkContrast {
+            color: ${theme.paletteExtended.link.contrast};
+          }
+        `,
+      },
       MuiLink: {
         styleOverrides: {
-          root: ({ ownerState }) => ({
+          root: ({ ownerState, theme }) => ({
             ...(ownerState.variant === 'dark'
               ? {
-                  color: color2.B2.hex,
+                  color: theme.paletteExtended.link.contrast,
                 }
               : {
-                  color: color2.B3.hex,
+                  color: theme.paletteExtended.link.default,
                 }),
           }),
         },
