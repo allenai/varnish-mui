@@ -1,6 +1,6 @@
 ---
-title: AI2 Varnish Extensions
-githubLabel: 'varnish: varnish-extensions'
+title: varnish-eslint-config
+githubLabel: 'varnish: varnish-eslint-config'
 ---
 
 # Extensions
