@@ -7,70 +7,65 @@
  */
 module.exports = {
     extends: [
-        "standard",
-        "plugin:prettier/recommended",
-        "plugin:jsx-a11y/strict",
+      "standard",
+      "plugin:prettier/recommended",
+      "plugin:jsx-a11y/strict",
     ],
     env: {
-        browser: true,
-        node: true,
-        es6: true,
-        mocha: true,
+      browser: true,
+      node: true,
+      es6: true,
+      mocha: true,
     },
     globals: {
-        Atomics: "readonly",
-        SharedArrayBuffer: "readonly",
-        JSX: true,
-        React: true,
+      Atomics: "readonly",
+      SharedArrayBuffer: "readonly",
+      JSX: true,
+      React: true,
     },
     parser: "@typescript-eslint/parser",
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-        sourceType: "module",
+      ecmaFeatures: {
+        jsx: true,
+      },
+      sourceType: "module",
     },
     plugins: ["react", "@typescript-eslint", "prettier"],
     rules: {
-        'disallow-active-element-as-key-event-target': require('./rules/disallow-active-element-as-key-event-target'),
-        'docgen-ignore-before-comment': require('./rules/docgen-ignore-before-comment'),
-        'mui-name-matches-component-name': require('./rules/mui-name-matches-component-name'),
-        'no-hardcoded-labels': require('./rules/no-hardcoded-labels'),
-        'rules-of-use-theme-variants': require('./rules/rules-of-use-theme-variants'),
-        "prettier/prettier": [
-            "error",
-            {
-                printWidth: 100,
-                tabWidth: 4,
-                singleQuote: true,
-                jsxBracketSameLine: true,
-                jsxSingleQuote: false,
-            },
-        ],
-        "react/jsx-uses-react": 1,
-        "react/jsx-uses-vars": 1,
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-                vars: "all",
-                args: "after-used",
-                ignoreRestSiblings: false,
-                argsIgnorePattern: "^_",
-            },
-        ],
-        "no-useless-constructor": "off",
-        "@typescript-eslint/no-useless-constructor": "error",
-        "no-use-before-define": 0,
-        "@typescript-eslint/no-use-before-define": 0,
-        "import/order": [
-            "error",
-            {
-                groups: ["internal", "external"],
-                "newlines-between": "always-and-inside-groups",
-            },
-        ],
-        "react/jsx-no-target-blank": "error",
-        "eol-last": ["error", "always"],
+      "prettier/prettier": [
+        "error",
+        {
+          printWidth: 100,
+          tabWidth: 4,
+          singleQuote: true,
+          jsxBracketSameLine: true,
+          jsxSingleQuote: false,
+        },
+      ],
+      "react/jsx-uses-react": 1,
+      "react/jsx-uses-vars": 1,
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          vars: "all",
+          args: "after-used",
+          ignoreRestSiblings: false,
+          argsIgnorePattern: "^_",
+        },
+      ],
+      "no-useless-constructor": "off",
+      "@typescript-eslint/no-useless-constructor": "error",
+      "no-use-before-define": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "import/order": [
+        "error",
+        {
+          groups: ["internal", "external"],
+          "newlines-between": "always-and-inside-groups",
+        },
+      ],
+      "react/jsx-no-target-blank": "error",
+      "eol-last": ["error", "always"],
     },
-};
+  };

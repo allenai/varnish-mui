@@ -4,7 +4,7 @@ The files in this directory represent the `eslint` configuration settings
 for Varnish. They also have the `eslint` rules for MUI folded in.
 
 They will be published as a separate NPM module,
-`@allenai/eslint-config-varnish2`. This allows them to be shared easily
+`@allenai/varnish-eslint-config`. This allows them to be shared easily
 across multiple AI2 projects.
 
 For more information about publishing and using shared `eslint` configuration

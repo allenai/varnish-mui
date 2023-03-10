@@ -20,6 +20,7 @@ module.exports = [
       { pathname: '/material-ui/varnish/logos', title: 'AI2 Logos' },
       { pathname: '/material-ui/varnish/colors' },
       { pathname: '/material-ui/varnish/error-boundary', title: 'Error Boundary' },
+      { pathname: '/material-ui/varnish/extensions', title: 'Varnish Extensions' },
     ],
   },
   {
