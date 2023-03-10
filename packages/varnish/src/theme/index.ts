@@ -1,3 +1,3 @@
 export * from './colors';
-export * from './extended';
+export * from './paletteExtended';
 export * from './theme';
