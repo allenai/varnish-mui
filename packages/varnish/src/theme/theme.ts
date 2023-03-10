@@ -50,7 +50,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiCssBaseline: {
         styleOverrides: () => `
           a {
-            color: ${extended.link.default};
+            color: ${theme.extended.link.default};
           }
           .linkContrast {
             color: ${theme.extended.link.contrast};
