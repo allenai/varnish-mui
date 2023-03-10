@@ -25,6 +25,8 @@ module.exports = [
   {
     pathname: '/material-ui/varnish/extensions',
     subheader: 'EXTENSIONS',
-    children: [],
+    children: [
+      { pathname: '/material-ui/varnish/varnish-eslint-config', title: 'Varnish ESLint Config' },
+    ],
   },
 ];
