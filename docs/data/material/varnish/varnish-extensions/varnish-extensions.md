@@ -1,6 +1,6 @@
 ---
 title: varnish-eslint-config
-githubLabel: 'varnish: varnish-extensions'
+githubLabel: 'varnish: varnish-eslint-config'
 ---
 
 # Extensions
