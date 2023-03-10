@@ -3,7 +3,7 @@ title: varnish-eslint-config
 githubLabel: 'varnish: varnish-eslint-config'
 ---
 
-# Extensions
+# Varnish ESLint Config
 
 <p class="description">AI2 Varnish ESLint Config</p>
 
