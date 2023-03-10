@@ -15,7 +15,7 @@ definitions, see [this documentation](https://eslint.org/docs/user-guide/configu
 1. Install it and it's peer dependencies:
 
    ```shell
-   ~ yarn add @allenai/eslint-config-varnish \
+   ~ yarn add @allenai/varnish-eslint-config \
        @typescript-eslint/eslint-plugin \
        @typescript-eslint/parser \
        eslint \

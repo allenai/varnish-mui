@@ -1,6 +1,6 @@
 /**
  * This file includes `eslint` settings that are distributed via the
- * `@allenai/eslint-config-varnish` package and shared amongst many AI2
+ * `@allenai/varnish-eslint-config` package and shared amongst many AI2
  * projects.
  *
  * @see https://eslint.org/docs/user-guide/configuring

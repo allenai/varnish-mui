@@ -3,9 +3,9 @@ title: varnish-eslint-config
 githubLabel: 'varnish: varnish-eslint-config'
 ---
 
-# Extensions
+# Varnish ESLint Config
 
-<p class="description">AI2 Varnish ESLint Config</p>
+<p class="description">AI2 Varnish ESLint Package</p>
 
 This is documentation for the ESLint extension packages that Varnish provides.
 
@@ -38,4 +38,4 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
    ~ yarn lint:fix
    ```
 
-For more information about Varnish ESLint and further customization options, visit the [documentation](https://github.com/allenai/varnish-mui/tree/main/packages/eslint-config-varnish/README.md).
+For more information about Varnish ESLint and further customization options, visit the [documentation](https://github.com/allenai/varnish-mui/tree/main/packages/varnish-eslint-config/README.md).
