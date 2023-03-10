@@ -53,7 +53,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
             color: ${extended.link.default};
           }
           .linkContrast {
-            color: ${extended.link.contrast};
+            color: ${theme.extended.link.contrast};
           }
         `,
       },
