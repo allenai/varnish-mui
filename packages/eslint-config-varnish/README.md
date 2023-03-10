@@ -48,7 +48,7 @@ definitions, see [this documentation](https://eslint.org/docs/user-guide/configu
    ```bash
    cat <<EOF > .eslintrc.js
    module.exports = {
-       extends: [ "@allenai/eslint-config-varnish2" ]
+       extends: [ "@allenai/varnish-eslint-config" ]
    };
    EOF
    ```
