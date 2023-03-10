@@ -73,10 +73,10 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiCssBaseline: {
         styleOverrides: (theme) => `
           a {
-            color: ${theme.extended.link.default};
+            color: ${theme.paletteExtended.link.default};
           }
           .linkContrast {
-            color: ${theme.extended.link.contrast};
+            color: ${theme.paletteExtended.link.contrast};
           }
         `,
       },
@@ -85,10 +85,10 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           root: ({ ownerState, theme }) => ({
             ...(ownerState.variant === 'dark'
               ? {
-                  color: theme.extended.link.contrast,
+                  color: theme.paletteExtended.link.contrast,
                 }
               : {
-                  color: theme.extended.link.default,
+                  color: theme.paletteExtended.link.default,
                 }),
           }),
         },
