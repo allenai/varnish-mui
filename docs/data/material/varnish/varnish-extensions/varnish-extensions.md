@@ -1,11 +1,11 @@
 ---
 title: AI2 Varnish Extensions
-githubLabel: 'varnish: extensions'
+githubLabel: 'varnish: varnish-extensions'
 ---
 
 # Extensions
 
-<p class="description">Varnish Extensions</p>
+<p class="description">AI2 Varnish Extensions</p>
 
 This is documentation for various extension packages that Varnish provides.
 
@@ -17,13 +17,13 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
 
 1. Install Varnish ESLint:
 
-   ```shell
-   ~ yarn add @allenai/varnish-eslint-config \
+   ```
+   ~ yarn add @allenai/varnish-eslint-config 
    ```
 
 2. Add targets for linting and reformatting code to your `package.json` file:
 
-   ```json
+   ```
    "scripts": {
        "lint": "eslint '**/*.{js,ts,tsx,json}' && echo '💫  Lint complete.'",
        "lint:fix": "eslint '**/*.{js,ts,tsx,json}' --fix && echo '🛠  Lint --fix complete.'",
@@ -32,7 +32,7 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
 
 3. Try it out:
 
-   ```bash
+   ```
    # See what's wrong
    ~ yarn lint
 
@@ -40,4 +40,4 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
    ~ yarn lint:fix
    ```
 
-For more information about Varnish ESLint and further customization options, visit the documentation at [Varnish ES Lint](https://github.com/allenai/varnish-mui/tree/main/packages/eslint-config-varnish/README.md).
+For more information about Varnish ESLint and further customization options, visit the documentation.
