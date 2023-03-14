@@ -27,6 +27,7 @@ module.exports = [
     subheader: 'EXTENSIONS',
     children: [
       { pathname: '/material-ui/varnish/varnish-eslint-config', title: 'Varnish ESLint Config' },
+      { pathname: '/material-ui/varnish/varnish-with-react-router', title: 'Varnish With React Router' },
     ],
   },
 ];
