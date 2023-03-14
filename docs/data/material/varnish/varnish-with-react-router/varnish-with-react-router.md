@@ -5,7 +5,7 @@ githubLabel: 'varnish: varnish-with-react-router'
 
 # Varnish With React Router
 
-<p class="description">AI2 Varnish With React Router Usage</p>
+<p class="description">AI2 Varnish With React Router</p>
 
 This is documentation for how you can use React Router in a Varnish App and inherit Varnish theming for links.
 
