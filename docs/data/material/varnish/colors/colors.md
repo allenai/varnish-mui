@@ -39,6 +39,14 @@ eg: `theme.palette.error.light`
 
 {{"demo": "PaletteDemo.js", "bg": false, "defaultCodeOpen": false}}
 
+### Extended Palette
+
+You can access Varnish-specific component palettes via the Extended Palette. 
+
+eg: `theme.paletteExtended.background.dark` or `theme.paletteExtended.link.contrast`
+
+{{"demo": "PaletteExtendedDemo.js", "bg": false, "defaultCodeOpen": false}}
+
 ### Text Contrast
 
 Each color defined by Varnish has a `useContrastText` boolean attached to it. If `true`, and the
