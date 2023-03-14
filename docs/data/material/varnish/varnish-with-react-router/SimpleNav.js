@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Header, VarnishApp } from '@allenai/varnish';
+import { Content, Header, VarnishApp } from '@allenai/varnish';
 
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import { StaticRouter } from 'react-router-dom/server';
@@ -27,7 +27,7 @@ Router.propTypes = {
 export default function Demo() {
   return (
     <VarnishApp>
-      <div style={{ width: '100%' }}>
+      <Content>
         <Header.AI2Banner />
         <Router>
           <ul>
@@ -47,7 +47,7 @@ export default function Demo() {
             </li>
           </ul>
         </Router>
-      </div>
+      </Content>
     </VarnishApp>
   );
 }
