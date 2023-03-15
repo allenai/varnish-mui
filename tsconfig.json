@@ -14,8 +14,8 @@
     "noErrorTruncation": false,
     "allowJs": true,
     "paths": {
-      "@allenai/varnish": ["./packages/varnish/src"],
-      "@allenai/varnish/*": ["./packages/varnish/src/*"],
+      "@allenai/varnish2": ["./packages/varnish/src"],
+      "@allenai/varnish2/*": ["./packages/varnish/src/*"],
       "@mui/material": ["./packages/mui-material/src"],
       "@mui/material/*": ["./packages/mui-material/src/*"],
       "@mui/lab": ["./packages/mui-lab/src"],

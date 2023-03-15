@@ -6,7 +6,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { CopyToClipboardButton } from '@allenai/varnish';
+import { CopyToClipboardButton } from '@allenai/varnish2';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function ColorValues({ colorGroupDict, themeProp }) {
   return (
@@ -100,17 +101,25 @@ function ColorRow(props) {
       </ColorBoxWrapper>
       <ColorName>
         <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
           text={`theme.${props.themeProp}.${props.color.displayName}`}
         >
           {props.color.displayName}
         </CopyToClipboardButton>
       </ColorName>
       <ColorHex>
-        <CopyToClipboardButton>{props.color.hex}</CopyToClipboardButton>
+        <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
+        >
+          {props.color.hex}
+        </CopyToClipboardButton>
       </ColorHex>
       {props.color.rgba ? (
         <ColorRgb>
-          <CopyToClipboardButton text={props.color.rgba.toString()}>
+          <CopyToClipboardButton
+            buttonContent={<ContentCopyIcon fontSize="inherit" />}
+            text={props.color.rgba.toString()}
+          >
             <span>
               {props.color.rgba.r}, {props.color.rgba.g}, {props.color.rgba.b},{' '}
               {props.color.rgba.a}

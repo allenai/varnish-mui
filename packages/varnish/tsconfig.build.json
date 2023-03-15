@@ -10,7 +10,11 @@
     "outDir": "build",
     "rootDir": "./src"
   },
-  "include": ["./src/**/*.ts*"],
+  "include": ["./src/**/*.ts*", "types"],
   "exclude": ["src/**/*.spec.ts*", "src/**/*.test.ts*"],
-  "references": []
+  "references": [
+    { "path": "../mui-material/tsconfig.build.json" },
+    { "path": "../mui-base/tsconfig.build.json" },
+    { "path": "../mui-system/tsconfig.build.json" }
+  ]
 }

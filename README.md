@@ -1,9 +1,22 @@
-# Varnish 2.0
+# Varnish2 Monorepo
 
 This repository contains code for a collection of libraries and applications that, in concert,
 help AI2 build web interfaces. This new version of Varnish is built on a forked version of [Material UI](https://github.com/mui/material-ui).
 
-To start the Varnish 2.0 docs site in development mode, from the project root, run:
+## Repository Structure
+
+All Varnish2 code can be found under `packages/varnish` and `packages/eslint-config-varnish`. The corresponding demos for these Varnish2 components can be found under `docs/data/material/varnish` and `docs/pages/material-ui/varnish`. When you add a new component, create a demo page for the component in the docs to test locally.
+
+**Tip:** To see most relevant source files, filter your searches to: `**/varnish/src/**/*.*, **/eslint-config-varnish/src/**/*.*, **/material/varnish/**/*.*, **/material-ui/varnish/**/*.*`
+
+## Packages
+
+- @allenai/varnish
+- @allenai/eslint-config-varnish
+
+## Development
+
+To start the Varnish2 docs site in development mode, from the project root, run:
 
 ```sh
 yarn && yarn docs:dev
@@ -13,24 +26,6 @@ If you do not have yarn installed, select your OS and follow the instructions on
 
 _DO NOT USE NPM, use Yarn to install the dependencies._
 
-## Repository Structure
+## Contributing
 
-All Varnish components can be found under packages/varnish/src. The corresponding demos for these Varnish components can be found under docs/data/material/varnish.
-When you add a new component, create a demo page for the component in the docs to test locally.
-
-**Note:** .tsx demos will need to provide .js equivalents to reference in the .md demo pages; if you are developing in TypeScript, you will need to run this script to produce the corresponding .js files:
-
-```sh
-yarn docs:typescript:formatted
-```
-
-Doing so will also produce a .tsx.preview file.
-
-For an example, look at the demo components referenced in the [Colors Markdown File](docs/data/material/varnish/colors/colors.md).
-
-## Coding Style
-
-Please follow the coding style of the project. MUI uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
-
-- `yarn prettier` reformats the code.
-- `yarn lint` runs the linting rules manually.
+See [Contributing](./CONTRIBUTING.md)

@@ -1,9 +1,9 @@
 ---
-title: varnish-eslint-config
-githubLabel: 'varnish: varnish-eslint-config'
+title: eslint-config-varnish
+githubLabel: 'varnish: eslint-config-varnish'
 ---
 
-# Varnish ESLint Config
+# ESLint Config Varnish
 
 <p class="description">AI2 Varnish ESLint Package</p>
 
@@ -16,7 +16,7 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
 1. Install Varnish ESLint:
 
    ```
-   ~ yarn add @allenai/varnish-eslint-config 
+   ~ yarn add @allenai/eslint-config-varnish
    ```
 
 2. Add targets for linting and reformatting code to your `package.json` file:
@@ -38,4 +38,4 @@ Varnish proves `eslint` configurations that you can utilize with a few simple se
    ~ yarn lint:fix
    ```
 
-For more information about Varnish ESLint and further customization options, visit the [documentation](https://github.com/allenai/varnish-mui/tree/main/packages/varnish-eslint-config/README.md).
+For more information about Varnish ESLint and further customization options, visit the [documentation](https://github.com/allenai/varnish-mui/tree/main/packages/eslint-config-varnish/README.md).

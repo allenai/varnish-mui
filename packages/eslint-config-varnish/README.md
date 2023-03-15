@@ -1,10 +1,10 @@
-# ESLint Config
+# ESLint Config Varnish
 
 The files in this directory represent the `eslint` configuration settings
 for Varnish. They also have the `eslint` rules for MUI folded in.
 
 They will be published as a separate NPM module,
-`@allenai/varnish-eslint-config`. This allows them to be shared easily
+`@allenai/eslint-config-varnish`. This allows them to be shared easily
 across multiple AI2 projects.
 
 For more information about publishing and using shared `eslint` configuration
@@ -15,7 +15,7 @@ definitions, see [this documentation](https://eslint.org/docs/user-guide/configu
 1. Install it and it's peer dependencies:
 
    ```shell
-   ~ yarn add @allenai/varnish-eslint-config \
+   ~ yarn add @allenai/eslint-config-varnish \
        @typescript-eslint/eslint-plugin \
        @typescript-eslint/parser \
        eslint \
@@ -48,7 +48,7 @@ definitions, see [this documentation](https://eslint.org/docs/user-guide/configu
    ```bash
    cat <<EOF > .eslintrc.js
    module.exports = {
-       extends: [ "@allenai/varnish-eslint-config" ]
+       extends: [ "@allenai/eslint-config-varnish" ]
    };
    EOF
    ```
@@ -72,8 +72,10 @@ definitions, see [this documentation](https://eslint.org/docs/user-guide/configu
    ~ yarn lint:fix
    ```
 
-## Publishing
+## Documentation
 
-See instructions at the monorepo root [README](../../README.md)
+[The documentation](https://varnish.apps.allenai.org)
 
-🤘 ⛵️ 🎨
+## Contributing
+
+See instructions at the monorepo root [CONTRIBUTING](https://github.com/allenai/varnish-mui/blob/main/CONTRIBUTING.md)

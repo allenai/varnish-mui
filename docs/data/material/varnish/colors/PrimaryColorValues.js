@@ -6,19 +6,27 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled, css } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { color2, CopyToClipboardButton } from '@allenai/varnish';
+import { color2, CopyToClipboardButton } from '@allenai/varnish2';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function PrimaryColor(props) {
   return (
     <PrimaryColorGrid>
       <PrimaryColorBox color={props.color.hex} />
       <PrimaryColorName>
-        <CopyToClipboardButton text={`theme.color2.${props.color.displayName}`}>
+        <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
+          text={`theme.color2.${props.color.displayName}`}
+        >
           {props.color.displayName}{' '}
         </CopyToClipboardButton>
       </PrimaryColorName>
       <PrimaryColorHex>
-        <CopyToClipboardButton>{props.color.hex}</CopyToClipboardButton>
+        <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
+        >
+          {props.color.hex}
+        </CopyToClipboardButton>
       </PrimaryColorHex>
     </PrimaryColorGrid>
   );

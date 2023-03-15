@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import { Footer } from '@allenai/varnish';
+import { Footer } from '@allenai/varnish2';
 
 export default function Demo() {
   return (

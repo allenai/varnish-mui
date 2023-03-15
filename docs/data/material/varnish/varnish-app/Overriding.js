@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import { Color, Header, VarnishApp } from '@allenai/varnish';
+import { Color, Header, VarnishApp } from '@allenai/varnish2';
 
 export default function Demo() {
   const extendedTheme = {

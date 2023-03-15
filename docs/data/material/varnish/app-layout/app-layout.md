@@ -9,7 +9,7 @@ githubLabel: 'varnish: app-layout'
 
 ```jsx
 import { Route, Switch } from 'react-router-dom';
-import { Content, Footer, Header, VarnishApp } from '@allenai/varnish';
+import { Content, Footer, Header, VarnishApp } from '@allenai/varnish2';
 <VarnishApp>
   <Header>{/* see: varnish.allenai.org/components/header */}</Header>
   <Content main>

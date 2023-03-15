@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header, logos } from '@allenai/varnish';
+import { Header, logos } from '@allenai/varnish2';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 

@@ -14,6 +14,7 @@ import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
 import { useTranslate } from 'docs/src/modules/utils/i18n';
+import packageJson from '../../../../packages/varnish/package.json';
 
 const savedScrollTop = {};
 
@@ -219,7 +220,7 @@ export default function AppNavDrawer(props) {
       <React.Fragment>
         <ToolbarDiv>
           {canonicalAs.startsWith('/material-ui/') && (
-            <ProductIdentifier name="Varnish" metadata="Material UI" />
+            <ProductIdentifier name={`Varnish v${packageJson.version}`} metadata="Material UI" />
           )}
           {canonicalAs.startsWith('/joy-ui/') && (
             <ProductIdentifier name="Joy UI" metadata="MUI Core" />

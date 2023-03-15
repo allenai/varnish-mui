@@ -41,7 +41,7 @@ eg: `theme.palette.error.light`
 
 ### Extended Palette
 
-You can access Varnish-specific component palettes via the Extended Palette. 
+You can access Varnish-specific component palettes via the Extended Palette.
 
 eg: `theme.paletteExtended.background.dark` or `theme.paletteExtended.link.contrast`
 
