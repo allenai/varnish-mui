@@ -2,7 +2,7 @@
  * This file has been auto-generated. Please don't edit nor review.
  */
 
-import { logos } from '@allenai/varnish';
+import { logos } from '@allenai/varnish2';
 import { Box, Paper, Stack, styled } from '@mui/material';
 import * as React from 'react';
 

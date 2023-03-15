@@ -5,7 +5,7 @@
 import * as React from 'react';
 import { styled, css } from '@mui/material/styles';
 import { Stack } from '@mui/material';
-import { color2 } from '@allenai/varnish';
+import { color2 } from '@allenai/varnish2';
 
 export default function Demo() {
   const ColorDiv = styled('div', {

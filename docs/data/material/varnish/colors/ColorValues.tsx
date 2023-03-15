@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useTheme, styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { Color, CopyToClipboardButton } from '@allenai/varnish';
+import { Color, CopyToClipboardButton } from '@allenai/varnish2';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 export type ColorGroupDict = { [k: string]: Color[] };
 
@@ -89,17 +90,25 @@ function ColorRow(props: ColorRowProps) {
       </ColorBoxWrapper>
       <ColorName>
         <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
           text={`theme.${props.themeProp}.${props.color.displayName}`}
         >
           {props.color.displayName}
         </CopyToClipboardButton>
       </ColorName>
       <ColorHex>
-        <CopyToClipboardButton>{props.color.hex}</CopyToClipboardButton>
+        <CopyToClipboardButton
+          buttonContent={<ContentCopyIcon fontSize="inherit" />}
+        >
+          {props.color.hex}
+        </CopyToClipboardButton>
       </ColorHex>
       {props.color.rgba ? (
         <ColorRgb>
-          <CopyToClipboardButton text={props.color.rgba.toString()}>
+          <CopyToClipboardButton
+            buttonContent={<ContentCopyIcon fontSize="inherit" />}
+            text={props.color.rgba.toString()}
+          >
             <span>
               {props.color.rgba.r}, {props.color.rgba.g}, {props.color.rgba.b},{' '}
               {props.color.rgba.a}

@@ -1,48 +1,8 @@
-import { ThemeOptions, createTheme } from '@mui/material/styles';
+import { createTheme, ThemeOptions } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
-import {
-  color,
-  color2,
-  darkCategoricalColor,
-  lightCategoricalColor,
-  ColorType,
-  Color2Type,
-  LightCategoricalColorType,
-  DarkCategoricalColorType,
-} from './colors';
-import { paletteExtended, PaletteExtendedType } from './paletteExtended';
-
-interface VarnishMuiTheme {
-  paletteExtended: PaletteExtendedType;
-  color: ColorType;
-  color2: Color2Type;
-  darkCategoricalColor: DarkCategoricalColorType;
-  lightCategoricalColor: LightCategoricalColorType;
-}
-
-interface VarnishMuiThemeOptions {
-  paletteExtended?: PaletteExtendedType;
-  color?: ColorType;
-  color2?: Color2Type;
-  darkCategoricalColor?: DarkCategoricalColorType;
-  lightCategoricalColor?: LightCategoricalColorType;
-}
-
-// Update the Typography's variant prop options
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    dark: true;
-    default: true;
-  }
-}
-
-declare module '@mui/material/styles' {
-  interface Theme extends VarnishMuiTheme {}
-
-  // allow configuration using `createTheme`
-  interface ThemeOptions extends VarnishMuiThemeOptions {}
-}
+import { color, color2, darkCategoricalColor, lightCategoricalColor } from './colors';
+import { paletteExtended } from './paletteExtended';
 
 const fontFamily = [
   '"Lato"',

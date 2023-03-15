@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Content, Header, VarnishApp } from '@allenai/varnish';
+import { Content, Header, VarnishApp } from '@allenai/varnish2';
 
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import { StaticRouter } from 'react-router-dom/server';

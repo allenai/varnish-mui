@@ -18,7 +18,7 @@ import { pathnameToLanguage } from 'docs/src/modules/utils/helpers';
 import { getDesignTokens } from 'docs/src/modules/brandingTheme';
 import { highDensity } from 'docs/src/modules/components/ThemeContext';
 import { deepmerge } from '@mui/utils';
-import { VarnishApp } from '@allenai/varnish';
+import { VarnishApp } from '@allenai/varnish2';
 
 function FramedDemo(props) {
   const { children, document } = props;

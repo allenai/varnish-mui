@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Footer } from '@allenai/varnish';
+import { Footer } from '@allenai/varnish2';
 import { useTheme } from '@mui/material/styles';
 
 export default function Demo() {

@@ -11,7 +11,7 @@ By default, `VarnishApp` is wrapped in this ErrorBoundary component, so all runt
 
 ```jsx
 import React from 'react';
-import { VarnishApp } from '@allenai/varnish';
+import { VarnishApp } from '@allenai/varnish2';
 
 // Varnish app includes an ErrorBoundary
 const App = () => (
@@ -26,7 +26,7 @@ catch without affecting other sections.
 
 ```jsx
 import React from 'react';
-import { VarnishApp, ErrorBoundary } from '@allenai/varnish';
+import { VarnishApp, ErrorBoundary } from '@allenai/varnish2';
 
 const App = () => (
   <VarnishApp>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header } from '@allenai/varnish';
+import { Header } from '@allenai/varnish2';
 
 export default function Demo() {
   return (

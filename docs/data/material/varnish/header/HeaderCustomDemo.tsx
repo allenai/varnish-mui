@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { pxToRem, Header, logos } from '@allenai/varnish';
+import { pxToRem, Header, logos } from '@allenai/varnish2';
 import styled from 'styled-components';
 
 const Tagline = {

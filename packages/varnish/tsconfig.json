@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig",
-  "include": ["src/**/*", "test/**/*"],
+  "include": ["src/**/*", "test/**/*", "types"],
   "exclude": ["test/typescript/moduleAugmentation", "src/types/OverridableComponentAugmentation.ts"]
 }

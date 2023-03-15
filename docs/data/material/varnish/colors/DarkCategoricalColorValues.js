@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import { darkCategoricalColor, dictionaryToArray } from '@allenai/varnish';
+import { darkCategoricalColor, dictionaryToArray } from '@allenai/varnish2';
 import { ChartingGrid, ColorValues } from './ColorValues';
 
 const darkCategoricalColorGroup = {

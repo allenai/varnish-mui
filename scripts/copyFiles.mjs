@@ -164,7 +164,6 @@ async function run() {
       [
         // use enhanced readme from workspace root for `@mui/material`
         packageData.name === '@mui/material' ? '../../README.md' : './README.md',
-        '../../CHANGELOG.md',
         '../../LICENSE',
       ].map((file) => includeFileInBuild(file)),
     );

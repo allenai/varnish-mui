@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { logos } from '@allenai/varnish';
+import { logos } from '@allenai/varnish2';
 import { Box, Paper, Stack, styled } from '@mui/material';
 
 export default function Demo() {

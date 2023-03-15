@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import { color2 } from '@allenai/varnish';
+import { color2 } from '@allenai/varnish2';
 import { ColorValues, ExtendedGrid } from './ColorValues';
 
 const colorGroups = {
