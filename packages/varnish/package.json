@@ -1,6 +1,6 @@
 {
   "name": "@allenai/varnish2",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "author": "Reviz",
   "description": "Varnish theme and components that implement Google's Material Design.",
