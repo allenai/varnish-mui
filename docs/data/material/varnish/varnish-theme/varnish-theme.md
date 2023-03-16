@@ -22,3 +22,7 @@ const DarkBanner = styled.div`
 ## Theme Values
 
 {{"demo": "ThemeValuesDemo.js", "defaultCodeOpen": false}}
+
+## Theme in Action
+
+You can see the Theme in action in the [Typography section](/material-ui/react-typography/) and the [Varnish Colors section](/material-ui/varnish/colors/).

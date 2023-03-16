@@ -24,8 +24,7 @@ export default function Demo() {
   };
 
   return (
-    <>
-      <List
+    <List
         sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
         component="nav"
         aria-labelledby="nested-list-subheader"
@@ -42,6 +41,5 @@ export default function Demo() {
           </div>
         ))}
       </List>
-    </>
   );
 }
