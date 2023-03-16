@@ -66,6 +66,19 @@ Please follow the coding style of the project. MUI uses prettier and eslint, so 
 
 1. If your changes look good, make a pull-request against main.
 
+## Versioning
+
+Varnish2 follows [Semantic Versioning 2.0.0](https://semver.org/).
+Varnish2 version numbers have three parts: `major.minor.patch`.
+The version number is incremented based on the level of change included in the release.
+
+- **Major releases** contain significant new features, some developer assistance is expected during the update.
+  When updating to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
+- **Minor releases** contain important new features.
+  Minor releases are fully backward-compatible; no developer assistance is expected during the update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
+- **Patch releases** are low risk, contain bug fixes and small new features.
+  No developer assistance is expected during the update.
+
 ## Publishing packages to NPM
 
 **Note: We do not use `lerna publish`. Lerna is configured by the MUI team to release packages we do not want to release.**
@@ -90,7 +103,9 @@ Please follow the coding style of the project. MUI uses prettier and eslint, so 
 
    ```sh
    cd packages/varnish
-   npm version major|minor|patch
+   npm version patch # major|minor|patch follow semver
+   git add packages/varnish/package.json
+   git commit -m "version update for release to npm"
    git push --tags origin main
    yarn release # yarn build && cd build && npm publish && cd ..
    ```
@@ -99,9 +114,11 @@ Please follow the coding style of the project. MUI uses prettier and eslint, so 
 
    ```sh
    cd packages/eslint-config-varnish
-   npm version major|minor|patch
+   npm version patch # major|minor|patch follow semver
+   git add packages/eslint-config-varnish/package.json
+   git commit -m "version update for release to npm"
    git push --tags origin main
-   yarn release # npm publish
+   npm publish
    ```
 
 1. Update the [Skiff Template](https://github.com/allenai/skiff-template) to use the latest packages.
