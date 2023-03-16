@@ -19,7 +19,7 @@
     "directory": "packages/varnish"
   },
   "license": "MIT",
-  "homepage": "https://varnishj.allenai.org/material-ui/getting-started/overview/",
+  "homepage": "https://varnish.allenai.org/material-ui/getting-started/overview/",
   "scripts": {
     "build": "yarn build:legacy && yarn build:modern && yarn build:node && yarn build:stable && yarn build:umd && yarn build:types && yarn build:copy-files",
     "build:legacy": "node ../../scripts/build.mjs legacy",
