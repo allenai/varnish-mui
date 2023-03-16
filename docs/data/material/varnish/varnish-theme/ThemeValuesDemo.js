@@ -29,21 +29,21 @@ export default function Demo() {
 
   return (
     <List
-        sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
-        {topLevelKeys.map((key) => (
-          <div key={key}>
-            <ListItemButton onClick={() => handleClick(key)}>
-              <ListItemText primary={key} />
-              {open.includes(key) ? <ExpandLess /> : <ExpandMore />}
-            </ListItemButton>
-            <Collapse in={open.includes(key)} timeout="auto" unmountOnExit>
-              <pre>{JSON.stringify(theme[key], null, 2)}</pre>
-            </Collapse>
-          </div>
-        ))}
-      </List>
+      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+    >
+      {topLevelKeys.map((key) => (
+        <div key={key}>
+          <ListItemButton onClick={() => handleClick(key)}>
+            <ListItemText primary={key} />
+            {open.includes(key) ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={open.includes(key)} timeout="auto" unmountOnExit>
+            <pre>{JSON.stringify(theme[key], null, 2)}</pre>
+          </Collapse>
+        </div>
+      ))}
+    </List>
   );
 }
