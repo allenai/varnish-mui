@@ -104,10 +104,12 @@ The version number is incremented based on the level of change included in the r
    ```sh
    cd packages/varnish
    npm version patch # major|minor|patch follow semver
-   git add packages/varnish/package.json
+   git add package.json
    git commit -m "version update for release to npm"
    git push --tags origin main
-   yarn release # yarn build && cd build && npm publish && cd ..
+   yarn build
+   cd build # important
+   npm publish # make sure you are in the packages/varnish/build directory
    ```
 
 1. To release **eslint-config-varnish**:
@@ -115,7 +117,7 @@ The version number is incremented based on the level of change included in the r
    ```sh
    cd packages/eslint-config-varnish
    npm version patch # major|minor|patch follow semver
-   git add packages/eslint-config-varnish/package.json
+   git add package.json
    git commit -m "version update for release to npm"
    git push --tags origin main
    npm publish
