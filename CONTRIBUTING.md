@@ -108,8 +108,7 @@ The version number is incremented based on the level of change included in the r
    git commit -m "version update for release to npm"
    git push --tags origin main
    yarn build
-   cd build # important
-   npm publish # make sure you are in the packages/varnish/build directory
+   cd build && npm publish && cd .. # deploy from the packages/varnish/build directory
    ```
 
 1. To release **eslint-config-varnish**:
