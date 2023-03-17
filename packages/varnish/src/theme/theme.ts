@@ -34,6 +34,10 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         styleOverrides: (theme) => `
           a {
             color: ${theme.paletteExtended.link.default};
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
           }
           .linkContrast {
             color: ${theme.paletteExtended.link.contrast};
@@ -43,6 +47,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiLink: {
         styleOverrides: {
           root: ({ ownerState, theme }) => ({
+            textDecoration: 'none',
             ...(ownerState.variant === 'dark'
               ? {
                   color: theme.paletteExtended.link.contrast,
@@ -58,6 +63,14 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           root: {
             color: color2.B3.hex,
           },
+        },
+      },
+      MuiAppBar: {
+        styleOverrides: {
+          root: ({theme}) => ({
+            backgroundColor: 'white',
+            color: theme.palette.text.primary
+          }),
         },
       },
     },
@@ -235,8 +248,8 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         active: color2.B3.hex,
         hover: color2.B3.hex,
         selected: color2.B3.hex,
-        disabled: color2.B3.hex,
-        disabledBackground: color2.N5.hex,
+        disabled: color2.B6.hex,
+        disabledBackground: color2.N6.hex,
         focus: color2.B3.hex,
       },
     },
