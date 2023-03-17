@@ -24,7 +24,6 @@ const fontFamily = [
 ].join(',');
 const fontWeightLight = 300;
 const fontWeightRegular = 400;
-const fontWeightMedium = 500;
 const fontWeightBold = 700;
 
 export const getVarnishDesignTokens = (): ThemeOptions => {
@@ -60,13 +59,23 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           },
         },
       },
+      MuiButton: {
+        styleOverrides: {
+          sizeSmall: () => ({
+            fontSize: '0.875rem',
+          }),
+          sizeLarge: ({ theme }) => ({
+            fontSize: theme.typography.button.fontSize,
+          }),
+        },
+      },
     },
     typography: {
       fontFamily,
-      fontWeightLight, // 300
-      fontWeightRegular, // 400
-      fontWeightMedium, // 500
-      fontWeightBold, // 700
+      fontWeightLight,
+      fontWeightRegular,
+      fontWeightMedium: fontWeightRegular,
+      fontWeightBold,
       h1: {
         color: color2.B3.hex,
         fontFamily,
