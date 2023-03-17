@@ -33,6 +33,10 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         styleOverrides: (theme) => `
           a {
             color: ${theme.paletteExtended.link.default};
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
           }
           .linkContrast {
             color: ${theme.paletteExtended.link.contrast};
@@ -42,6 +46,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiLink: {
         styleOverrides: {
           root: ({ ownerState, theme }) => ({
+            textDecoration: 'none',
             ...(ownerState.variant === 'dark'
               ? {
                   color: theme.paletteExtended.link.contrast,
