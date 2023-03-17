@@ -249,8 +249,6 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         active: color2.B3.hex,
         hover: color2.B3.hex,
         selected: color2.B3.hex,
-        disabled: color2.B3.hex,
-        disabledBackground: color2.N5.hex,
         focus: color2.B3.hex,
       },
     },
