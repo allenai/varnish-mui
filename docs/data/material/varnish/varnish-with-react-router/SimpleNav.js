@@ -4,6 +4,7 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Content, Header, VarnishApp } from '@allenai/varnish2';
 
 import { BrowserRouter, NavLink } from 'react-router-dom';
@@ -24,30 +25,41 @@ Router.propTypes = {
   children: PropTypes.node,
 };
 
+const DarkBackground = styled.li`
+  background: ${({ theme }) => theme.paletteExtended.background.dark};
+  padding: ${({ theme }) => theme.spacing(1)};
+`;
+
+const LiteBackground = styled(DarkBackground)`
+  background: ${({ theme }) => theme.palette.common.white};
+`;
+
 export default function Demo() {
   return (
-    <VarnishApp>
-      <Content>
-        <Header.AI2Banner />
-        <Router>
-          <ul>
-            <li>
-              <NavLink
-                reloadDocument
-                className={'linkContrast'}
-                to="/material-ui/getting-started/overview/"
-              >
-                To Getting Started
-              </NavLink>
-            </li>
-            <li>
-              <NavLink reloadDocument to="/material-ui/varnish/app-layout">
-                To Layout
-              </NavLink>
-            </li>
-          </ul>
-        </Router>
-      </Content>
-    </VarnishApp>
+    <Router>
+      <VarnishApp>
+        <div style={{ width: '100%' }}>
+          <Header.AI2Banner />
+          <Content main>
+            <ul>
+              <DarkBackground>
+                <NavLink
+                  reloadDocument
+                  className={'linkContrast'}
+                  to="/material-ui/getting-started/overview/"
+                >
+                  Link on dark background
+                </NavLink>
+              </DarkBackground>
+              <LiteBackground>
+                <NavLink reloadDocument to="/material-ui/varnish/app-layout">
+                  Link on lite background
+                </NavLink>
+              </LiteBackground>
+            </ul>
+          </Content>
+        </div>
+      </VarnishApp>
+    </Router>
   );
 }

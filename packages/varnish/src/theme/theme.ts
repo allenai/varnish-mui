@@ -24,7 +24,6 @@ const fontFamily = [
 ].join(',');
 const fontWeightLight = 300;
 const fontWeightRegular = 400;
-const fontWeightMedium = 500;
 const fontWeightBold = 700;
 
 export const getVarnishDesignTokens = (): ThemeOptions => {
@@ -34,6 +33,10 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         styleOverrides: (theme) => `
           a {
             color: ${theme.paletteExtended.link.default};
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
           }
           .linkContrast {
             color: ${theme.paletteExtended.link.contrast};
@@ -43,6 +46,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       MuiLink: {
         styleOverrides: {
           root: ({ ownerState, theme }) => ({
+            textDecoration: 'none',
             ...(ownerState.variant === 'dark'
               ? {
                   color: theme.paletteExtended.link.contrast,
@@ -60,13 +64,23 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
           },
         },
       },
+      MuiButton: {
+        styleOverrides: {
+          sizeSmall: () => ({
+            fontSize: '0.875rem',
+          }),
+          sizeLarge: ({ theme }) => ({
+            fontSize: theme.typography.button.fontSize,
+          }),
+        },
+      },
     },
     typography: {
       fontFamily,
-      fontWeightLight, // 300
-      fontWeightRegular, // 400
-      fontWeightMedium, // 500
-      fontWeightBold, // 700
+      fontWeightLight,
+      fontWeightRegular,
+      fontWeightMedium: fontWeightRegular,
+      fontWeightBold,
       h1: {
         color: color2.B3.hex,
         fontFamily,
@@ -230,14 +244,6 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       background: {
         paper: color2.N1.hex,
         default: color2.white.hex,
-      },
-      action: {
-        active: color2.B3.hex,
-        hover: color2.B3.hex,
-        selected: color2.B3.hex,
-        disabled: color2.B3.hex,
-        disabledBackground: color2.N5.hex,
-        focus: color2.B3.hex,
       },
     },
     paletteExtended,

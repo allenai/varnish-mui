@@ -12,6 +12,58 @@ githubLabel: 'varnish: header'
 You should put this at the top of the page. It is highly recommended to be present on every page of
 your application.
 
+## Examples
+
+### Default
+
+The Header provides sensible defaults and can be used out of the box without any changes.
+
+{{"demo": "HeaderDefaultDemo.js", "defaultCodeOpen": false}}
+
+### With Logo and Content
+
+This shows how to render a header with an application logo. Logos make your application more fun, even emojis suffice!
+
+{{"demo": "HeaderWithLogoDemo.js", "defaultCodeOpen": false}}
+
+### With Tagline
+
+This shows how to render a header with an application tagline.
+
+{{"demo": "HeaderWithTaglineDemo.js", "defaultCodeOpen": false}}
+
+### With Menu
+
+This shows how to render a header with a logo and navigation.
+
+{{"demo": "HeaderWithMenuDemo.js", "defaultCodeOpen": false}}
+
+### AI2 Banner
+
+A component that only displays the AI2 Banner.
+
+{{"demo": "HeaderJustBannerDemo.js", "defaultCodeOpen": false}}
+
+### Custom Header
+
+Header with custom content.
+
+{{"demo": "HeaderCustomDemo.js", "defaultCodeOpen": false}}
+
+### Smart AI2 Banner
+
+#### Collapse on Window Scroll
+
+An AI2 Banner at the top of the header that collapses when the page is scrolled.
+
+{{"demo": "HeaderWithTargetWindowSmartBanner.js", "defaultCodeOpen": false}}
+
+#### Collapse on Target Div Scroll
+
+An AI2 Banner at the top of the header that collapses when the target div is scrolled.
+
+{{"demo": "HeaderWithTargetDivSmartBannerDemo.js", "defaultCodeOpen": false}}
+
 ### API
 
 | Property            | Type                                                                       | Default   | Description                                                                                                                                                                                                                          |
@@ -74,55 +126,3 @@ A helper component for styling the App Tagline in the `<Header/>`.
     </Header.Columns>
 </Header
 ```
-
-## Examples
-
-### Default
-
-The Header provides sensible defaults and can be used out of the box without any changes.
-
-{{"demo": "HeaderDefaultDemo.js", "defaultCodeOpen": false}}
-
-### With Logo and Content
-
-This shows how to render a header with an application logo. Logos make your application more fun, even emojis suffice!
-
-{{"demo": "HeaderWithLogoDemo.js", "defaultCodeOpen": false}}
-
-### With Tagline
-
-This shows how to render a header with an application tagline.
-
-{{"demo": "HeaderWithTaglineDemo.js", "defaultCodeOpen": false}}
-
-### With Menu
-
-This shows how to render a header with a logo and navigation.
-
-{{"demo": "HeaderWithMenuDemo.js", "defaultCodeOpen": false}}
-
-### AI2 Banner
-
-A component that only displays the AI2 Banner.
-
-{{"demo": "HeaderJustBannerDemo.js", "defaultCodeOpen": false}}
-
-### Custom Header
-
-Header with custom content.
-
-{{"demo": "HeaderCustomDemo.js", "defaultCodeOpen": false}}
-
-### Smart AI2 Banner
-
-#### Collapse on Window Scroll
-
-An AI2 Banner at the top of the header that collapses when the page is scrolled.
-
-{{"demo": "HeaderWithTargetWindowSmartBanner.js", "defaultCodeOpen": false}}
-
-#### Collapse on Target Div Scroll
-
-An AI2 Banner at the top of the header that collapses when the target div is scrolled.
-
-{{"demo": "HeaderWithTargetDivSmartBannerDemo.js", "defaultCodeOpen": false}}
