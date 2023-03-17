@@ -113,7 +113,7 @@ const MaxWidthDiv = styled.div`
 
 const StyledAppBar = styled(AppBar)`
   &&&& {
-    background-color: theme.palette.common.white;
+    background-color: ${({ theme }) => theme.palette.common.white};
     color: ${({ theme }) => theme.palette.text.primary};
     size: 22pt;
     top: 0;
