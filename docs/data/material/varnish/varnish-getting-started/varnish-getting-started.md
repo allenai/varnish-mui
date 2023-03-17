@@ -9,7 +9,7 @@ githubLabel: 'varnish: getting-started'
 
 ## Note About Versions
 
-Older [documentation on Varnish-Deprecated](https://varnish-deprecated.allenai.org/components/table/) and [documentation on Varnish-1](https://varnish.allenai.org/components/getting_started) is still availiable. But, you should upgrade to varnish2, and if you’re not sure how, contact REVIZ.
+Older [documentation on Varnish-Deprecated](https://varnish-deprecated.allenai.org/components/table/) and [documentation on Varnish-1](https://varnish.allenai.org/components/getting_started) is still availiable. All new applications should be using varnish 2.  Upgrading older applications is non trivial. contact REVIZ if you feel this should happen.
 
 ## Getting Started
 
