@@ -245,12 +245,6 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         paper: color2.N1.hex,
         default: color2.white.hex,
       },
-      action: {
-        active: color2.B3.hex,
-        hover: color2.B3.hex,
-        selected: color2.B3.hex,
-        focus: color2.B3.hex,
-      },
     },
     paletteExtended,
     color,
