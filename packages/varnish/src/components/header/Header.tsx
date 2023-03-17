@@ -112,12 +112,16 @@ const MaxWidthDiv = styled.div`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  size: 22pt;
-  top: 0;
-  width: 100%;
-  box-shadow: 0px ${({ theme }) => theme.spacing(0.5)} ${({ theme }) => theme.spacing(2)}
-    rgba(10, 41, 57, 0.08);
-  transition: top 200ms ease-in-out;
+  &&&& {
+    background-color: white;
+    color: ${({ theme }) => theme.palette.text.primary};
+    size: 22pt;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px ${({ theme }) => theme.spacing(0.5)} ${({ theme }) => theme.spacing(2)}
+      rgba(10, 41, 57, 0.08);
+    transition: top 200ms ease-in-out;
+  }
 `;
 
 interface ScrollProps {

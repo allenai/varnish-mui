@@ -60,7 +60,6 @@ export const color2: Dictionary<Color> = {
   B3: new Color('B3', '#265ED4', true),
   B4: new Color('B4', '#1B4596', true),
   B5: new Color('B5', '#223367', true),
-  B6: new Color('B6', '#265ED461', true), // TODO: validate naming conventions with Jon
   P1: new Color('P1', '#E6E3F7'),
   P2: new Color('P2', '#B7AFEB'),
   P3: new Color('P3', '#7446F2', true),
@@ -76,7 +75,6 @@ export const color2: Dictionary<Color> = {
   N3: new Color('N3', '#AEB7C4', true),
   N4: new Color('N4', '#616C7A', true),
   N5: new Color('N5', '#47515C', true),
-  N6: new Color('N6', '#47515C4D', true), // TODO: validate naming conventions with Jon
   black: new Color('Black', '#000', true),
   white: new Color('White', '#FFF'),
   transparent: new Color('Transparent', '#00000000'),
