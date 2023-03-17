@@ -85,7 +85,7 @@ The version number is incremented based on the level of change included in the r
 
 1. Make sure you have [NodeJS](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/lang/en/) installed.
 
-2. Login to `npm`:
+1. Login to `npm`:
 
    ```bash
    npm login
@@ -95,11 +95,11 @@ The version number is incremented based on the level of change included in the r
    get a permissions error when you attempt the `publish` command below. If
    this occurs ask someone from [REVIZ](mailto:reviz@allenai.org) to add you.
 
-3. Review the changes since the last release manually and make sure you're comfortable releasing.
+1. Review the changes since the last release manually and make sure you're comfortable releasing.
 
-4. Make sure you're on the `main` branch without any pending changes.
+1. Make sure you're on the `main` branch without any pending changes.
 
-5. To release **varnish2**:
+1. To release **varnish2**:
 
    ```sh
    cd packages/varnish
@@ -112,7 +112,7 @@ The version number is incremented based on the level of change included in the r
    npm publish # make sure you are in the packages/varnish/build directory
    ```
 
-6. To release **eslint-config-varnish**:
+1. To release **eslint-config-varnish**:
 
    ```sh
    cd packages/eslint-config-varnish
@@ -123,4 +123,4 @@ The version number is incremented based on the level of change included in the r
    npm publish
    ```
 
-7. Update the [Skiff Template](https://github.com/allenai/skiff-template) to use the latest packages.
+1. Update the [Skiff Template](https://github.com/allenai/skiff-template) to use the latest packages.
