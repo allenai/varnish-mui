@@ -13,7 +13,7 @@ All applications should be wrapped in a `<VarnishApp>`. This ensures
 Varnish is setup correctly. If you don't do this your application
 probably won't compile, or if it does things probably won't work.
 
-## Example Usage
+## Basic Usage
 
 ```jsx
 import React from 'react';
