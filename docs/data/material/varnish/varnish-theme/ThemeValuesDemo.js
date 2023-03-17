@@ -4,46 +4,40 @@
 
 import * as React from 'react';
 import { getTheme } from '@allenai/varnish2';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 
 export default function Demo() {
   const theme = getTheme();
   const topLevelKeys = Object.keys(theme);
 
-  const [open, setOpen] = React.useState([]);
-
-  const handleClick = (key) => {
-    if (open.includes(key)) {
-      const idx = open.indexOf(key);
-      open.splice(idx, 1);
-      setOpen([...open]);
-    } else {
-      setOpen([...open, key]);
-    }
-  };
-
   return (
-    <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-    >
+    <div style={{ maxWidth: '100%' }}>
       {topLevelKeys.map((key) => (
-        <div key={key}>
-          <ListItemButton onClick={() => handleClick(key)}>
-            <ListItemText primary={key} />
-            {open.includes(key) ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          <Collapse in={open.includes(key)} timeout="auto" unmountOnExit>
-            <pre>{JSON.stringify(theme[key], null, 2)}</pre>
-          </Collapse>
-        </div>
+        <Accordion key={key}>
+          <AccordionSummary
+            expandIcon={<ExpandMore />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            {key}
+          </AccordionSummary>
+          <AccordionDetails>
+            <div
+              style={{
+                maxWidth: '90%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'column',
+              }}
+            >
+              <pre style={{ whiteSpace: 'pre-wrap' }}>
+                {JSON.stringify(theme[key], null, 2)}
+              </pre>
+            </div>
+          </AccordionDetails>
+        </Accordion>
       ))}
-    </List>
+    </div>
   );
 }
