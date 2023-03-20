@@ -16,3 +16,36 @@ The 'To Getting Started' example link below shows how to employ the contrast col
 ## Example
 
 {{"demo": "SimpleNav.js", "bg": true}}
+
+## ScrollToTopOnPageChange
+
+A common function you may want to add to you React Router Application to auto scroll the user to the top of a page when they navigate to a new page.
+
+```jsx
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+export const ScrollToTopOnPageChange = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  return null;
+};
+```
+
+### Usage
+
+```jsx
+import React from 'react';
+import { VarnishApp } from '@allenai/varnish2/components';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+<BrowserRouter>
+  <ScrollToTopOnPageChange />
+  <VarnishApp>
+    <App />
+  </VarnishApp>
+</BrowserRouter>;
+```
