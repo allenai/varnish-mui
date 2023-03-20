@@ -1,30 +1,128 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+/* REMOVED BY VARNISH ON PURPOSE
+import NextLink from 'next/link';
+*/
 import { useRouter } from 'next/router';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { styled, alpha } from '@mui/material/styles';
 import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
+import Menu from '@mui/material/Menu';
+/* REMOVED BY VARNISH ON PURPOSE
+import MenuItem from '@mui/material/MenuItem';
+*/
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/utils';
+/* REMOVED BY VARNISH ON PURPOSE
+import SvgMuiLogo from 'docs/src/icons/SvgMuiLogo';
+import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
+*/
 import AppNavDrawerItem from 'docs/src/modules/components/AppNavDrawerItem';
 import { pathnameToLanguage, pageToTitleI18n } from 'docs/src/modules/utils/helpers';
 import PageContext from 'docs/src/modules/components/PageContext';
-import { useTranslate } from 'docs/src/modules/utils/i18n';
+import {
+  /* REMOVED BY VARNISH ON PURPOSE
+  useUserLanguage,
+  */
+  useTranslate,
+} from 'docs/src/modules/utils/i18n';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+/* REMOVED BY VARNISH ON PURPOSE
+import DoneRounded from '@mui/icons-material/DoneRounded';
+*/
+import MuiProductSelector from 'docs/src/modules/components/MuiProductSelector';
+/* REMOVED BY VARNISH ON PURPOSE
+import materialPkgJson from '../../../../packages/mui-material/package.json';
+import joyPkgJson from '../../../../packages/mui-joy/package.json';
+import basePkgJson from '../../../../packages/mui-base/package.json';
+import systemPkgJson from '../../../../packages/mui-system/package.json';
+*/
 import packageJson from '../../../../packages/varnish/package.json';
 
 const savedScrollTop = {};
 
-function ProductIdentifier({ name, metadata }) {
+function ProductDrawerButton(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <React.Fragment>
+      <Button
+        id="mui-product-selector"
+        aria-controls="drawer-open-button"
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        endIcon={<ArrowDropDownRoundedIcon fontSize="small" sx={{ ml: -0.5 }} />}
+        sx={(theme) => ({
+          py: 0.1,
+          minWidth: 0,
+          fontSize: theme.typography.pxToRem(13),
+          fontWeight: theme.typography.fontWeightMedium,
+          color: (theme.vars || theme).palette.primary[600],
+          '& svg': {
+            ml: -0.6,
+            width: 18,
+            height: 18,
+          },
+          '& > span': {
+            ml: '4px',
+          },
+          ...theme.applyDarkStyles({
+            color: (theme.vars || theme).palette.primary[300],
+          }),
+        })}
+      >
+        {props.productName}
+      </Button>
+      <Menu
+        id="mui-product-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'mui-product-selector',
+        }}
+        PaperProps={{
+          sx: {
+            width: { xs: 340, sm: 'auto' },
+          },
+        }}
+      >
+        <MuiProductSelector />
+      </Menu>
+    </React.Fragment>
+  );
+}
+
+ProductDrawerButton.propTypes = {
+  productName: PropTypes.string,
+};
+
+function ProductIdentifier({
+  name,
+  metadata,
+  /* REMOVED BY VARNISH ON PURPOSE
+  versionSelector
+  */
+}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Typography
         sx={(theme) => ({
           ml: 1,
-          color: theme.palette.grey[600],
+          color: (theme.vars || theme).palette.grey[600],
           fontSize: theme.typography.pxToRem(11),
           fontWeight: 700,
           textTransform: 'uppercase',
@@ -215,10 +313,109 @@ export default function AppNavDrawer(props) {
     const { canonicalAs } = pathnameToLanguage(router.asPath);
 
     const navItems = renderNavItems({ onClose, pages, activePageParents, depth: 0, t });
+    /* REMOVED BY VARNISH ON PURPOSE
+    const renderVersionSelector = (versions, sx) => {
+      if (!versions?.length) {
+        return null;
+      }
+
+      const currentVersion = versions.find((version) => version.current) || versions[0];
+      return (
+        <React.Fragment>
+          <Button
+            id="mui-version-selector"
+            onClick={(event) => {
+              setAnchorEl(event.currentTarget);
+            }}
+            endIcon={
+              versions.length > 1 ? (
+                <ArrowDropDownRoundedIcon fontSize="small" sx={{ ml: -0.5 }} />
+              ) : null
+            }
+            sx={[
+              (theme) => ({
+                py: 0.1,
+                minWidth: 0,
+                fontSize: theme.typography.pxToRem(13),
+                fontWeight: 500,
+                color: (theme.vars || theme).palette.primary[600],
+                '& svg': {
+                  ml: -0.6,
+                  width: 18,
+                  height: 18,
+                },
+                ...theme.applyDarkStyles({
+                  color: (theme.vars || theme).palette.primary[300],
+                }),
+              }),
+              ...(Array.isArray(sx) ? sx : [sx]),
+            ]}
+          >
+            {currentVersion.text}
+          </Button>
+          <Menu
+            id="mui-version-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={() => setAnchorEl(null)}
+          >
+            {versions.map((item) => {
+              if (item.text === 'View all versions') {
+                return [
+                  <Divider key="divider" />,
+                  <MenuItem key="all-versions" component="a" href={item.href} onClick={onClose}>
+                    {/* eslint-disable-next-line material-ui/no-hardcoded-labels -- version string is untranslatable * /}
+                    {`View all versions`}
+                  </MenuItem>,
+                ];
+              }
+              return (
+                <MenuItem
+                  key={item.text}
+                  {...(item.current
+                    ? {
+                        selected: true,
+                        onClick: () => setAnchorEl(null),
+                      }
+                    : {
+                        component: 'a',
+                        href: item.href,
+                        onClick: onClose,
+                      })}
+                >
+                  {item.text} {item.current && <DoneRounded sx={{ fontSize: 16, ml: 0.25 }} />}
+                </MenuItem>
+              );
+            })}
+          </Menu>
+        </React.Fragment>
+      );
+    };
+    */
 
     return (
       <React.Fragment>
         <ToolbarDiv>
+          {/* REMOVED BY VARNISH ON PURPOSE
+          <NextLink href="/" passHref legacyBehavior>
+            <Box
+              component="a"
+              onClick={onClose}
+              aria-label={t('goToHome')}
+              sx={(theme) => ({
+                pr: '12px',
+                mr: '4px',
+                borderRight: '1px solid',
+                borderColor: (theme.vars || theme).palette.grey[200],
+                ...theme.applyDarkStyles({
+                  borderColor: alpha(theme.palette.primary[100], 0.08),
+                }),
+              })}
+            >
+              <SvgMuiLogo width={30} />
+            </Box>
+          </NextLink>
+          */}
           {canonicalAs.startsWith('/material-ui/') && (
             <ProductIdentifier name={`Varnish v${packageJson.version}`} metadata="Material UI" />
           )}
@@ -236,28 +433,106 @@ export default function AppNavDrawer(props) {
           )}
           {(canonicalAs.startsWith('/x/react-data-grid/') ||
             canonicalAs.startsWith('/x/api/data-grid/')) && (
-            <ProductIdentifier name="Data Grid" metadata="MUI X" />
+            <ProductIdentifier
+              name="Data Grid"
+              metadata="MUI X"
+              {
+                ...{
+                  /* REMOVED BY VARNISH ON PURPOSE
+              versionSelector={renderVersionSelector([
+                // DATA_GRID_VERSION is set from the X repo
+                {
+                  text: 'v6',
+                  ...(process.env.DATA_GRID_VERSION.startsWith('6')
+                    ? {
+                        text: `v${process.env.DATA_GRID_VERSION}`,
+                        current: true,
+                      }
+                    : {
+                        href: `https://mui.com${languagePrefix}/components/data-grid/`,
+                      }),
+                },
+                {
+                  text: 'v5',
+                  ...(process.env.DATA_GRID_VERSION.startsWith('5')
+                    ? {
+                        text: `v${process.env.DATA_GRID_VERSION}`,
+                        current: true,
+                      }
+                    : {
+                        href: `https://v5.mui.com${languagePrefix}/components/data-grid/`,
+                      }),
+                },
+                { text: 'v4', href: `https://v4.mui.com${languagePrefix}/components/data-grid/` },
+              ])}
+            */
+                }
+              }
+            />
           )}
           {(canonicalAs.startsWith('/x/react-date-pickers/') ||
             canonicalAs.startsWith('/x/api/date-pickers/')) && (
-            <ProductIdentifier name="Date pickers" metadata="MUI X" />
+            <ProductIdentifier
+              name="Date pickers"
+              metadata="MUI X"
+              {
+                ...{
+                  /* REMOVED BY VARNISH ON PURPOSE
+              versionSelector={renderVersionSelector([
+                // DATE_PICKERS_VERSION is set from the X repo
+                {
+                  ...(process.env.DATE_PICKERS_VERSION.startsWith('6')
+                    ? {
+                        text: `v${process.env.DATE_PICKERS_VERSION}`,
+                        current: true,
+                      }
+                    : {
+                        text: `v6`,
+                        href: `https://next.mui.com${languagePrefix}/components/data-grid/`,
+                      }),
+                },
+                {
+                  ...(process.env.DATE_PICKERS_VERSION.startsWith('5')
+                    ? {
+                        text: `v${process.env.DATE_PICKERS_VERSION}`,
+                        current: true,
+                      }
+                    : {
+                        text: `v5`,
+                        href: `https://v5.mui.com${languagePrefix}/components/data-grid/`,
+                      }),
+                },
+              ])}
+              */
+                }
+              }
+            />
           )}
           {canonicalAs.startsWith('/toolpad/') && (
             <ProductIdentifier name="Toolpad" metadata="MUI Toolpad" />
           )}
         </ToolbarDiv>
         <Divider
-          sx={{
-            borderColor: (theme) =>
-              theme.palette.mode === 'dark'
-                ? alpha(theme.palette.primary[100], 0.08)
-                : theme.palette.grey[100],
-          }}
+          sx={(theme) => ({
+            borderColor: (theme.vars || theme).palette.grey[100],
+            ...theme.applyDarkStyles({
+              borderColor: alpha(theme.palette.primary[100], 0.08),
+            }),
+          })}
         />
         {navItems}
       </React.Fragment>
     );
-  }, [activePageParents, pages, onClose, t, router.asPath]);
+  }, [
+    activePageParents,
+    pages,
+    onClose,
+    t,
+    router.asPath,
+    /* REMOVED BY VARNISH ON PURPOSE
+    languagePrefix, anchorEl, setAnchorEl,
+    */
+  ]);
 
   return (
     <nav className={className} aria-label={t('mainNavigation')}>

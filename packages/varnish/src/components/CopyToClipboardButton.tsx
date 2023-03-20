@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 
@@ -10,7 +9,7 @@ interface Props {
   children: NonNullable<React.ReactNode>;
 }
 export function CopyToClipboardButton({ text, autoHideDuration, buttonContent, children }: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
   const value = text ? (text as string) : children.toString();
   const handleClick = () => {
     setOpen(true);

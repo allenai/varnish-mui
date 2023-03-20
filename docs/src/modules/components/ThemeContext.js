@@ -207,9 +207,6 @@ export function ThemeProvider(props) {
       {
         direction,
         ...brandingDesignTokens,
-        nprogress: {
-          color: brandingDesignTokens.palette.primary.main,
-        },
         palette: {
           ...nextPalette,
           mode: paletteMode,
