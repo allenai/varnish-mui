@@ -19,8 +19,17 @@ export default function Demo() {
             {key}
           </AccordionSummary>
           <AccordionDetails>
-            <div style={{ maxWidth: '90%', display: 'flex', flexWrap: 'wrap', flexDirection: 'column' }} >
-              <pre style={{whiteSpace: 'pre-wrap' }}>{JSON.stringify((theme as any)[key], null, 2)}</pre>
+            <div
+              style={{
+                maxWidth: '90%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'column',
+              }}
+            >
+              <pre style={{ whiteSpace: 'pre-wrap' }}>
+                {JSON.stringify((theme as any)[key], null, 2)}
+              </pre>
             </div>
           </AccordionDetails>
         </Accordion>
