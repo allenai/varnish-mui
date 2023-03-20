@@ -13,6 +13,10 @@ module.exports = [
     pathname: '/material-ui/varnish/app',
     subheader: 'APP',
     children: [
+      {
+        pathname: '/material-ui/varnish/varnish-getting-started/',
+        title: 'Getting Started',
+      },
       { pathname: '/material-ui/varnish/varnish-app', title: 'Varnish App' },
     ],
   },

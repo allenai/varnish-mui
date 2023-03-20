@@ -5,16 +5,20 @@ githubLabel: 'varnish: getting-started'
 
 # Getting Started
 
-<p class="description">Getting Started with Varnish2</p>
+<p class="description">Getting Started with Varnish</p>
 
 ## Note About Versions
 
-Older [documentation on Varnish-Deprecated](https://varnish-deprecated.allenai.org/components/table/) and [documentation on Varnish-1](https://varnish.allenai.org/components/getting_started) is still availiable. All new applications should be using varnish 2. Upgrading older applications is non trivial. contact REVIZ if you feel this should happen.
+All new applications should be using `Varnish2`. However, many older applicaitons will still be using `Varnish`. [Documentation on deprecated version](https://varnish-deprecated.allenai.org/) is still availiable.
+
+## Upgrading from Varnish to Varnish2
+
+Upgrading older applications is non trivial. contact REVIZ if you feel this should happen.
 
 ## Getting Started
 
 If you started your application from [Skiff Template](https://github.com/allenai/skiff-template),
-then you're already using Varnish2, as it comes installed by default.
+then you're already using `Varnish`, as it comes installed by default.
 
 However, if you didn't, follow these steps to use `Varnish`:
 
@@ -58,6 +62,6 @@ However, if you didn't, follow these steps to use `Varnish`:
 
 ## Material UI Components
 
-Varnish consists of a few components and many styles that are automatically applied to all
-[Material UI components](https://mui.com/components/). We encourage you to explore their
+`Varnish` consists of a few components and many styles that are automatically applied to all
+[Material UI components](https://varnish.allenai.org/material-ui/). We encourage you to explore their
 documentation and use any component that suits you.

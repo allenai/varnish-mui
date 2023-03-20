@@ -5,7 +5,7 @@ githubLabel: 'varnish: varnish-app'
 
 # Varnish App
 
-<p class="description">A top-level container for `Varnish` applications.</p>
+<p class="description">A top-level container for Varnish applications.</p>
 
 ## When To Use
 

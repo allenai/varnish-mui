@@ -1,0 +1,11 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+{topLevelKeys.map((key: string) => (
+  <Accordion key={key}>
+    <AccordionSummary expandIcon={<ExpandMore />}>{key}</AccordionSummary>
+    <AccordionDetails>
+      <pre style={{ whiteSpace: 'pre-wrap' }}>
+        {JSON.stringify((theme as any)[key], null, 2)}
+      </pre>
+    </AccordionDetails>
+  </Accordion>
+))}
