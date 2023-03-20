@@ -1,5 +1,15 @@
 module.exports = [
   {
+    pathname: '/material-ui/varnish/getting-started',
+    subheader: 'DOCS',
+    children: [
+      {
+        pathname: '/material-ui/varnish/varnish-getting-started/',
+        title: 'Getting Started with Varnish',
+      },
+    ],
+  },
+  {
     pathname: '/material-ui/varnish/app',
     subheader: 'APP',
     children: [
@@ -19,6 +29,7 @@ module.exports = [
       { pathname: '/material-ui/varnish/footer', title: 'AI2 Footer' },
       { pathname: '/material-ui/varnish/logos', title: 'AI2 Logos' },
       { pathname: '/material-ui/varnish/colors' },
+      { pathname: '/material-ui/varnish/varnish-theme', title: 'Varnish Theme' },
       { pathname: '/material-ui/varnish/error-boundary', title: 'Error Boundary' },
     ],
   },
