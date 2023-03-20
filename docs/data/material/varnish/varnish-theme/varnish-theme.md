@@ -21,7 +21,7 @@ const DarkBanner = styled.div`
 
 ## Theme Values
 
-{{"demo": "ThemeValuesDemo.js", "defaultCodeOpen": false}}
+{{"demo": "ThemeValuesDemo.js", "defaultCodeOpen": false, "bg": false}}
 
 ## Theme in Action
 

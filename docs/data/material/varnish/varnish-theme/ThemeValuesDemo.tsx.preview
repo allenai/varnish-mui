@@ -1,17 +1,11 @@
 {/* This file has been auto-generated. Please don't edit nor review. */}
 {topLevelKeys.map((key: string) => (
   <Accordion key={key}>
-    <AccordionSummary
-      expandIcon={<ExpandMore />}
-      aria-controls="panel1a-content"
-      id="panel1a-header"
-    >
-      {key}
-    </AccordionSummary>
+    <AccordionSummary expandIcon={<ExpandMore />}>{key}</AccordionSummary>
     <AccordionDetails>
-      <div style={{ maxWidth: '90%', display: 'flex', flexWrap: 'wrap', flexDirection: 'column' }} >
-        <pre style={{whiteSpace: 'pre-wrap' }}>{JSON.stringify((theme as any)[key], null, 2)}</pre>
-      </div>
+      <pre style={{ whiteSpace: 'pre-wrap' }}>
+        {JSON.stringify((theme as any)[key], null, 2)}
+      </pre>
     </AccordionDetails>
   </Accordion>
 ))}

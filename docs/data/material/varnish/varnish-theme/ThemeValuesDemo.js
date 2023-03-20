@@ -15,26 +15,11 @@ export default function Demo() {
     <div style={{ maxWidth: '100%' }}>
       {topLevelKeys.map((key) => (
         <Accordion key={key}>
-          <AccordionSummary
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            {key}
-          </AccordionSummary>
+          <AccordionSummary expandIcon={<ExpandMore />}>{key}</AccordionSummary>
           <AccordionDetails>
-            <div
-              style={{
-                maxWidth: '90%',
-                display: 'flex',
-                flexWrap: 'wrap',
-                flexDirection: 'column',
-              }}
-            >
-              <pre style={{ whiteSpace: 'pre-wrap' }}>
-                {JSON.stringify(theme[key], null, 2)}
-              </pre>
-            </div>
+            <pre style={{ whiteSpace: 'pre-wrap' }}>
+              {JSON.stringify(theme[key], null, 2)}
+            </pre>
           </AccordionDetails>
         </Accordion>
       ))}
