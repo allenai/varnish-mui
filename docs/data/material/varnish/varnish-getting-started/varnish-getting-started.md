@@ -9,7 +9,7 @@ githubLabel: 'varnish: getting-started'
 
 ## Note About Versions
 
-Older [documentation on Varnish-Deprecated](https://varnish-deprecated.allenai.org/components/table/) and [documentation on Varnish-1](https://varnish.allenai.org/components/getting_started) is still availiable. All new applications should be using varnish 2.  Upgrading older applications is non trivial. contact REVIZ if you feel this should happen.
+Older [documentation on Varnish-Deprecated](https://varnish-deprecated.allenai.org/components/table/) and [documentation on Varnish-1](https://varnish.allenai.org/components/getting_started) is still availiable. All new applications should be using varnish 2. Upgrading older applications is non trivial. contact REVIZ if you feel this should happen.
 
 ## Getting Started
 
@@ -36,9 +36,9 @@ However, if you didn't, follow these steps to use `Varnish`:
     import { VarnishApp } from '@allenai/varnish2';
 
     const App = () => (
-        <VarnishApp>
-            <YourApp />
-        </VarnishApp>
+      <VarnishApp>
+        <YourApp />
+      </VarnishApp>
     );
     ```
 
@@ -49,10 +49,10 @@ However, if you didn't, follow these steps to use `Varnish`:
 
     // use as any other React component
     const MyComponent = () => (
-        <div>
-            <h1>👋 Hello World</h1>
-            <Footer />
-        </div>
+      <div>
+        <h1>👋 Hello World</h1>
+        <Footer />
+      </div>
     );
     ```
 

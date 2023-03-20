@@ -32,6 +32,20 @@ const PageLinkButton = styled(Button)(({ theme }) => ({
   fontWeight: theme.typography.fontWeightMedium,
 }));
 
+/* REMOVED BY VARNISH ON PURPOSE
+const FeedbackGrid = styled(Grid)(({ theme }) => {
+  return {
+    width: 'auto',
+    color: theme.palette.text.secondary,
+    [theme.breakpoints.down('sm')]: {
+      order: 3,
+      marginTop: 40,
+      width: '100%',
+    },
+  };
+});
+*/
+
 /**
  * @typedef {import('docs/src/pages').MuiPage} MuiPage
  * @typedef {import('docs/src/pages').OrderedMuiPage} OrderedMuiPage

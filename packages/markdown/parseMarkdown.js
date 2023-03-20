@@ -263,6 +263,11 @@ function createRender(context) {
         `<a aria-labelledby="${hash}" class="anchor-link" href="#${hash}" tabindex="-1">`,
         '<svg><use xlink:href="#anchor-link-icon" /></svg>',
         '</a>',
+        /* REMOVED BY VARNISH ON PURPOSE
+        `<button title="Post a comment" class="comment-link" data-feedback-hash="${hash}">`,
+        '<svg><use xlink:href="#comment-link-icon" /></svg>',
+        `</button>`,
+        */
         `</h${level}>`,
       ].join('');
     };
