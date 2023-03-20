@@ -58,7 +58,7 @@ Please follow the coding style of the project. MUI uses prettier and eslint, so 
    yarn
    yarn prettier
    yarn docs:typescript:formatted
-   yarn lint --fix
+   yarn lint:fix
    yarn start
    ```
 
@@ -123,3 +123,73 @@ The version number is incremented based on the level of change included in the r
    ```
 
 1. Update the [Skiff Template](https://github.com/allenai/skiff-template) to use the latest packages.
+
+## Merging changes from the parent repo
+
+This repo is a fork of `git@github.com:mui/material-ui.git`
+Monthly, we should merge changes from the original evolving codebase into our repo.
+
+### Background
+
+We have 2 remotes:
+
+```
+$ remote -v
+
+origin    git@github.com:allenai/varnish-mui.git (fetch)
+origin    git@github.com:allenai/varnish-mui.git (push)
+upstream  git@github.com:mui/material-ui.git (fetch)
+upstream  git@github.com:mui/material-ui.git (push)
+```
+
+### Merge Process
+
+Fetch all the branches of that remote into remote-tracking branches
+
+```sh
+git fetch upstream
+```
+
+Make a local upgrade branch branch. You don't have to name it upgrade :-P
+
+```sh
+git checkout -b upgrade
+```
+
+Merge upstream changes into local branch
+
+```sh
+git merge upstream/master
+```
+
+Fix any merge conflicts and test new code. (There are usually hundreds of conflicts, but most are easy to resolve. If you see thousands, hold up and get help)
+
+**Note**: `.preview` files and `.js` files with a corresponding `.ts*` file, should be ignored, review the `.ts*` file and the other files will be overridden via build process.
+After running `yarn prettier`, `yarn docs:typescript:formatted`, and `yarn lint:fix`, you should bulk `resolve using mine` the `.preview` and `.js` files with a corresponding `.ts*` file.
+
+For other files:
+`DU` Any files we deleted (and they updated) can likely remain deleted.
+`UD` Any file they deleted (and we updated) can likely be deleted.
+`AA` Review
+`UU` Review
+`UA` Review
+`AU` Review
+`yarn.lock` after fixing conflicts, and rerunning yarn `resolve using mine`
+
+Most files that are not in the varnish sections are going to conflict on formatting, just `resolve using theirs` then formatting durring build will remix any issues.
+However, there are some changes outside of varnish sections having to do with altering the header or not showing ads, etc... In those cases, try to reason out if the change is fine.
+
+Once merges are complete, lint the code.
+
+```sh
+yarn
+yarn prettier
+yarn docs:typescript:formatted
+yarn lint:fix
+```
+
+Then make a pull request from upgrade -> origin/main
+
+```sh
+git push --set-upstream origin upgrade
+```
