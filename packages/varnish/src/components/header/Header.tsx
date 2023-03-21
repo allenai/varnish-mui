@@ -7,7 +7,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
 import { pxToRem } from '../../utils/base';
-import { Content } from '../Content';
+import { Content as VContent } from '../Content';
 
 // TODO: Any theming constants (font-size of  headings, box shadow coloring, z-index) needs to be updated
 
@@ -65,6 +65,11 @@ const DecorationlessAnchor = styled(Link)`
   }
   text-decoration: none;
   color: ${({ theme }) => theme.palette.text.primary};
+`;
+
+const Content = styled(VContent)`
+  padding-top: 0;
+  padding-bottom: 0;
 `;
 
 // Wraps the header logo with an ahref if href is passed in
