@@ -20,7 +20,7 @@ export interface ContentProps {
 
 const contentCSS = css<{ layout?: LayoutVariant; bgcolor?: string }>`
   max-width: ${({ theme, layout }) =>
-    layout === 'center-aligned' ? theme.breakpoints.values.lg : null};
+    layout === 'center-aligned' ? `${theme.breakpoints.values.lg}px` : null};
   width: 100%;
   ${({ layout }) => (layout === 'center-aligned' ? 'margin: 0 auto;' : '')}
   padding: ${({ theme }) => theme.spacing(3)};
@@ -30,7 +30,7 @@ const contentCSS = css<{ layout?: LayoutVariant; bgcolor?: string }>`
   background: ${({ theme, bgcolor }) =>
     bgcolor ? (theme.color[bgcolor] ? theme.color[bgcolor] : bgcolor) : 'none'};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.values.sm}) {
+  @media (max-width: ${({ theme }) => `${theme.breakpoints.values.sm}px`}) {
     padding: ${({ theme }) => theme.spacing(1.5)};
   }
 `;

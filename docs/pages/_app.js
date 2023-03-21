@@ -20,7 +20,6 @@ import createEmotionCache from 'docs/src/createEmotionCache';
 import findActivePage from 'docs/src/modules/utils/findActivePage';
 import useRouterExtra from 'docs/src/modules/utils/useRouterExtra';
 import { LicenseInfo } from '@mui/x-data-grid-pro';
-import '../../packages/varnish/src/theme.css';
 
 // Remove the license warning from demonstration purposes
 LicenseInfo.setLicenseKey(process.env.NEXT_PUBLIC_MUI_LICENSE);

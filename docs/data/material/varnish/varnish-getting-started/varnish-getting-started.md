@@ -32,10 +32,16 @@ However, if you didn't, follow these steps to use `Varnish`:
     yarn add @allenai/varnish2
     ```
 
-1.  Add Varnish styles by importing the theme file.
+1.  Add Varnish fonts by importing them in your index.html.
 
     ```jsx
-    import '@allenai/varnish2/theme.css';
+    <head>
+      ...
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      />
+    </head>
     ```
 
 1.  Wrap your `<YourApp />` in the `<VarnishApp />` component:
@@ -44,7 +50,6 @@ However, if you didn't, follow these steps to use `Varnish`:
     import React from 'react';
     import ReactDOM from 'react-dom';
     import { VarnishApp } from '@allenai/varnish2';
-    import '@allenai/varnish2/theme.css';
 
     const App = () => (
       <VarnishApp>
