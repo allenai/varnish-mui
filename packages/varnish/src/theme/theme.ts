@@ -183,6 +183,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
       },
     },
     palette: {
+      mode: 'light',
       primary: {
         light: color2.B2.hex,
         main: color2.B3.hex,

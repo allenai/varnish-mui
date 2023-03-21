@@ -32,12 +32,19 @@ However, if you didn't, follow these steps to use `Varnish`:
     yarn add @allenai/varnish2
     ```
 
-2.  Wrap your `<YourApp />` in the `<VarnishApp />` component:
+1.  Add Varnish styles by importing the theme file.
 
-    ```jsx dark
+    ```jsx
+    import '@allenai/varnish2/theme.css';
+    ```
+
+1.  Wrap your `<YourApp />` in the `<VarnishApp />` component:
+
+    ```jsx
     import React from 'react';
     import ReactDOM from 'react-dom';
     import { VarnishApp } from '@allenai/varnish2';
+    import '@allenai/varnish2/theme.css';
 
     const App = () => (
       <VarnishApp>
@@ -46,9 +53,9 @@ However, if you didn't, follow these steps to use `Varnish`:
     );
     ```
 
-3.  Now that you have Varnish installed, you can start using it to style your application.
+1.  Now that you have Varnish installed, you can start using it to style your application.
 
-    ```jsx dark
+    ```jsx
     import { Footer } from '@allenai/varnish2';
 
     // use as any other React component

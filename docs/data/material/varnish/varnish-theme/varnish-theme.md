@@ -9,7 +9,7 @@ githubLabel: 'varnish: theme'
 
 ## Usage in a Styled Component
 
-```jsx dark
+```jsx
 import styled from 'styled-components';
 
 const DarkBanner = styled.div`

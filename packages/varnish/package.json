@@ -27,7 +27,7 @@
     "build:node": "node ../../scripts/build.mjs node",
     "build:stable": "node ../../scripts/build.mjs stable",
     "build:umd": "cross-env BABEL_ENV=stable rollup -c scripts/rollup.config.js",
-    "build:copy-files": "node ../../scripts/copyFiles.mjs",
+    "build:copy-files": "node ../../scripts/copyFiles.mjs && cp ./src/theme.css ./build",
     "build:types": "node ../../scripts/buildTypes.mjs",
     "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "typescript": "tslint -p tsconfig.json \"{src,test}/**/*.{spec,d}.{ts,tsx}\" && tsc -p tsconfig.json",
@@ -53,12 +53,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.6",
+    "@fontsource/lato": "^4.5.10",
     "@types/react-transition-group": "^4.4.5",
     "clsx": "^1.2.1",
     "csstype": "^3.1.1",
+    "hex-rgb": "^5.0.0",
     "react-is": "^18.2.0",
-    "react-transition-group": "^4.4.5",
-    "hex-rgb": "^5.0.0"
+    "react-transition-group": "^4.4.5"
   },
   "sideEffects": false,
   "publishConfig": {
