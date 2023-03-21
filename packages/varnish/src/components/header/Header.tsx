@@ -7,6 +7,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
 import { pxToRem } from '../../utils/base';
+import { Content } from '../Content';
 
 // TODO: Any theming constants (font-size of  headings, box shadow coloring, z-index) needs to be updated
 
@@ -107,10 +108,6 @@ interface ColumnsProps {
   columns?: string;
 }
 
-const MaxWidthDiv = styled.div`
-  width: 100%;
-`;
-
 const StyledAppBar = styled(AppBar)`
   &&&& {
     background-color: ${({ theme }) => theme.palette.common.white};
@@ -173,7 +170,7 @@ function HeaderComponent({
       )}
       {children ? (
         <Toolbar>
-          <MaxWidthDiv>{children}</MaxWidthDiv>
+          <Content>{children}</Content>
         </Toolbar>
       ) : null}
     </StyledAppBar>
