@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { ThemeProvider, useTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { brandingDarkTheme, brandingLightTheme } from 'docs/src/modules/brandingTheme';
+import { brandingLightTheme } from 'docs/src/modules/brandingTheme';
 import { NextNProgressBar } from 'docs/src/modules/components/AppFrame';
 import SkipLink from 'docs/src/modules/components/SkipLink';
 import MarkdownLinks from 'docs/src/modules/components/MarkdownLinks';
+import { getTheme } from '@allenai/varnish2';
+import { deepmerge } from '@mui/utils';
 
 interface BrandingProviderProps {
   children: React.ReactNode;
@@ -16,11 +18,11 @@ interface BrandingProviderProps {
 
 export default function BrandingProvider(props: BrandingProviderProps) {
   const { children, mode: modeProp } = props;
-  const upperTheme = useTheme();
-  const mode = modeProp || upperTheme.palette.mode;
-  const theme = mode === 'dark' ? brandingDarkTheme : brandingLightTheme;
+  // bring in varnish overrides
+  const vTheme = getTheme();
+  const varnishTheme = deepmerge(brandingLightTheme, vTheme);
   return (
-    <ThemeProvider theme={modeProp ? () => theme : theme}>
+    <ThemeProvider theme={modeProp ? () => varnishTheme : varnishTheme}>
       {modeProp ? null : <NextNProgressBar />}
       {modeProp ? null : <CssBaseline />}
       {modeProp ? null : <SkipLink />}

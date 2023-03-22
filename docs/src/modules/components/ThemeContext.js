@@ -244,7 +244,7 @@ export function ThemeProvider(props) {
   }, [theme]);
 
   // bring in varnish overrides
-  const vTheme = getTheme(paletteMode);
+  const vTheme = getTheme();
   const varnishTheme = deepmerge(theme, vTheme);
 
   return (
