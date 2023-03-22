@@ -1,8 +1,9 @@
-import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { createTheme, ThemeOptions, Theme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
 
 import { color, color2, darkCategoricalColor, lightCategoricalColor } from './colors';
 import { paletteExtended } from './paletteExtended';
+import { getTypographyStyle } from '../utils/base';
 
 const fontFamily = [
   '"Lato"',
@@ -26,22 +27,34 @@ const fontWeightLight = 300;
 const fontWeightRegular = 400;
 const fontWeightBold = 700;
 
+// exported so it can be used by other themes in the docs
+export const getMuiCssBaselineStyleOverrides = (theme: Omit<Theme, 'components'>) => {
+  return `
+    a {
+      color: ${theme.paletteExtended.link.default};
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .linkContrast {
+      color: ${theme.paletteExtended.link.contrast};
+    }
+    ${getTypographyStyle(theme, 'h1')}
+    ${getTypographyStyle(theme, 'h2')}
+    ${getTypographyStyle(theme, 'h3')}
+    ${getTypographyStyle(theme, 'h4')}
+    ${getTypographyStyle(theme, 'h5')}
+    ${getTypographyStyle(theme, 'h6')}
+    ${getTypographyStyle(theme, 'body1', 'p')}
+  `;
+};
+
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     components: {
       MuiCssBaseline: {
-        styleOverrides: (theme) => `
-          a {
-            color: ${theme.paletteExtended.link.default};
-            text-decoration: none;
-          }
-          a:hover {
-            text-decoration: underline;
-          }
-          .linkContrast {
-            color: ${theme.paletteExtended.link.contrast};
-          }
-        `,
+        styleOverrides: (theme) => getMuiCssBaselineStyleOverrides(theme),
       },
       MuiLink: {
         styleOverrides: {

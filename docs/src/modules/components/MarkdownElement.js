@@ -2,13 +2,12 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { alpha, darken, styled } from '@mui/material/styles';
-import {
-  brandingDarkTheme as darkTheme,
-  brandingLightTheme as lightTheme,
-} from 'docs/src/modules/brandingTheme';
+import { getMuiCssBaselineStyleOverrides } from '../../../../packages/varnish/src/theme';
 
 const Root = styled('div')(
-  ({ theme }) => ({
+  // varnish renamed theme to lightTheme to make fewer conflicts
+  // the intent is to use the theme, not the lightTheme
+  ({ theme: lightTheme, theme }) => ({
     ...lightTheme.typography.body1,
     lineHeight: 1.5625, // Increased compared to the 1.5 default to make the docs easier to read.
     color: `var(--muidocs-palette-text-primary, ${lightTheme.palette.text.primary})`,
@@ -451,6 +450,9 @@ const Root = styled('div')(
       },
     },
   }),
+  // make sure varnish typography is preserved
+  ({ theme }) => getMuiCssBaselineStyleOverrides(theme),
+  /* REMOVED BY VARNISH ON PURPOSE
   ({ theme }) => ({
     [`:where(${theme.vars ? '[data-mui-color-scheme="dark"]' : '.mode-dark'}) &`]: {
       color: 'rgb(255, 255, 255)',
@@ -581,6 +583,7 @@ const Root = styled('div')(
       },
     },
   }),
+  */
 );
 
 const MarkdownElement = React.forwardRef(function MarkdownElement(props, ref) {
