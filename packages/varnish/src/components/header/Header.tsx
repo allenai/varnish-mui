@@ -20,7 +20,7 @@ const AppNameText = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: ${pxToRem(30)};
-  color: ${({ theme }) => theme.color.N5};
+  color: ${({ theme }) => theme.color2.N5};
 
   @media (max-width: 480px) {
     font-size: ${pxToRem(24)};
@@ -41,6 +41,7 @@ const AppTagline = styled.h4`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: ${pxToRem(24)};
+  color: ${({ theme }) => theme.color2.N5};
 
   @media (max-width: 480px) {
     display: none;
@@ -69,8 +70,7 @@ const DecorationlessAnchor = styled(Link)`
 `;
 
 const Content = styled(VContent)`
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
 `;
 
 // Wraps the header logo with an ahref if href is passed in

@@ -8,7 +8,7 @@ module.exports = [
         title: 'Getting Started',
       },
       { pathname: '/material-ui/varnish/varnish-app', title: 'Varnish App' },
-      { pathname: '/material-ui/varnish/varnish-theme', title: 'Varnish Theme' },
+      { pathname: '/material-ui/varnish/varnish-theme', title: 'Varnish' },
     ],
   },
   {
