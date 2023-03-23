@@ -183,7 +183,7 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         fontWeight: fontWeightBold,
         fontSize: pxToRem(16),
         lineHeight: 1.5,
-        letterSpacing: pxToEm(0.3),
+        letterSpacing: pxToEm(0.304),
         textTransform: 'none',
       },
       caption: {
