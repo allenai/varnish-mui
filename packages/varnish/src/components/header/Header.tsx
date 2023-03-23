@@ -70,15 +70,15 @@ const DecorationlessAnchor = styled(Link)`
 `;
 
 const Content = styled(VContent)`
-  &&& {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
 `;
 
 const Toolbar = styled(MuiToolbar)`
-  padding-left: 0;
-  padding-right: 0;
+  &&& {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 // Wraps the header logo with an ahref if href is passed in
