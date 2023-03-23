@@ -70,8 +70,10 @@ const DecorationlessAnchor = styled(Link)`
 `;
 
 const Content = styled(VContent)`
-  padding-top: 0;
-  padding-bottom: 0;
+  &&& {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 `;
 
 const Toolbar = styled(MuiToolbar)`
