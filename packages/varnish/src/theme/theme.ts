@@ -46,7 +46,9 @@ export const getMuiCssBaselineStyleOverrides = (theme: Omit<Theme, 'components'>
     ${getTypographyStyle(theme, 'h4')}
     ${getTypographyStyle(theme, 'h5')}
     ${getTypographyStyle(theme, 'h6')}
-    ${getTypographyStyle(theme, 'body1', 'p')}
+    p {
+      ${getTypographyStyle(theme, 'body1', false)}
+      margin: 16px 0;
   `;
 };
 
@@ -168,7 +170,6 @@ export const getVarnishDesignTokens = (): ThemeOptions => {
         fontSize: pxToRem(16),
         lineHeight: 1.45,
         letterSpacing: pxToEm(0.28),
-        margin: '16px 0',
       },
       body2: {
         fontFamily,

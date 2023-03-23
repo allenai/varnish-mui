@@ -26,10 +26,10 @@ type IndexableTypography = Indexable<Record<Variant, TypographyStyle>>;
 export const getTypographyStyle = (
   theme: Omit<Theme, 'components'>,
   key: Variant,
-  keyOverride?: string,
+  includeKey: boolean = true,
 ) => {
   return `
-    ${keyOverride || key} {
+    ${includeKey ? `${key} {` : ''}
       color: ${(theme.typography as IndexableTypography)[key].color};
       font-family: ${(theme.typography as IndexableTypography)[key].fontFamily};
       font-weight:  ${(theme.typography as IndexableTypography)[key].fontWeight};
@@ -37,6 +37,6 @@ export const getTypographyStyle = (
       line-height:  ${(theme.typography as IndexableTypography)[key].lineHeight};
       letter-spacing:  ${(theme.typography as IndexableTypography)[key].letterSpacing};
       margin:  ${(theme.typography as IndexableTypography)[key].margin};
-    }
+    ${includeKey ? '}' : ''}
   `;
 };
