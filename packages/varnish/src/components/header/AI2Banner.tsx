@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { AI2Logo } from '../logos/AI2Logo';
+import { Content } from '../Content';
 
 export interface AI2BannerProps {
   children?: React.ReactNode;
@@ -11,11 +12,9 @@ export const BannerLink = styled.a`
   padding: 5px 0 2px 0;
 `;
 
-const BannerContent = styled.div`
+const BannerContent = styled(Content)`
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: ${({ theme }) => theme.spacing(3)};
-  padding-right: ${({ theme }) => theme.spacing(3)};
 `;
 
 const DarkBanner = styled.div`

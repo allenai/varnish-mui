@@ -20,6 +20,7 @@ const AppNameText = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: ${pxToRem(30)};
+  color: ${({ theme }) => theme.color.N5};
 
   @media (max-width: 480px) {
     font-size: ${pxToRem(24)};
