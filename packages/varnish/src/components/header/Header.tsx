@@ -2,7 +2,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Link from '@mui/material/Link';
 import AppBar from '@mui/material/AppBar';
 import Collapse from '@mui/material/Collapse';
-import Toolbar from '@mui/material/Toolbar';
+import MuiToolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
@@ -70,7 +70,13 @@ const DecorationlessAnchor = styled(Link)`
 `;
 
 const Content = styled(VContent)`
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+`;
+
+const Toolbar = styled(MuiToolbar)`
+  padding-left: 0;
+  padding-right: 0;
 `;
 
 // Wraps the header logo with an ahref if href is passed in
