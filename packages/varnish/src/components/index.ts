@@ -4,5 +4,6 @@ export * from './ErrorBoundary';
 export * from './Footer';
 export * from './header';
 export * from './logos';
+export * from './MaxWidthText';
 export * from './VarnishApp';
 export * from './VarnishContext';

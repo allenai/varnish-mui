@@ -8,6 +8,7 @@ module.exports = [
         title: 'Getting Started',
       },
       { pathname: '/material-ui/varnish/varnish-app', title: 'Varnish App' },
+      { pathname: '/material-ui/varnish/varnish-theme', title: 'Varnish Theme' },
     ],
   },
   {
@@ -23,8 +24,8 @@ module.exports = [
       { pathname: '/material-ui/varnish/footer', title: 'AI2 Footer' },
       { pathname: '/material-ui/varnish/logos', title: 'AI2 Logos' },
       { pathname: '/material-ui/varnish/colors' },
-      { pathname: '/material-ui/varnish/varnish-theme', title: 'Varnish Theme' },
       { pathname: '/material-ui/varnish/error-boundary', title: 'Error Boundary' },
+      { pathname: '/material-ui/varnish/max-width-text', title: 'Max Width Text' },
     ],
   },
   {

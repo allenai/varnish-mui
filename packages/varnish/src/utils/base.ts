@@ -5,8 +5,16 @@ export type Dictionary<T> = { [id: string]: T };
 
 export type Indexable<T> = { [K in keyof T & string]: T[K] };
 
+const pxTo = (px: number, suffix: string, base: number) => {
+  return `${px / base}${suffix}`;
+};
+
 export const pxToRem = (px: number, base: number = 16) => {
-  return `${px / base}rem`;
+  return pxTo(px, 'rem', base);
+};
+
+export const pxToEm = (px: number, base: number = 16) => {
+  return pxTo(px, 'em', base);
 };
 
 export function dictionaryToArray<T>(dict: Dictionary<T>) {
@@ -28,6 +36,7 @@ export const getTypographyStyle = (
       font-size:  ${(theme.typography as IndexableTypography)[key].fontSize};
       line-height:  ${(theme.typography as IndexableTypography)[key].lineHeight};
       letter-spacing:  ${(theme.typography as IndexableTypography)[key].letterSpacing};
+      margin:  ${(theme.typography as IndexableTypography)[key].margin};
     }
   `;
 };
