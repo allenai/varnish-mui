@@ -49,6 +49,7 @@ export const getMuiCssBaselineStyleOverrides = (theme: Omit<Theme, 'components'>
     p {
       ${getTypographyStyle(theme, 'body1', false)}
       margin: 16px 0;
+    }
   `;
 };
 

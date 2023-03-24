@@ -23,9 +23,19 @@ module.exports = withDocsInfra({
     return [
       {
         source: '/',
-        destination: '/material-ui/varnish/varnish-app/',
+        destination: '/material-ui/varnish/varnish-getting-started/',
         permanent: true,
       },
+      {
+        source: '/material-ui/',
+        destination: '/material-ui/varnish/varnish-getting-started/',
+        permanent: true,
+      },
+      {
+        source: '/material-ui/varnish/',
+        destination: '/material-ui/varnish/varnish-getting-started/',
+        permanent: true,
+      }
     ];
   },
   webpack: (config, options) => {
