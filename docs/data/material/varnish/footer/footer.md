@@ -34,3 +34,10 @@ Dark Variant of the Footer.
 Footer with custom content.
 
 {{"demo": "FooterCustomDemo.js", "defaultCodeOpen": false}}
+
+### API
+
+| Property        | Type                | Default   | Description                          |
+| :-------------- | ------------------- | :-------- | :----------------------------------- |
+| variant         | 'default' \| 'dark' | 'default' | Used contrast text color when 'dark. |
+| backgroundColor | string?             | undefined | Background color of footer.          |

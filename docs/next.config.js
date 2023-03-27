@@ -35,7 +35,7 @@ module.exports = withDocsInfra({
         source: '/material-ui/varnish/',
         destination: '/material-ui/varnish/varnish-getting-started/',
         permanent: true,
-      }
+      },
     ];
   },
   webpack: (config, options) => {

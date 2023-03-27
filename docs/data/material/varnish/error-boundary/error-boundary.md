@@ -39,3 +39,19 @@ const App = () => (
   </VarnishApp>
 );
 ```
+
+## Examples
+
+### Default
+
+{{"demo": "BasicDemo.js", "defaultCodeOpen": false}}
+
+### Custom Title
+
+{{"demo": "CustomDemo.js", "defaultCodeOpen": false}}
+
+### API
+
+| Property   | Type   | Default                        | Description           |
+| :--------- | ------ | :----------------------------- | :-------------------- |
+| errorTitle | string | "Sorry, something went wrong." | Title of error alert. |
