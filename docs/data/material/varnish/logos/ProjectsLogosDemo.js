@@ -4,52 +4,74 @@
 
 import * as React from 'react';
 import { logos } from '@allenai/varnish2';
-import { Box, Paper, Stack, styled } from '@mui/material';
+import { styled, ImageListItem, ImageListItemBar } from '@mui/material';
 
 export default function Demo() {
-  const Item = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(1),
-    textAlign: 'center',
-  }));
+  const Item = styled(ImageListItem)`
+    background: white;
+    width: 160px;
+    margin: ${({ theme }) => theme.spacing(0.5)};
+    border: 1px solid ${({ theme }) => theme.color2.N2.hex};
+  `;
+  const Center = styled('div')`
+    margin: 60px auto 10px auto;
+    text-align: center;
+  `;
+  const List = styled('div')`
+    display: flex;
+    flex-wrap: wrap;
+  `;
 
   return (
-    <Box>
-      <Stack spacing={2}>
-        <Item>
-          <div>AllenNLP</div>
+    <List>
+      <Item>
+        <Center>
+          <ImageListItemBar title="AllenNLP" position="top" />
           <logos.AllenNLP />
-        </Item>
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Aristo</div>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Aristo" position="top" />
           <logos.Aristo />
-        </Item>
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Mosaic</div>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Mosaic" position="top" />
           <logos.Mosaic />
-        </Item>
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Prior</div>
-          <logos.Prior />
-        </Item>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Prior" position="top" />
+          <logos.Prior />{' '}
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Semantic Scholar</div>
-          <logos.SemanticScholar />
-        </Item>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Semantic Scholar" position="top" />
+          <logos.SemanticScholar />{' '}
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Fairness</div>
-          <logos.Fairness />
-        </Item>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Fairness" position="top" />
+          <logos.Fairness />{' '}
+        </Center>
+      </Item>
 
-        <Item>
-          <div>Incubator</div>
-          <logos.Incubator />
-        </Item>
-      </Stack>
-    </Box>
+      <Item>
+        <Center>
+          <ImageListItemBar title="Incubator" position="top" />
+          <logos.Incubator />{' '}
+        </Center>
+      </Item>
+    </List>
   );
 }

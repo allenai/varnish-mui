@@ -1,11 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Alert from '@mui/material/Alert';
-
-import { Content } from './Content';
+import AlertTitle from '@mui/material/AlertTitle';
 
 export interface ErrorBoundaryProps {
-  defaultErrorMessage?: string;
+  errorTitle?: string;
   children: React.ReactNode | JSX.Element;
 }
 
@@ -38,29 +37,30 @@ export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, Error
   }
 
   render() {
+    const { errorTitle = 'Sorry, something went wrong.', children } = this.props;
+    const { error } = this.state;
+
     // If there's no error, just return what renders via the happy path.
-    if (!this.state.error) {
-      return this.props.children;
+    if (!error) {
+      return children;
     }
 
     const showErrorDetails = process.env.NODE_ENV === 'development';
-    const description = showErrorDetails ? (
-      <React.Fragment>
-        <b>{this.state.error.message}:</b>
-        <DebugInfo>
-          <pre>{this.state.error.stack || JSON.stringify(this.state.error, null, 2)}</pre>
-        </DebugInfo>
-      </React.Fragment>
-    ) : (
-      <React.Fragment>
-        {this.props.defaultErrorMessage || 'Sorry, something went wrong. Please try again.'}
-      </React.Fragment>
-    );
-
     return (
-      <Content>
-        <Alert severity="error">{description}</Alert>
-      </Content>
+      <Alert severity="error">
+        <AlertTitle>{errorTitle}</AlertTitle>
+
+        {showErrorDetails ? (
+          <p>
+            <b>{error.message}:</b>
+            <DebugInfo>
+              <pre>{error.stack || JSON.stringify(error, null, 2)}</pre>
+            </DebugInfo>
+          </p>
+        ) : (
+          <div>Please try again.</div>
+        )}
+      </Alert>
     );
   }
 }
