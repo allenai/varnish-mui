@@ -61,7 +61,7 @@ export function DefaultAppLayoutProvider({ layout, children }: VarnishContextPro
         {children}
       </VarnishContext.Provider>
     );
-  }, [layout, children]);
+  }, [layout, children, currentHeaderHeight]);
 }
 
 export default DefaultAppLayoutProvider;

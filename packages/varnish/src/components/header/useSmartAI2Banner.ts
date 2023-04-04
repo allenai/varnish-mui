@@ -65,3 +65,5 @@ export const useSmartAI2Banner = (): SmartBannerAttrs => {
 
   return [stickyRef, bannerRef, topOffset];
 };
+
+export default useSmartAI2Banner;
