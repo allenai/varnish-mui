@@ -33,6 +33,10 @@ module.exports = [
     subheader: 'EXTENSIONS',
     children: [
       {
+        pathname: '/material-ui/varnish/shellac',
+        title: 'Shellac',
+      },
+      {
         pathname: '/material-ui/varnish/eslint-config-varnish',
         title: 'ESLint Config Varnish',
       },
