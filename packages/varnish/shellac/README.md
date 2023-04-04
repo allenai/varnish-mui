@@ -17,16 +17,14 @@ e.g:
 
 ```
 :root {
-    --breakpoints-keys-0: xs;
-    --breakpoints-keys-1: sm;
-    --breakpoints-keys-2: md;
-    --breakpoints-keys-3: lg;
-    --breakpoints-keys-4: xl;
-    --breakpoints-values-xs: 0px;
-    --breakpoints-values-sm: 600px;
-    --breakpoints-values-md: 900px;
-    --breakpoints-values-lg: 1200px;
-    --breakpoints-values-xl: 1536px;
+    --breakpoints-xs: 0px;
+    --breakpoints-sm: 600px;
+    --breakpoints-md: 900px;
+    --breakpoints-lg: 1200px;
+    --breakpoints-xl: 1536px;
+    --palette-primary-light: #80BDFF;
+    --palette-primary-main: #265ED4;
+    --palette-primary-dark: #1B4596;
 ...
 }
 ```

@@ -11,13 +11,13 @@ const theme = getTheme();
 const all = createCssVarsTheme({ ...theme, colorSchemes }).generateCssVars().css;
 const formatted = Object.entries(all)
   // remove broken mixins
-  .filter(([k,]) => !k.startsWith('--mixins-'))
+  .filter(([k]) => !k.startsWith('--mixins-'))
   // remove color rgb values
-  .filter(([k,]) => !k.match('--.+-.+-rgba-.'))
+  .filter(([k]) => !k.match('--.+-.+-rgba-.'))
   // remove color names
-  .filter(([k,]) => !k.match('--.+-.+-displayName'))
+  .filter(([k]) => !k.match('--.+-.+-displayName'))
   // remove breakpoint keys
-  .filter(([k,]) => !k.match('--breakpoints-keys-.+') && k !== '--breakpoints-unit')
+  .filter(([k]) => !k.match('--breakpoints-keys-.+') && k !== '--breakpoints-unit')
   // rename color to remove hex
   .map(([k, v]) => {
     let newK = k;
