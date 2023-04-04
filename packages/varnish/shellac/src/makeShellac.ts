@@ -49,6 +49,7 @@ const ret = [
   ...formatted,
   `${indent}--spacing-0: ${theme.spacing(0.5)};`,
   ...getSpacings(),
+  '/* spacing variables below are set to be depricated soon. */',
   `${indent}--spacing-xxs: ${theme.spacing(0.5)};`,
   `${indent}--spacing-xs2: ${theme.spacing(0.5)};`,
   `${indent}--spacing-xs: ${theme.spacing(1)};`,
