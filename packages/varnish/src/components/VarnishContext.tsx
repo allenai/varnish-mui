@@ -17,6 +17,11 @@ export type LayoutVariant = 'left-aligned' | 'center-aligned';
 export interface AppSettings {
   /* The current, active variant. */
   layout: LayoutVariant;
+  /* The current height of the header, which by default in Varnish collapses
+   as the user scrolls. */
+  currentHeaderHeight: number;
+  /* A method allowing the header height to be set. */
+  setHeaderHeight: (height: number) => void;
 }
 
 /**
@@ -28,6 +33,8 @@ export interface AppSettings {
  */
 export const VarnishContext = React.createContext<AppSettings>({
   layout: 'center-aligned',
+  currentHeaderHeight: 0,
+  setHeaderHeight() {},
 });
 
 export interface VarnishContextProviderProps {
@@ -41,11 +48,14 @@ export interface VarnishContextProviderProps {
  * Most of the time you should use this.
  */
 export function DefaultAppLayoutProvider({ layout, children }: VarnishContextProviderProps) {
+  const [currentHeaderHeight, setHeaderHeight] = React.useState(0);
   return React.useMemo(() => {
     return (
       <VarnishContext.Provider
         value={{
           layout,
+          currentHeaderHeight,
+          setHeaderHeight,
         }}
       >
         {children}

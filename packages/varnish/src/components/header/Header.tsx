@@ -8,8 +8,7 @@ import styled from 'styled-components';
 import { AI2Banner } from './AI2Banner';
 import { pxToRem } from '../../utils/base';
 import { Content as VContent } from '../Content';
-
-// TODO: Any theming constants (font-size of  headings, box shadow coloring, z-index) needs to be updated
+import { useSmartAI2Banner } from './useSmartAI2Banner';
 
 /* eslint-disable no-nested-ternary */
 
@@ -159,29 +158,19 @@ interface HeaderProps {
   children?: React.ReactNode | React.ReactNodeArray;
   bannerAlwaysVisible?: boolean;
   customBanner?: React.ReactNode;
-
-  // Note: Only modify this if you want the smart AI2 banner to be hidden on scroll of
-  // a container OTHER than the main window
-  scrollTriggerTarget?: HTMLDivElement;
 }
 
-function HeaderComponent({
-  children,
-  customBanner,
-  bannerAlwaysVisible,
-  scrollTriggerTarget,
-}: HeaderProps) {
+function HeaderComponent({ children, customBanner, bannerAlwaysVisible }: HeaderProps) {
   const ai2Banner = customBanner || <AI2Banner />;
+  const [sticky, banner, offsetTop] = useSmartAI2Banner();
 
   return (
-    <StyledAppBar position={'sticky'}>
-      {bannerAlwaysVisible ? (
-        <div>{ai2Banner}</div>
-      ) : (
-        <HideOnScroll triggerTarget={scrollTriggerTarget}>
-          <div>{ai2Banner}</div>
-        </HideOnScroll>
-      )}
+    <StyledAppBar
+      style={{ top: `${!bannerAlwaysVisible ? offsetTop : 0}px` }}
+      ref={sticky}
+      position={'sticky'}
+    >
+      <div ref={banner}>{ai2Banner}</div>
       {children ? (
         <Toolbar>
           <Content>{children}</Content>
