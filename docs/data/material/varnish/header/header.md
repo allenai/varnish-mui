@@ -52,25 +52,18 @@ Header with custom content.
 
 ### Smart AI2 Banner
 
-#### Collapse on Window Scroll
+#### Collapse on Scroll
 
 An AI2 Banner at the top of the header that collapses when the page is scrolled.
 
 {{"demo": "HeaderWithTargetWindowSmartBanner.js", "defaultCodeOpen": false}}
 
-#### Collapse on Target Div Scroll
-
-An AI2 Banner at the top of the header that collapses when the target div is scrolled.
-
-{{"demo": "HeaderWithTargetDivSmartBannerDemo.js", "defaultCodeOpen": false}}
-
 ### API
 
-| Property            | Type                                                                       | Default   | Description                                                                                                                                                                                                                          |
-| :------------------ | :------------------------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| bannerAlwaysVisible | boolean                                                                    | false     | Prevents the AI2 banner from disappearing when the page is scrolled                                                                                                                                                                  |
-| customBanner        | JSX / TSX Element; if left undefined, the banner is the default AI2 banner | undefined | A Custom AI2 banner that you can inject into the header via this prop                                                                                                                                                                |
-| scrollTriggerTarget | HTMLDivElement                                                             | undefined | If you choose to use the AI2 Header with Smart Banner within a div, you can change the scroll target to be the specific div it is in. Note: This should rarely be used, reach out to the team if you find yourself using this often. |
+| Property            | Type                                                                       | Default   | Description                                                           |
+| :------------------ | :------------------------------------------------------------------------- | :-------- | :-------------------------------------------------------------------- |
+| bannerAlwaysVisible | boolean                                                                    | false     | Prevents the AI2 banner from disappearing when the page is scrolled   |
+| customBanner        | JSX / TSX Element; if left undefined, the banner is the default AI2 banner | undefined | A Custom AI2 banner that you can inject into the header via this prop |
 
 ## Sub Components
 
