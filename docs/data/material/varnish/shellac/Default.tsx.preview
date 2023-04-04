@@ -1,0 +1,4 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+<VarnishApp>
+  <div style={{ width: '100%', wordBreak: 'break-word' }}>{formatedCss()}</div>
+</VarnishApp>
