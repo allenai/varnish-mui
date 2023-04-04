@@ -1,7 +1,5 @@
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Link from '@mui/material/Link';
 import AppBar from '@mui/material/AppBar';
-import Collapse from '@mui/material/Collapse';
 import MuiToolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -133,26 +131,6 @@ const StyledAppBar = styled(AppBar)`
     transition: top 200ms ease-in-out;
   }
 `;
-
-interface ScrollProps {
-  children: React.ReactElement;
-  triggerTarget?: HTMLDivElement;
-}
-
-// This is the function that enables 'smart scroll'. It hides any component(s) passed in via the children props
-// in a Collapse Transition component, and on scroll of the trigger target (default is window), the children will
-// get hidden.
-function HideOnScroll(props: ScrollProps) {
-  const { children, triggerTarget } = props;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const trigger = triggerTarget ? useScrollTrigger({ target: triggerTarget }) : useScrollTrigger();
-
-  return (
-    <Collapse appear={false} unmountOnExit in={!trigger}>
-      {children}
-    </Collapse>
-  );
-}
 
 interface HeaderProps {
   children?: React.ReactNode | React.ReactNodeArray;
