@@ -45,6 +45,10 @@ module.exports = [
         pathname: '/material-ui/varnish/varnish-with-react-router',
         title: 'Varnish With React Router',
       },
+      {
+        pathname: '/material-ui/varnish/third-party-libs',
+        title: 'Third Party Libraries',
+      },
     ],
   },
 ];
