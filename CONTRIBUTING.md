@@ -106,7 +106,8 @@ The version number is incremented based on the level of change included in the r
    npm version patch # major|minor|patch follow semver
    git add package.json && git commit -m "version update for release to npm"
    git push --tags origin main
-   yarn build
+   cd shellac && yarn && cd .. # need to install dependencies in shellac
+   yarn && yarn build
    cd build && npm publish && cd .. # deploy from the packages/varnish/build directory
    ```
 
