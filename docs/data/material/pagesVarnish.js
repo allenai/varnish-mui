@@ -26,6 +26,7 @@ module.exports = [
       { pathname: '/material-ui/varnish/colors' },
       { pathname: '/material-ui/varnish/error-boundary', title: 'Error Boundary' },
       { pathname: '/material-ui/varnish/max-width-text', title: 'Max Width Text' },
+      { pathname: '/material-ui/varnish/copy-to-clipboard', title: 'Copy To Clipboard' }
     ],
   },
   {

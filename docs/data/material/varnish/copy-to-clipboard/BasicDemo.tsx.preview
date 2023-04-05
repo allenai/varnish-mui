@@ -1,0 +1,7 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+<CopyToClipboardButton
+    buttonContent={<ContentCopyIcon fontSize="inherit" />}
+    text={'Test Copy Text'}
+>
+    {'Test Copy Text'}
+</CopyToClipboardButton>
