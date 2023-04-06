@@ -8,6 +8,7 @@ module.exports = [
         title: 'Getting Started',
       },
       { pathname: '/material-ui/varnish/varnish-app', title: 'Varnish App' },
+      { pathname: '/material-ui/varnish/third-party-libs', title: 'Third Party Libraries' },
       { pathname: '/material-ui/varnish/varnish-theme', title: 'Theme' },
     ],
   },
@@ -28,8 +29,8 @@ module.exports = [
       { pathname: '/material-ui/varnish/logos', title: 'AI2 Logos' },
       { pathname: '/material-ui/varnish/colors' },
       { pathname: '/material-ui/varnish/error-boundary', title: 'Error Boundary' },
-      { pathname: '/material-ui/varnish/max-width-text', title: 'Max Width Text' },
-      { pathname: '/material-ui/varnish/copy-to-clipboard', title: 'Copy To Clipboard' }
+      { pathname: '/material-ui/varnish/copy-to-clipboard', title: 'Copy To Clipboard' },
+      { pathname: '/material-ui/varnish/max-width-text', title: 'Max Width Text' }
     ],
   },
   {
@@ -47,11 +48,7 @@ module.exports = [
       {
         pathname: '/material-ui/varnish/varnish-with-react-router',
         title: 'Varnish With React Router',
-      },
-      {
-        pathname: '/material-ui/varnish/third-party-libs',
-        title: 'Third Party Libraries',
-      },
+      }
     ],
   },
 ];
