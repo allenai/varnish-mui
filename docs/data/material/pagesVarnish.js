@@ -14,7 +14,10 @@ module.exports = [
   {
     pathname: '/material-ui/varnish/patterns',
     subheader: 'PATTERNS',
-    children: [{ pathname: '/material-ui/varnish/app-layout', title: 'App Layout' }],
+    children: [
+      { pathname: '/material-ui/varnish/app-layout', title: 'App Layout' },
+      { pathname: '/material-ui/varnish/menu-pattern', title: 'Menu' }
+    ],
   },
   {
     pathname: '/material-ui/varnish/components',
