@@ -75,5 +75,5 @@ However, if you didn't, follow these steps to use `Varnish`:
 ## Material UI Components
 
 `Varnish` consists of a few components and many styles that are automatically applied to all
-[Material UI components](https://varnish.allenai.org/material-ui/). We encourage you to explore their
+[Material UI components](https://varnish.allenai.org/material-ui/getting-started/supported-components/). We encourage you to explore their
 documentation and use any component that suits you.
