@@ -35,7 +35,6 @@ export const getTypographyStyle = (
       font-weight:  ${(theme.typography as IndexableTypography)[key].fontWeight};
       font-size:  ${(theme.typography as IndexableTypography)[key].fontSize};
       line-height:  ${(theme.typography as IndexableTypography)[key].lineHeight};
-      letter-spacing:  ${(theme.typography as IndexableTypography)[key].letterSpacing};
       margin:  ${(theme.typography as IndexableTypography)[key].margin};
     ${includeKey ? '}' : ''}
   `;

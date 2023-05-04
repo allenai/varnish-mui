@@ -9,7 +9,7 @@ githubLabel: 'varnish: getting-started'
 
 ## Note About Versions
 
-All new applications should be using `Varnish2`. However, many older applicaitons will still be using `Varnish`. [Documentation on deprecated version](https://varnish-deprecated.allenai.org/) is still availiable.
+All new applications should be using `Varnish2`. However, many older applications will still be using `Varnish`. [Documentation on deprecated version](https://varnish-deprecated.allenai.org/) is still availiable.
 
 ## Upgrading from Varnish to Varnish2
 

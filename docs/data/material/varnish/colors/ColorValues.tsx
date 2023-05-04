@@ -150,7 +150,10 @@ const ExtendedHeadRow = styled('div')`
 `;
 
 const Label = styled(Typography)`
-  text-transform: capitalize;
+  && {
+    text-transform: capitalize;
+    margin: 0;
+  }
 `;
 Label.defaultProps = {
   variant: 'h6',
