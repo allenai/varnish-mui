@@ -89,9 +89,6 @@ module.exports = {
     // Destructuring harm grep potential.
     'prefer-destructuring': 'off',
 
-    // disabling because not recognizing when optional props are used in some places
-    'react/no-unused-prop-types': 'off',
-
     // disabled type-aware linting due to performance considerations
     '@typescript-eslint/dot-notation': 'off',
     'dot-notation': 'error',
@@ -157,6 +154,10 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/no-danger': 'error',
     'react/no-direct-mutation-state': 'error',
+
+    // disabling because not recognizing when optional props are used in some places
+    'react/no-unused-prop-types': 'off',
+
     // Not always relevant
     'react/require-default-props': 'off',
     'react/sort-prop-types': 'error',
