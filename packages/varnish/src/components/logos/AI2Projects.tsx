@@ -4,7 +4,7 @@ export interface IconProps {
   width?: string;
   height?: string;
   className?: string;
-  mono?: boolean;
+  polychrome?: boolean;
 }
 
 const defaults = {
@@ -281,8 +281,8 @@ export function Wildlands({ width, height }: IconProps) {
   );
 }
 
-export function Reviz({ width, height, mono }: IconProps) {
-  if (mono) {
+export function Reviz({ width, height, polychrome }: IconProps) {
+  if (!polychrome) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
