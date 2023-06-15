@@ -72,6 +72,48 @@ export default function Demo() {
           <logos.Incubator />{' '}
         </Center>
       </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="EarthRanger" position="top" />
+          <logos.EarthRanger width="32" height="32" />{' '}
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="Skylight" position="top" />
+          <logos.Skylight width="32" height="32" />{' '}
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="Climate" position="top" />
+          <logos.Climate width="32" height="32" />{' '}
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="Wildlands" position="top" />
+          <logos.Wildlands width="32" height="32" />{' '}
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="ReViz Monochrome" position="top" />
+          <logos.RevizBlue width="32" height="32" />{' '}
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
+          <ImageListItemBar title="ReViz Color" position="top" />
+          <logos.RevizColor width="32" height="32" />{' '}
+        </Center>
+      </Item>
     </List>
   );
 }

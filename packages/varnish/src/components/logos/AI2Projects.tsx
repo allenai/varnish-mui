@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 export interface IconProps {
-  className?: string;
   width?: string;
   height?: string;
 }
@@ -11,10 +10,9 @@ const defaults = {
   fill: 'none',
 };
 
-export function AllenNLP({ className, width, height }: IconProps) {
+export function AllenNLP({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -37,10 +35,9 @@ export function AllenNLP({ className, width, height }: IconProps) {
   );
 }
 
-export function Aristo({ className, width, height }: IconProps) {
+export function Aristo({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -57,10 +54,9 @@ export function Aristo({ className, width, height }: IconProps) {
   );
 }
 
-export function Mosaic({ className, width, height }: IconProps) {
+export function Mosaic({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -79,10 +75,9 @@ export function Mosaic({ className, width, height }: IconProps) {
   );
 }
 
-export function Prior({ className, width, height }: IconProps) {
+export function Prior({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -104,10 +99,9 @@ export function Prior({ className, width, height }: IconProps) {
   );
 }
 
-export function SemanticScholar({ className, width, height }: IconProps) {
+export function SemanticScholar({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -123,10 +117,9 @@ export function SemanticScholar({ className, width, height }: IconProps) {
   );
 }
 
-export function Fairness({ className, width, height }: IconProps) {
+export function Fairness({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -178,10 +171,9 @@ export function Fairness({ className, width, height }: IconProps) {
   );
 }
 
-export function Incubator({ className, width, height }: IconProps) {
+export function Incubator({ width, height }: IconProps) {
   return (
     <svg
-      className={className}
       width={width || defaults.SIZE}
       height={height || defaults.SIZE}
       viewBox="0 0 32 32"
@@ -201,6 +193,241 @@ export function Incubator({ className, width, height }: IconProps) {
       <rect x="4" y="15" width="2" height="2" fill="#B5F0FF" />
       <rect x="9" y="20" width="2" height="2" fill="#B5F0FF" />
       <rect x="23" y="23" width="2" height="2" fill="#B5F0FF" />
+    </svg>
+  );
+}
+
+export function EarthRanger({ width, height }: IconProps) {
+  return (
+    <svg
+      id="prefix__Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      x={0}
+      y={0}
+      viewBox="0 0 52.4 52.4"
+      xmlSpace="preserve"
+      width={width}
+      height={height}
+    >
+      <style>{'.prefix__st1{fill:#b5f0ff}'}</style>
+      <g id="prefix__Layer_2_1_">
+        <g id="prefix__Layer_1-2">
+          <circle cx={26.2} cy={26.2} r={26.2} fill="#265ed4" />
+          <path
+            className="prefix__st1"
+            d="M39.6 33.1v.8c0 2.5-.5 5.4-4 7.4l-9.9 6.2-10.3-6.2C12 39 12 35.3 12 33.9v-.7l27.6-.1zM25.8 7.3L11.3 9.7l.6 8.3h27.7l.7-8.3zM36.3 20.2l-24.4.1v10.3h24.4z"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+export function Skylight({ width, height }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.36 52.36" width={width} height={height}>
+      <defs>
+        <style>{'.prefix__cls-2{fill:#265ed4}'}</style>
+      </defs>
+      <g id="prefix__Layer_2" data-name="Layer 2">
+        <g id="prefix__Layer_1-2" data-name="Layer 1">
+          <circle cx={26.18} cy={26.18} r={26.18} fill="#b5f0ff" />
+          <path
+            className="prefix__cls-2"
+            d="M26.37 37.48l-15.26-7.59v10.68l15.26 7.59 15.26-7.59v-10.7l-8.13 4.05-7.13 3.56zM26.89 14.14l15.26 8.33V11.79L26.89 4.2l-14.58 6.93 9.9 5.18 4.68-2.17zM11.05 23.07l.02-.01-.02-.01v.02z"
+          />
+          <path
+            className="prefix__cls-2"
+            d="M11.13 12.33l-.08.05v10.67l.02.01 18.99 10.35 10.3-5.13-29.23-15.95z"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+export function Climate({ width, height }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.75 42.78" width={width} height={height}>
+      <g data-name="Layer 2">
+        <g data-name="Layer 1">
+          <path
+            d="M12 29.62A12.36 12.36 0 010 17.18a12 12 0 0112-11.9 11.94 11.94 0 015.88 1.55 1.39 1.39 0 00.69.18 1.35 1.35 0 00.43-.07 1.43 1.43 0 00.84-.76 10.48 10.48 0 0120 4.28v.84a1.37 1.37 0 00.48 1.17 1.41 1.41 0 00.91.34 1.24 1.24 0 00.33 0 8.61 8.61 0 012-.23c4.9 0 9.21 3.86 9.21 8.26s-2.69 8.82-8.68 8.82z"
+            fill="#b5f0ff"
+          />
+          <path
+            data-name="Path 213"
+            d="M22.6 42.67l1.55-12.93c0-.06-.06-.12-.14-.12h-6.26c-.11 0-.18-.09-.12-.16l14.3-18.15c.08-.1.3 0 .26.08l-4.43 15c0 .06 0 .13.14.13H35c.1 0 .17.08.12.15l-12.28 16c-.05.16-.25.11-.24 0z"
+            fill="#265ed4"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+export function Wildlands({ width, height }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 181" width={width} height={height}>
+      <defs>
+        <clipPath id="clip0_76_62">
+          <rect width="150" height="180" fill="white" transform="translate(0 0.5)" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#clip0_76_62)">
+        <path
+          d="M6 110.05C6 145.59 37 174.5 75 174.5C113 174.5 144 145.59 144 110.05V6.5H6V110.05Z"
+          fill="#C0EEFD"
+        />
+        <path
+          d="M0 0.5V110.05C0 147.9 31.78 178.77 71.63 180.42C72.75 180.47 73.87 180.5 75 180.5C76.13 180.5 77.25 180.5 78.37 180.42C94.2134 179.818 109.492 174.378 122.15 164.83C139.15 151.91 149.98 132.19 149.98 110.07V0.5H0ZM144 110.05C144 128.56 135.59 145.26 122.17 157.05V115.5L132.5 125.83L138.29 120.04L122.17 103.92V99.12L132.5 109.5L138.29 103.71L122.17 87.57V82.78L132.5 93.11L138.29 87.32L118.07 67.1L97.85 87.32L103.64 93.11L114 82.78V87.57L97.85 103.7L103.64 109.49L114 99.16V103.96L97.85 120.08L103.64 125.87L114 115.5V163.15C103.535 169.852 91.5095 173.722 79.1 174.38V97.87L89.43 108.2L95.22 102.41L79.1 86.28V81.5L89.43 91.82L95.22 86.03L95.12 85.92L95.22 85.82L79.1 69.7V65.11L89.43 75.44L95.22 69.65L95.12 69.54L95.22 69.44L79.1 53.32V48.73L89.43 59.06L95.22 53.27L95.12 53.16L95.22 53.06L79.1 36.93V32.14L89.43 42.5L95.22 36.71L75 16.5L54.78 36.68L60.57 42.5L70.9 32.14V36.93L54.78 53.06L54.88 53.16L54.78 53.27L60.57 59.06L70.9 48.73V53.32L54.78 69.44L54.88 69.54L54.78 69.65L60.57 75.44L70.9 65.11V69.7L54.78 85.82L54.88 85.92L54.78 86.03L60.57 91.82L70.9 81.5V86.29L54.78 102.41L60.57 108.2L70.9 97.87V174.38C58.4941 173.734 46.4685 169.878 36 163.19V113.93L46.34 124.26L52.15 118.5L36 102.34V97.5L46.34 107.84L52.13 102.05L36 85.96V81.16L46.36 91.5L52.15 85.71L36 69.58V64.78L46.36 75.12L52.15 69.33L31.93 49.11L11.71 69.33L17.5 75.12L27.83 64.78V69.58L11.71 85.71L17.5 91.5L27.83 81.16V85.96L11.71 102.09L17.5 107.88L27.83 97.5V102.3L11.71 118.5L17.5 124.29L27.83 113.96V157.06C14.41 145.26 6 128.56 6 110.05V6.5H144V110.05Z"
+          fill="#3360CD"
+        />
+      </g>
+    </svg>
+  );
+}
+
+export function RevizBlue({ width, height }: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 100 86.26"
+      width={width}
+      height={height}
+    >
+      <defs>
+        <linearGradient
+          id="a"
+          x1="40.64"
+          y1="7.74"
+          x2="78.44"
+          y2="61.14"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#b5f0ff" />
+          <stop offset="0.6" stopColor="#4de1ff" />
+          <stop offset="0.97" stopColor="#00c1e8" />
+        </linearGradient>
+        <linearGradient
+          id="b"
+          x1="-8.43"
+          y1="26.48"
+          x2="58.48"
+          y2="57.96"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#265ed4" />
+          <stop offset="0.61" stopColor="#1a4cae" />
+          <stop offset="0.71" stopColor="#1a4ba9" />
+          <stop offset="0.82" stopColor="#1b469c" />
+          <stop offset="0.94" stopColor="#1d3f86" />
+          <stop offset="0.97" stopColor="#1d3d7e" />
+        </linearGradient>
+        <linearGradient
+          id="c"
+          x1="29.4"
+          y1="49.64"
+          x2="66.51"
+          y2="-14.63"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#80bdff" />
+          <stop offset="0.6" stopColor="#2f85f7" />
+          <stop offset="1" stopColor="#265ed4" />
+        </linearGradient>
+      </defs>
+      <polygon
+        points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
+        fill="url(#a)"
+        stroke="url(#a)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
+        fill="url(#b)"
+        stroke="url(#b)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
+        fill="url(#c)"
+        stroke="url(#c)"
+        strokeWidth="0.1"
+      />
+    </svg>
+  );
+}
+
+export function RevizColor({ width, height }: IconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 100 86.26"
+      width={width}
+      height={height}
+    >
+      <defs>
+        <linearGradient
+          id="a"
+          x1="40.64"
+          y1="7.74"
+          x2="78.44"
+          y2="61.14"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#b5f0ff" />
+          <stop offset="0.6" stopColor="#4de1ff" />
+          <stop offset="0.97" stopColor="#00c1e8" />
+        </linearGradient>
+        <linearGradient
+          id="b"
+          x1="-8.43"
+          y1="26.48"
+          x2="58.48"
+          y2="57.96"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#2f85f7" />
+          <stop offset="0.52" stopColor="#265ed4" />
+          <stop offset="0.63" stopColor="#255ccf" />
+          <stop offset="0.75" stopColor="#2357c2" />
+          <stop offset="0.87" stopColor="#1f4eac" />
+          <stop offset="0.97" stopColor="#1b4596" />
+        </linearGradient>
+        <linearGradient
+          id="c"
+          x1="29.4"
+          y1="49.64"
+          x2="66.51"
+          y2="-14.63"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#e7a2de" />
+          <stop offset="0.6" stopColor="#d864c9" />
+          <stop offset="1" stopColor="#be54b0" />
+        </linearGradient>
+      </defs>
+      <polygon
+        points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
+        fill="url(#a)"
+        stroke="url(#a)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
+        fill="url(#b)"
+        stroke="url(#b)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
+        fill="url(#c)"
+        stroke="url(#c)"
+        strokeWidth="0.1"
+      />
     </svg>
   );
 }
