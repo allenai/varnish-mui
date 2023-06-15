@@ -60,22 +60,22 @@ HiddenJs.propTypes = {
   /**
    * If `true`, screens this size and down are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   lgDown: PropTypes.bool,
   /**
    * If `true`, screens this size and up are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   lgUp: PropTypes.bool,
   /**
    * If `true`, screens this size and down are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   mdDown: PropTypes.bool,
   /**
    * If `true`, screens this size and up are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   mdUp: PropTypes.bool,
   /**
    * Hide the given breakpoint(s).
@@ -87,12 +87,12 @@ HiddenJs.propTypes = {
   /**
    * If `true`, screens this size and down are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   smDown: PropTypes.bool,
   /**
    * If `true`, screens this size and up are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   smUp: PropTypes.bool,
   /**
    * @ignore
@@ -102,22 +102,22 @@ HiddenJs.propTypes = {
   /**
    * If `true`, screens this size and down are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   xlDown: PropTypes.bool,
   /**
    * If `true`, screens this size and up are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   xlUp: PropTypes.bool,
   /**
    * If `true`, screens this size and down are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   xsDown: PropTypes.bool,
   /**
    * If `true`, screens this size and up are hidden.
    */
-  // eslint-disable-next-line react/no-unused-prop-types
+
   xsUp: PropTypes.bool,
 };
 

@@ -3,10 +3,8 @@ import * as React from 'react';
 export interface IconProps {
   width?: string;
   height?: string;
-}
-
-export interface MonoColorIconProps extends IconProps {
-  mono: boolean;
+  className?: string;
+  mono?: boolean;
 }
 
 const defaults = {
@@ -177,7 +175,7 @@ export function Incubator({ width, height }: IconProps) {
   );
 }
 
-export function EarthRanger({ width, height }: IconProps) {
+export function EarthRanger({ width, height, className }: IconProps) {
   return (
     <svg
       id="prefix__Layer_1"
@@ -186,15 +184,15 @@ export function EarthRanger({ width, height }: IconProps) {
       y={0}
       viewBox="0 0 52.4 52.4"
       xmlSpace="preserve"
-      width={width}
-      height={height}
+      width={width || defaults.SIZE}
+      height={height || defaults.SIZE}
     >
-      <style>{'.prefix__st1{fill:#b5f0ff}'}</style>
+      <style>{`.${className}{fill:#b5f0ff}`}</style>
       <g id="prefix__Layer_2_1_">
         <g id="prefix__Layer_1-2">
           <circle cx={26.2} cy={26.2} r={26.2} fill="#265ed4" />
           <path
-            className="prefix__st1"
+            className={className}
             d="M39.6 33.1v.8c0 2.5-.5 5.4-4 7.4l-9.9 6.2-10.3-6.2C12 39 12 35.3 12 33.9v-.7l27.6-.1zM25.8 7.3L11.3 9.7l.6 8.3h27.7l.7-8.3zM36.3 20.2l-24.4.1v10.3h24.4z"
           />
         </g>
@@ -203,21 +201,26 @@ export function EarthRanger({ width, height }: IconProps) {
   );
 }
 
-export function Skylight({ width, height }: IconProps) {
+export function Skylight({ width, height, className }: IconProps) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.36 52.36" width={width} height={height}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 52.36 52.36"
+      width={width || defaults.SIZE}
+      height={height || defaults.SIZE}
+    >
       <defs>
-        <style>{'.prefix__cls-2{fill:#265ed4}'}</style>
+        <style>{`.${className}{fill:#265ed4}`}</style>
       </defs>
       <g id="prefix__Layer_2" data-name="Layer 2">
         <g id="prefix__Layer_1-2" data-name="Layer 1">
           <circle cx={26.18} cy={26.18} r={26.18} fill="#b5f0ff" />
           <path
-            className="prefix__cls-2"
+            className={className}
             d="M26.37 37.48l-15.26-7.59v10.68l15.26 7.59 15.26-7.59v-10.7l-8.13 4.05-7.13 3.56zM26.89 14.14l15.26 8.33V11.79L26.89 4.2l-14.58 6.93 9.9 5.18 4.68-2.17zM11.05 23.07l.02-.01-.02-.01v.02z"
           />
           <path
-            className="prefix__cls-2"
+            className={className}
             d="M11.13 12.33l-.08.05v10.67l.02.01 18.99 10.35 10.3-5.13-29.23-15.95z"
           />
         </g>
@@ -228,7 +231,12 @@ export function Skylight({ width, height }: IconProps) {
 
 export function Climate({ width, height }: IconProps) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.75 42.78" width={width} height={height}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 52.75 42.78"
+      width={width || defaults.SIZE}
+      height={height || defaults.SIZE}
+    >
       <g data-name="Layer 2">
         <g data-name="Layer 1">
           <path
@@ -248,7 +256,12 @@ export function Climate({ width, height }: IconProps) {
 
 export function Wildlands({ width, height }: IconProps) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 181" width={width} height={height}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 150 181"
+      width={width || defaults.SIZE}
+      height={height || defaults.SIZE}
+    >
       <defs>
         <clipPath id="clip0_76_62">
           <rect width="150" height="180" fill="white" transform="translate(0 0.5)" />
@@ -268,15 +281,15 @@ export function Wildlands({ width, height }: IconProps) {
   );
 }
 
-export function Reviz({ width, height, mono }: MonoColorIconProps) {
+export function Reviz({ width, height, mono }: IconProps) {
   if (mono) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 100 86.26"
-        width={width}
-        height={height}
+        width={width || defaults.SIZE}
+        height={height || defaults.SIZE}
       >
         <defs>
           <linearGradient
@@ -339,75 +352,74 @@ export function Reviz({ width, height, mono }: MonoColorIconProps) {
         />
       </svg>
     );
-  } 
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 100 86.26"
-        width={width}
-        height={height}
-      >
-        <defs>
-          <linearGradient
-            id="a"
-            x1="40.64"
-            y1="7.74"
-            x2="78.44"
-            y2="61.14"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopColor="#b5f0ff" />
-            <stop offset="0.6" stopColor="#4de1ff" />
-            <stop offset="0.97" stopColor="#00c1e8" />
-          </linearGradient>
-          <linearGradient
-            id="b"
-            x1="-8.43"
-            y1="26.48"
-            x2="58.48"
-            y2="57.96"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopColor="#2f85f7" />
-            <stop offset="0.52" stopColor="#265ed4" />
-            <stop offset="0.63" stopColor="#255ccf" />
-            <stop offset="0.75" stopColor="#2357c2" />
-            <stop offset="0.87" stopColor="#1f4eac" />
-            <stop offset="0.97" stopColor="#1b4596" />
-          </linearGradient>
-          <linearGradient
-            id="c"
-            x1="29.4"
-            y1="49.64"
-            x2="66.51"
-            y2="-14.63"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopColor="#e7a2de" />
-            <stop offset="0.6" stopColor="#d864c9" />
-            <stop offset="1" stopColor="#be54b0" />
-          </linearGradient>
-        </defs>
-        <polygon
-          points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
-          fill="url(#a)"
-          stroke="url(#a)"
-          strokeWidth="0.1"
-        />
-        <polygon
-          points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
-          fill="url(#b)"
-          stroke="url(#b)"
-          strokeWidth="0.1"
-        />
-        <polygon
-          points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
-          fill="url(#c)"
-          stroke="url(#c)"
-          strokeWidth="0.1"
-        />
-      </svg>
-    );
-  
+  }
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 100 86.26"
+      width={width}
+      height={height}
+    >
+      <defs>
+        <linearGradient
+          id="a"
+          x1="40.64"
+          y1="7.74"
+          x2="78.44"
+          y2="61.14"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#b5f0ff" />
+          <stop offset="0.6" stopColor="#4de1ff" />
+          <stop offset="0.97" stopColor="#00c1e8" />
+        </linearGradient>
+        <linearGradient
+          id="b"
+          x1="-8.43"
+          y1="26.48"
+          x2="58.48"
+          y2="57.96"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#2f85f7" />
+          <stop offset="0.52" stopColor="#265ed4" />
+          <stop offset="0.63" stopColor="#255ccf" />
+          <stop offset="0.75" stopColor="#2357c2" />
+          <stop offset="0.87" stopColor="#1f4eac" />
+          <stop offset="0.97" stopColor="#1b4596" />
+        </linearGradient>
+        <linearGradient
+          id="c"
+          x1="29.4"
+          y1="49.64"
+          x2="66.51"
+          y2="-14.63"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#e7a2de" />
+          <stop offset="0.6" stopColor="#d864c9" />
+          <stop offset="1" stopColor="#be54b0" />
+        </linearGradient>
+      </defs>
+      <polygon
+        points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
+        fill="url(#a)"
+        stroke="url(#a)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
+        fill="url(#b)"
+        stroke="url(#b)"
+        strokeWidth="0.1"
+      />
+      <polygon
+        points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
+        fill="url(#c)"
+        stroke="url(#c)"
+        strokeWidth="0.1"
+      />
+    </svg>
+  );
 }

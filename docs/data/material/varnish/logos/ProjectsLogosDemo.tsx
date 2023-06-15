@@ -72,35 +72,35 @@ export default function Demo() {
       <Item>
         <Center>
           <ImageListItemBar title="EarthRanger" position="top" />
-          <logos.EarthRanger width="32" height="32" />
+          <logos.EarthRanger className="earthranger_logo" />
         </Center>
       </Item>
 
       <Item>
         <Center>
           <ImageListItemBar title="Skylight" position="top" />
-          <logos.Skylight width="32" height="32" />
+          <logos.Skylight className="skylight_logo" />
         </Center>
       </Item>
 
       <Item>
         <Center>
           <ImageListItemBar title="Climate" position="top" />
-          <logos.Climate width="32" height="32" />
+          <logos.Climate />
         </Center>
       </Item>
 
       <Item>
         <Center>
           <ImageListItemBar title="Wildlands" position="top" />
-          <logos.Wildlands width="32" height="32" />
+          <logos.Wildlands />
         </Center>
       </Item>
 
       <Item>
         <Center>
           <ImageListItemBar title="ReViz" position="top" />
-          <logos.Reviz mono width="32" height="32" />
+          <logos.Reviz mono />
         </Center>
       </Item>
     </List>
