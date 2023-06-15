@@ -104,7 +104,7 @@ export default function Demo() {
       <Item>
         <Center>
           <ImageListItemBar title="ReViz" position="top" />
-          <logos.Reviz mono />
+          <logos.Reviz polychrome={false} />
         </Center>
       </Item>
     </List>
