@@ -5,6 +5,10 @@ export interface IconProps {
   height?: string;
 }
 
+export interface MonoColorIconProps extends IconProps {
+  mono: boolean;
+}
+
 const defaults = {
   SIZE: 32,
   fill: 'none',
@@ -37,11 +41,7 @@ export function AllenNLP({ width, height }: IconProps) {
 
 export function Aristo({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <ellipse cx="16" cy="16.15" rx="14" ry="14.15" fill="#B5F0FF" />
       <circle cx="17.0998" cy="14.2" r="4.8" fill="white" />
       <path
@@ -56,11 +56,7 @@ export function Aristo({ width, height }: IconProps) {
 
 export function Mosaic({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <path
         d="M26.4 23.5L29 20.15L30.5 16V15L30 14.5L19.5 15.5L2 13.5L2.5 14.5L3.5 16L6 19L7.5 19.5L10.8 20.7L16 19.8L15.5 21.5L16 22.5L18 25L20.5 27.5L22 25L24 24.7L25.55 24.3L26.4 23.5Z"
         fill="#B5F0FF"
@@ -77,11 +73,7 @@ export function Mosaic({ width, height }: IconProps) {
 
 export function Prior({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <circle cx="16" cy="16" r="14" fill="#B5F0FF" />
       <path
         fillRule="evenodd"
@@ -101,11 +93,7 @@ export function Prior({ width, height }: IconProps) {
 
 export function SemanticScholar({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <path d="M8.5 5.5H25L27 13C27 13 18.5 17.5 13 23C13 20.5 8.5 5.5 8.5 5.5Z" fill="#B5F0FF" />
       <path
         fillRule="evenodd"
@@ -119,11 +107,7 @@ export function SemanticScholar({ width, height }: IconProps) {
 
 export function Fairness({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <path
         d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z"
         fill="#265ED4"
@@ -173,11 +157,7 @@ export function Fairness({ width, height }: IconProps) {
 
 export function Incubator({ width, height }: IconProps) {
   return (
-    <svg
-      width={width || defaults.SIZE}
-      height={height || defaults.SIZE}
-      viewBox="0 0 32 32"
-    >
+    <svg width={width || defaults.SIZE} height={height || defaults.SIZE} viewBox="0 0 32 32">
       <path
         d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z"
         fill="#265ED4"
@@ -288,146 +268,146 @@ export function Wildlands({ width, height }: IconProps) {
   );
 }
 
-export function RevizBlue({ width, height }: IconProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 100 86.26"
-      width={width}
-      height={height}
-    >
-      <defs>
-        <linearGradient
-          id="a"
-          x1="40.64"
-          y1="7.74"
-          x2="78.44"
-          y2="61.14"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#b5f0ff" />
-          <stop offset="0.6" stopColor="#4de1ff" />
-          <stop offset="0.97" stopColor="#00c1e8" />
-        </linearGradient>
-        <linearGradient
-          id="b"
-          x1="-8.43"
-          y1="26.48"
-          x2="58.48"
-          y2="57.96"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#265ed4" />
-          <stop offset="0.61" stopColor="#1a4cae" />
-          <stop offset="0.71" stopColor="#1a4ba9" />
-          <stop offset="0.82" stopColor="#1b469c" />
-          <stop offset="0.94" stopColor="#1d3f86" />
-          <stop offset="0.97" stopColor="#1d3d7e" />
-        </linearGradient>
-        <linearGradient
-          id="c"
-          x1="29.4"
-          y1="49.64"
-          x2="66.51"
-          y2="-14.63"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#80bdff" />
-          <stop offset="0.6" stopColor="#2f85f7" />
-          <stop offset="1" stopColor="#265ed4" />
-        </linearGradient>
-      </defs>
-      <polygon
-        points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
-        fill="url(#a)"
-        stroke="url(#a)"
-        strokeWidth="0.1"
-      />
-      <polygon
-        points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
-        fill="url(#b)"
-        stroke="url(#b)"
-        strokeWidth="0.1"
-      />
-      <polygon
-        points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
-        fill="url(#c)"
-        stroke="url(#c)"
-        strokeWidth="0.1"
-      />
-    </svg>
-  );
-}
-
-export function RevizColor({ width, height }: IconProps) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 100 86.26"
-      width={width}
-      height={height}
-    >
-      <defs>
-        <linearGradient
-          id="a"
-          x1="40.64"
-          y1="7.74"
-          x2="78.44"
-          y2="61.14"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#b5f0ff" />
-          <stop offset="0.6" stopColor="#4de1ff" />
-          <stop offset="0.97" stopColor="#00c1e8" />
-        </linearGradient>
-        <linearGradient
-          id="b"
-          x1="-8.43"
-          y1="26.48"
-          x2="58.48"
-          y2="57.96"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#2f85f7" />
-          <stop offset="0.52" stopColor="#265ed4" />
-          <stop offset="0.63" stopColor="#255ccf" />
-          <stop offset="0.75" stopColor="#2357c2" />
-          <stop offset="0.87" stopColor="#1f4eac" />
-          <stop offset="0.97" stopColor="#1b4596" />
-        </linearGradient>
-        <linearGradient
-          id="c"
-          x1="29.4"
-          y1="49.64"
-          x2="66.51"
-          y2="-14.63"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stopColor="#e7a2de" />
-          <stop offset="0.6" stopColor="#d864c9" />
-          <stop offset="1" stopColor="#be54b0" />
-        </linearGradient>
-      </defs>
-      <polygon
-        points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
-        fill="url(#a)"
-        stroke="url(#a)"
-        strokeWidth="0.1"
-      />
-      <polygon
-        points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
-        fill="url(#b)"
-        stroke="url(#b)"
-        strokeWidth="0.1"
-      />
-      <polygon
-        points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
-        fill="url(#c)"
-        stroke="url(#c)"
-        strokeWidth="0.1"
-      />
-    </svg>
-  );
+export function Reviz({ width, height, mono }: MonoColorIconProps) {
+  if (mono) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 100 86.26"
+        width={width}
+        height={height}
+      >
+        <defs>
+          <linearGradient
+            id="a"
+            x1="40.64"
+            y1="7.74"
+            x2="78.44"
+            y2="61.14"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#b5f0ff" />
+            <stop offset="0.6" stopColor="#4de1ff" />
+            <stop offset="0.97" stopColor="#00c1e8" />
+          </linearGradient>
+          <linearGradient
+            id="b"
+            x1="-8.43"
+            y1="26.48"
+            x2="58.48"
+            y2="57.96"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#265ed4" />
+            <stop offset="0.61" stopColor="#1a4cae" />
+            <stop offset="0.71" stopColor="#1a4ba9" />
+            <stop offset="0.82" stopColor="#1b469c" />
+            <stop offset="0.94" stopColor="#1d3f86" />
+            <stop offset="0.97" stopColor="#1d3d7e" />
+          </linearGradient>
+          <linearGradient
+            id="c"
+            x1="29.4"
+            y1="49.64"
+            x2="66.51"
+            y2="-14.63"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#80bdff" />
+            <stop offset="0.6" stopColor="#2f85f7" />
+            <stop offset="1" stopColor="#265ed4" />
+          </linearGradient>
+        </defs>
+        <polygon
+          points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
+          fill="url(#a)"
+          stroke="url(#a)"
+          strokeWidth="0.1"
+        />
+        <polygon
+          points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
+          fill="url(#b)"
+          stroke="url(#b)"
+          strokeWidth="0.1"
+        />
+        <polygon
+          points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
+          fill="url(#c)"
+          stroke="url(#c)"
+          strokeWidth="0.1"
+        />
+      </svg>
+    );
+  } 
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 100 86.26"
+        width={width}
+        height={height}
+      >
+        <defs>
+          <linearGradient
+            id="a"
+            x1="40.64"
+            y1="7.74"
+            x2="78.44"
+            y2="61.14"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#b5f0ff" />
+            <stop offset="0.6" stopColor="#4de1ff" />
+            <stop offset="0.97" stopColor="#00c1e8" />
+          </linearGradient>
+          <linearGradient
+            id="b"
+            x1="-8.43"
+            y1="26.48"
+            x2="58.48"
+            y2="57.96"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#2f85f7" />
+            <stop offset="0.52" stopColor="#265ed4" />
+            <stop offset="0.63" stopColor="#255ccf" />
+            <stop offset="0.75" stopColor="#2357c2" />
+            <stop offset="0.87" stopColor="#1f4eac" />
+            <stop offset="0.97" stopColor="#1b4596" />
+          </linearGradient>
+          <linearGradient
+            id="c"
+            x1="29.4"
+            y1="49.64"
+            x2="66.51"
+            y2="-14.63"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#e7a2de" />
+            <stop offset="0.6" stopColor="#d864c9" />
+            <stop offset="1" stopColor="#be54b0" />
+          </linearGradient>
+        </defs>
+        <polygon
+          points="99.59 13.93 32.63 13.93 41.79 29.22 74.11 29.09 41.63 86.25 58.1 86.25 99.59 13.93"
+          fill="url(#a)"
+          stroke="url(#a)"
+          strokeWidth="0.1"
+        />
+        <polygon
+          points="41.66 86.26 74.11 29.09 57.88 29.17 41.37 56.62 8.42 0 0.16 14.57 41.66 86.26"
+          fill="url(#b)"
+          stroke="url(#b)"
+          strokeWidth="0.1"
+        />
+        <polygon
+          points="8.45 0 41.38 56.56 49.78 42.61 32.63 13.93 99.62 13.94 91.67 -0.11 8.45 0"
+          fill="url(#c)"
+          stroke="url(#c)"
+          strokeWidth="0.1"
+        />
+      </svg>
+    );
+  
 }
