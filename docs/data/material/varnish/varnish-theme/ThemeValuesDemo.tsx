@@ -7,6 +7,9 @@ export default function Demo() {
   const theme = getTheme();
   const topLevelKeys = Object.keys(theme);
 
+  // we want to filter out the 'unstable' material theme objects, and we need 
+  // to special-case the 'spacing' theme object since it is a function, so this
+  // returns all theme objects with those two special-casing rules observed.
   return (
     <div style={{ maxWidth: '100%' }}>
       {topLevelKeys.map(
