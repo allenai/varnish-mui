@@ -82,6 +82,10 @@ export const color2: Dictionary<Color> = {
 
 export type Color2Type = Indexable<typeof color2>;
 
+export const isVarnishColor = (id: string) => {
+  return id in color2;
+};
+
 // temp: use this to lookup new color from old
 export const color: Dictionary<Color> = {
   R1: color2.R1,

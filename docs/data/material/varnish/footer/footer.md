@@ -41,3 +41,15 @@ Footer with custom content.
 | :-------------- | ------------------- | :-------- | :----------------------------------- |
 | variant         | 'default' \| 'dark' | 'default' | Used contrast text color when 'dark. |
 | backgroundColor | string?             | undefined | Background color of footer.          |
+
+### Footer Components
+
+The Footer consists of multiple different links that can each be used individually or together for a custom footer:
+
+| Link Component             | Prop    | Description                                                                                 |
+| :------------------------- | ------- | :------------------------------------------------------------------------------------------ |
+| PrivacyLink                | variant | The AI2 Privacy Policy Link, with variant default or dark depending on footer               |
+| TermsOfUseLink             | variant | The AI2 Terms of Use Link, with variant default or dark depending on footer                 |
+| BusinessConductLink        | variant | The AI2 Business Code of Conduct Link, with variant default or dark depending on footer     |
+| AI2TermsAndConditionsLinks | variant | The combination of the AI2 Privacy Policy, Terms of Use, and Business Code of Conduct links |
+| AI2CopyrightLink           | variant | The AI2 Copyright Link, with variant default or dark depending on footer                    |

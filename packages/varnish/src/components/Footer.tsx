@@ -15,6 +15,10 @@ interface Props {
   className?: string;
 }
 
+interface TermsAndConditionsProps {
+  variant?: FooterVariant;
+}
+
 const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <footer {...rest} />)<{
   backgroundColor?: Color;
   isContrast?: boolean;
@@ -32,6 +36,47 @@ const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <foote
       : theme.palette.common.white};
 `;
 
+export function PrivacyLink(props: TermsAndConditionsProps) {
+  return (
+    <Link variant={props.variant} href="https://allenai.org/privacy-policy">
+      Privacy Policy
+    </Link>
+  );
+}
+
+export function TermsOfUseLink(props: TermsAndConditionsProps) {
+  return (
+    <Link variant={props.variant} href="https://allenai.org/terms">
+      Terms of Use
+    </Link>
+  );
+}
+
+export function BusinessConductLink(props: TermsAndConditionsProps) {
+  return (
+    <Link variant={props.variant} href="https://allenai.org/business-code-of-conduct">
+      Business Code of Conduct
+    </Link>
+  );
+}
+
+export function AI2TermsAndConditionsLinks(props: TermsAndConditionsProps) {
+  return (
+    <React.Fragment>
+      <PrivacyLink variant={props.variant} /> | <TermsOfUseLink variant={props.variant} /> |{' '}
+      <BusinessConductLink variant={props.variant} />{' '}
+    </React.Fragment>
+  );
+}
+
+export function AI2CopyrightLink(props: TermsAndConditionsProps) {
+  return (
+    <Link variant={props.variant} href="https://allenai.org">
+      © The Allen Institute for Artificial Intelligence
+    </Link>
+  );
+}
+
 export function Footer(props: Props) {
   // TODO: Make custom styles for elements that have standardized padding across AI2
   return (
@@ -47,21 +92,8 @@ export function Footer(props: Props) {
             props.children
           ) : (
             <span>
-              <Link variant={props.variant} href="https://allenai.org">
-                © The Allen Institute for Artificial Intelligence
-              </Link>{' '}
-              - All Rights Reserved |{' '}
-              <Link variant={props.variant} href="https://allenai.org/privacy-policy">
-                Privacy Policy
-              </Link>{' '}
-              |{' '}
-              <Link variant={props.variant} href="https://allenai.org/terms">
-                Terms of Use
-              </Link>{' '}
-              |{' '}
-              <Link variant={props.variant} href="https://allenai.org/business-code-of-conduct">
-                Business Code of Conduct
-              </Link>
+              <AI2CopyrightLink variant={props.variant} /> - All Rights Reserved |{' '}
+              <AI2TermsAndConditionsLinks variant={props.variant} />
             </span>
           )}
         </StyledFooter>
