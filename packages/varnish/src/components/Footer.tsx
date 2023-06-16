@@ -36,6 +36,10 @@ const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <foote
       : theme.palette.common.white};
 `;
 
+export function FooterLinkSeparator() {
+  return <React.Fragment> | </React.Fragment>
+}
+
 export function PrivacyLink(props: TermsAndConditionsProps) {
   return (
     <Link variant={props.variant} href="https://allenai.org/privacy-policy">
@@ -60,20 +64,26 @@ export function BusinessConductLink(props: TermsAndConditionsProps) {
   );
 }
 
-export function AI2TermsAndConditionsLinks(props: TermsAndConditionsProps) {
+export function AI2TermsAndConditionsAllLinks(props: TermsAndConditionsProps) {
   return (
     <React.Fragment>
-      <PrivacyLink variant={props.variant} /> | <TermsOfUseLink variant={props.variant} /> |{' '}
-      <BusinessConductLink variant={props.variant} />{' '}
+      <PrivacyLink variant={props.variant} />
+      <FooterLinkSeparator />
+      <TermsOfUseLink variant={props.variant} />
+      <FooterLinkSeparator />
+      <BusinessConductLink variant={props.variant} />
     </React.Fragment>
   );
 }
 
 export function AI2CopyrightLink(props: TermsAndConditionsProps) {
   return (
-    <Link variant={props.variant} href="https://allenai.org">
-      © The Allen Institute for Artificial Intelligence
-    </Link>
+    <React.Fragment>
+      <Link variant={props.variant} href="https://allenai.org">
+        © The Allen Institute for Artificial Intelligence
+      </Link>{' '}
+      - All Rights Reserved
+    </React.Fragment>
   );
 }
 
@@ -92,8 +102,9 @@ export function Footer(props: Props) {
             props.children
           ) : (
             <span>
-              <AI2CopyrightLink variant={props.variant} /> - All Rights Reserved |{' '}
-              <AI2TermsAndConditionsLinks variant={props.variant} />
+              <AI2CopyrightLink variant={props.variant} />
+              <FooterLinkSeparator />
+              <AI2TermsAndConditionsAllLinks variant={props.variant} />
             </span>
           )}
         </StyledFooter>

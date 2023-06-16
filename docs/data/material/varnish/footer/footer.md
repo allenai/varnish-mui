@@ -35,6 +35,12 @@ Footer with custom content.
 
 {{"demo": "FooterCustomDemo.js", "defaultCodeOpen": false}}
 
+### Custom Footer with AI2 Privacy and Terms of Use Links
+
+Footer with some custom content and some AI2 proprietary content.
+
+{{"demo": "FooterCustomWithAI2LinksDemo.js", "defaultCodeOpen": false}}
+
 ### API
 
 | Property        | Type                | Default   | Description                          |
@@ -46,10 +52,12 @@ Footer with custom content.
 
 The Footer consists of multiple different links that can each be used individually or together for a custom footer:
 
-| Link Component             | Prop    | Description                                                                                 |
-| :------------------------- | ------- | :------------------------------------------------------------------------------------------ |
-| PrivacyLink                | variant | The AI2 Privacy Policy Link, with variant default or dark depending on footer               |
-| TermsOfUseLink             | variant | The AI2 Terms of Use Link, with variant default or dark depending on footer                 |
-| BusinessConductLink        | variant | The AI2 Business Code of Conduct Link, with variant default or dark depending on footer     |
-| AI2TermsAndConditionsLinks | variant | The combination of the AI2 Privacy Policy, Terms of Use, and Business Code of Conduct links |
-| AI2CopyrightLink           | variant | The AI2 Copyright Link, with variant default or dark depending on footer                    |
+| Link Component                | Prop    | Description                                                                                 |
+| :---------------------------- | ------- | :------------------------------------------------------------------------------------------ |
+| PrivacyLink                   | variant | The AI2 Privacy Policy Link, with variant default or dark depending on footer               |
+| TermsOfUseLink                | variant | The AI2 Terms of Use Link, with variant default or dark depending on footer                 |
+| BusinessConductLink           | variant | The AI2 Business Code of Conduct Link, with variant default or dark depending on footer     |
+| AI2TermsAndConditionsAllLinks | variant | The combination of the AI2 Privacy Policy, Terms of Use, and Business Code of Conduct links |
+| AI2CopyrightLink              | variant | The AI2 Copyright Link, with variant default or dark depending on footer                    |
+
+You can separate Footer links if used in a custom footer with a `<FooterLinkSeparator />` component
