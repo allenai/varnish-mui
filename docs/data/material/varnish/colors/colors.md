@@ -80,3 +80,9 @@ When designing charts on a `dark` background, use the following colors for data 
 | displayName     | string                                       |         | Name of color                              |
 | hex             | string                                       |         | Hex value of color                         |
 | rgba            | {r: number, g: number, b: number, a: number} |         | RGBA object of color                       |
+
+## Additional APIs to work with Varnish Colors
+
+| Function Name  | Type    | Parameter  | Description                                   |
+| :------------- | :------ | :--------- | :-------------------------------------------- |
+| isVarnishColor | boolean | id: string | Checks if a color id is a valid Varnish Color |
