@@ -13,6 +13,10 @@ module.exports = [
         title: 'Third Party Libraries',
       },
       { pathname: '/material-ui/varnish/varnish-theme', title: 'Theme' },
+      {
+        pathname: '/material-ui/varnish/varnish1-to-varnish2',
+        title: 'Varnish1 Concepts in Varnish2',
+      },
     ],
   },
   {

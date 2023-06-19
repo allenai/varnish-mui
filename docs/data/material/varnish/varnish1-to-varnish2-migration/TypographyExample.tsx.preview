@@ -1,0 +1,9 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+<p
+  style={{
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.body1.fontSize,
+  }}
+>
+  Test Paragraph Body 1 Size
+</p>
