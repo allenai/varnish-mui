@@ -13,8 +13,20 @@ You can promote users to share something on Twitter as just text, or text and a 
 
 #### Text Only
 
-{{"demo": "TextOnlyShare.js", "defaultCodeOpen": false}}
+{{"demo": "TwitterTextOnlyShare.js", "defaultCodeOpen": false}}
 
 #### Text + URL
 
-{{"demo": "TextAndUrlShare.js", "defaultCodeOpen": false}}
+{{"demo": "TwitterTextAndUrlShare.js", "defaultCodeOpen": false}}
+
+## Share on Facebook Button
+
+You can share your website's URL on Facebook.
+
+{{"demo": "FacebookShare.js", "defaultCodeOpen": false}}
+
+## Share on LinkedIn Button
+
+You can share your website with a title and summary on LinkedIn.
+
+{{"demo": "LinkedInShare.js", "defaultCodeOpen": false}}
