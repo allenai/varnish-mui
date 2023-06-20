@@ -9,7 +9,7 @@ export default function Demo() {
   const OuterDiv = styled('div')(
     ({ theme }) =>
       css`
-        background-color: ${theme.color2.B5.hex}
+        background-color: ${theme.color2.B5.hex};
         width: 100%;
         height: 50px;
       `,
@@ -18,11 +18,12 @@ export default function Demo() {
   const InnerDiv = styled('div')(
     ({ theme }) =>
       css`
-        background-color: white
+        background-color: white;
         width: 50%;
         margin-top: 10px;
         margin-left: 10px;
-        border-raduis: ${theme.shape.borderRadius}
+        border-radius: ${theme.shape.borderRadius}px;
+        text-align: center;
       `,
   );
 

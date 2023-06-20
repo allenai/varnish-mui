@@ -14,7 +14,7 @@ export default function Demo() {
   const StyledParagraph = styled('p')(
     ({ theme }) =>
       css`
-        font-family: ${theme.typography.body1.fontFamily}
+        font-family: ${theme.typography.body1.fontFamily};
         font-size: ${theme.typography.body1.fontSize};
       `,
   );
