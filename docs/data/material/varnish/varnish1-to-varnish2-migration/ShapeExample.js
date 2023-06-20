@@ -5,7 +5,7 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 
-export default function ShapeExample() {
+export default function Demo() {
   const theme = useTheme();
   return (
     <div
