@@ -8,10 +8,6 @@ module.exports = [
         title: 'Getting Started',
       },
       { pathname: '/material-ui/varnish/varnish-app', title: 'Varnish App' },
-      {
-        pathname: '/material-ui/varnish/third-party-libs',
-        title: 'Third Party Libraries',
-      },
       { pathname: '/material-ui/varnish/varnish-theme', title: 'Theme' },
       {
         pathname: '/material-ui/varnish/varnish1-to-varnish2',
@@ -20,6 +16,10 @@ module.exports = [
       {
         pathname: '/material-ui/varnish/how-to',
         title: 'How Do I...',
+      },
+      {
+        pathname: '/material-ui/varnish/third-party-libs',
+        title: 'Third Party Libraries',
       },
     ],
   },

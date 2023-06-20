@@ -3,25 +3,32 @@
  */
 
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
+import { styled, css } from '@mui/material/styles';
 
 export default function Demo() {
-  const theme = useTheme();
+  const OuterDiv = styled('div')(
+    ({ theme }) =>
+      css`
+        background-color: ${theme.color2.B5.hex}
+        width: 100%;
+        height: 50px;
+      `,
+  );
+
+  const InnerDiv = styled('div')(
+    ({ theme }) =>
+      css`
+        background-color: white
+        width: 50%;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-raduis: ${theme.shape.borderRadius}
+      `,
+  );
+
   return (
-    <div
-      style={{ width: '100%', height: '50px', backgroundColor: theme.color2.B5.hex }}
-    >
-      <div
-        style={{
-          marginTop: '10px',
-          marginLeft: '10px',
-          width: '50%',
-          backgroundColor: 'white',
-          borderRadius: theme.shape.borderRadius,
-        }}
-      >
-        Test
-      </div>
-    </div>
+    <OuterDiv>
+      <InnerDiv>Test</InnerDiv>
+    </OuterDiv>
   );
 }

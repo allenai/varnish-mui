@@ -1,9 +1,12 @@
+/**
+ * This file has been auto-generated. Please don't edit nor review.
+ */
+
 import * as React from 'react';
 import { styled, css } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 
 export default function Demo() {
-  const CustomButton = styled(Button)(
+  const CustomButton = styled('button')(
     ({ theme }) =>
       css`
         width: 50%;
@@ -11,7 +14,6 @@ export default function Demo() {
         background-color: ${theme.color2.T4.hex};
         padding: ${theme.spacing(3)};
         font-size: ${theme.typography.h4.fontSize};
-        color: black;
       `,
   );
 
