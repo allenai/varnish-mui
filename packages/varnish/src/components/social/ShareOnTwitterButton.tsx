@@ -8,22 +8,20 @@ interface Props {
 }
 
 export function ShareOnTwitterButton({ url, text }: Props) {
-  let baseUrl = 'https://twitter.com/intent/tweet';
+  const myUrlWithParams = new URL('https://twitter.com/intent/tweet');
   if (url) {
-    baseUrl += `?url=${  url}`;
-    if (text) {
-      baseUrl += `&text=${  text}`;
-    }
-  } else if (text) {
-    baseUrl += `?text=${  text}`;
+    myUrlWithParams.searchParams.append('url', url);
+  }
+  if (text) {
+    myUrlWithParams.searchParams.append('text', text);
   }
 
   return (
     <IconButton color="primary" size="small">
-        <a href={baseUrl} target="_blank" rel="noopener noreferrer">
-          <TwitterIcon alt="Share on Twitter" />
-        </a>
-      </IconButton>
+      <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
+        <TwitterIcon alt="Share on Twitter" />
+      </a>
+    </IconButton>
   );
 }
 
