@@ -1,0 +1,15 @@
+{/* This file has been auto-generated. Please don't edit nor review. */}
+<div>
+  <Button
+    sx={{
+      width: '50%',
+      textAlign: 'center',
+      bgcolor: (theme) => theme.color2.T4.hex,
+      padding: (theme) => theme.spacing(3),
+      fontSize: (theme) => theme.typography.h4.fontSize,
+      color: 'black',
+    }}
+  >
+    👾 🤖 👽 Custom 👾 🤖 👽
+  </Button>
+</div>
