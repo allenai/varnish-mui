@@ -15,7 +15,7 @@ export function ShareOnFacebookButton({ url }: Props) {
   return (
     <IconButton color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
-        <FacebookIcon alt="Share on Twitter" />
+        <FacebookIcon />
       </a>
     </IconButton>
   );
