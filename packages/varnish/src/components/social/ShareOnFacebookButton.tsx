@@ -13,7 +13,7 @@ export function ShareOnFacebookButton({ url }: Props) {
   }
 
   return (
-    <IconButton color="primary" size="small">
+    <IconButton aria-label="Facebook Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
         <FacebookIcon />
       </a>

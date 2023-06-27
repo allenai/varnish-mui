@@ -21,7 +21,7 @@ export function ShareOnLinkedInButton({ url, title, summary }: Props) {
   }
 
   return (
-    <IconButton color="primary" size="small">
+    <IconButton aria-label="LinkedIn Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
         <LinkedInIcon />
       </a>

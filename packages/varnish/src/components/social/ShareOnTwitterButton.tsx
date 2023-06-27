@@ -17,7 +17,7 @@ export function ShareOnTwitterButton({ url, text }: Props) {
   }
 
   return (
-    <IconButton color="primary" size="small">
+    <IconButton aria-label="Twitter Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
         <TwitterIcon />
       </a>
