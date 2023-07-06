@@ -17,7 +17,7 @@ probably won't compile, or if it does things probably won't work.
 
 ```jsx
 import React from 'react';
-import { VarnishApp } from '@allenai/varnish2';
+import { VarnishApp } from '@allenai/varnish2/components';
 
 const App = () => (
   <VarnishApp layout="left-aligned">

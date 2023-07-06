@@ -9,7 +9,7 @@ githubLabel: 'varnish: menu-pattern'
 
 ## Pattern
 
-To achieve a menu like the one on [Skiff Template](https://skiff-template-varnish2.apps.allenai.org/), you can use the following structure:
+To achieve a menu like the one on [Skiff Template](https://skiff-template.apps.allenai.org/), you can use the following structure:
 
 ```jsx
 import { List, ListItem, ListItemButton } from '@mui/material';
