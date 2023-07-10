@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import TwitterIcon from '@mui/icons-material/Twitter';
+// the below import is causing issues; until we get the dependency issues resolved, commenting out
+// import TwitterIcon from '@mui/icons-material/Twitter';
 
 interface Props {
   url?: string;
@@ -19,7 +20,7 @@ export function ShareOnTwitterButton({ url, text }: Props) {
   return (
     <IconButton aria-label="Twitter Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
-        <TwitterIcon />
+        {/* <TwitterIcon /> */}
       </a>
     </IconButton>
   );

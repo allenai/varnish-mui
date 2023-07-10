@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// the below import is causing issues; until we get the dependency issues resolved, commenting out
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 interface Props {
   url?: string;
@@ -23,7 +24,7 @@ export function ShareOnLinkedInButton({ url, title, summary }: Props) {
   return (
     <IconButton aria-label="LinkedIn Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
-        <LinkedInIcon />
+        {/* <LinkedInIcon /> */}
       </a>
     </IconButton>
   );

@@ -45,10 +45,6 @@ module.exports = [
         title: 'Copy To Clipboard',
       },
       { pathname: '/material-ui/varnish/max-width-text', title: 'Max Width Text' },
-      {
-        pathname: '/material-ui/varnish/social-share-buttons',
-        title: 'Social Share Buttons',
-      },
     ],
   },
   {

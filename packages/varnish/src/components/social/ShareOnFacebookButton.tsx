@@ -1,6 +1,7 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import FacebookIcon from '@mui/icons-material/Facebook';
+// the below import is causing issues; until we get the dependency issues resolved, commenting out
+// import FacebookIcon from '@mui/icons-material/Facebook';
 
 interface Props {
   url?: string;
@@ -15,7 +16,7 @@ export function ShareOnFacebookButton({ url }: Props) {
   return (
     <IconButton aria-label="Facebook Icon" color="primary" size="small">
       <a href={myUrlWithParams.href} target="_blank" rel="noopener noreferrer">
-        <FacebookIcon />
+        {/* <FacebookIcon /> */}
       </a>
     </IconButton>
   );
