@@ -58,6 +58,12 @@ An AI2 Banner at the top of the header that collapses when the page is scrolled.
 
 {{"demo": "HeaderWithTargetWindowSmartBanner.js", "defaultCodeOpen": false}}
 
+### AI2 Banner Black and White
+
+An AI2 Banner in Black and White.
+
+{{"demo": "HeaderBlackAndWhiteBanner.js", "defaultCodeOpen": false}}
+
 ### API
 
 | Property            | Type                                                                       | Default   | Description                                                           |

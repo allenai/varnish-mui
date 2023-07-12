@@ -1,10 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { AI2Logo } from '../logos/AI2Logo';
+import Grid from '@mui/material/Grid';
+import { AI2Logo, LogoSize } from '../logos/AI2Logo';
 import { Content } from '../Content';
 
 export interface AI2BannerProps {
   children?: React.ReactNode;
+  size?: LogoSize;
+  controls?: React.ReactNode;
+  blackAndWhite?: boolean;
 }
 
 export const BannerLink = styled.a`
@@ -17,20 +21,27 @@ const BannerContent = styled(Content)`
   padding-bottom: 0;
 `;
 
-const DarkBanner = styled.div`
-  background: ${({ theme }) => theme.paletteExtended.background.dark};
+const StyledBanner = styled.div<{ blackAndWhite?: boolean }>`
+  background: ${({ theme, blackAndWhite,  }) => blackAndWhite ? `black` : theme.paletteExtended.background.dark};
   padding: ${({ theme }) => theme.spacing(0.5)} 0;
   line-height: 1;
 `;
 
-export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ children }) => (
-  <DarkBanner>
+export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ children, size, blackAndWhite, controls }) => (
+  <StyledBanner blackAndWhite={blackAndWhite}>
     <BannerContent>
       {children || (
-        <BannerLink href="https://allenai.org">
-          <AI2Logo color="white" size="sm" />
-        </BannerLink>
+        <Grid container justifyContent="space-between" spacing={2}>
+          <Grid item>
+              <BannerLink href="https://allenai.org">
+                  <AI2Logo color="white" size={size || "sm"}/>
+              </BannerLink>
+          </Grid>
+          <Grid item>
+              {controls || null}
+          </Grid>
+      </Grid>
       )}
     </BannerContent>
-  </DarkBanner>
+  </StyledBanner>
 ));
