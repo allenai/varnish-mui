@@ -7,7 +7,7 @@ import { color2, Color } from '../../theme/colors';
 import { Indexable, Dictionary } from '../../utils/base';
 
 type ColorVariants = 'default' | 'white';
-type LogoSize = 'sm' | 'md' | 'lg';
+export type LogoSize = 'sm' | 'md' | 'lg';
 
 interface DimData {
   height: number;
