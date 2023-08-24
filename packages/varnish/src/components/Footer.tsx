@@ -37,7 +37,7 @@ const StyledFooter = styled(({ backgroundColor, isContrast, ...rest }) => <foote
 `;
 
 export function FooterLinkSeparator() {
-  return <React.Fragment> | </React.Fragment>
+  return <React.Fragment> | </React.Fragment>;
 }
 
 export function PrivacyLink(props: TermsAndConditionsProps) {

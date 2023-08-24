@@ -22,28 +22,27 @@ const BannerContent = styled(Content)`
 `;
 
 const StyledBanner = styled.div<{ grayscale?: boolean }>`
-  background: ${({ theme, grayscale }) => grayscale ? `black` : theme.paletteExtended.background.dark};
+  background: ${({ theme, grayscale }) =>
+    grayscale ? `black` : theme.paletteExtended.background.dark};
   padding: ${({ theme }) => theme.spacing(0.5)} 0;
   line-height: 1;
 `;
 
-export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(({ children, logoSize, grayscale, endSlot }) => (
-  <StyledBanner grayscale={grayscale}>
-    <BannerContent>
-      {children || (
-        <Grid container justifyContent="space-between" spacing={2}>
-          <Grid item>
-              <BannerLink href="https://allenai.org">
-                  <AI2Logo color="white" size={logoSize || "sm"}/>
-              </BannerLink>
-          </Grid>
-          {endSlot && 
+export const AI2Banner = React.forwardRef<HTMLDivElement, AI2BannerProps>(
+  ({ children, logoSize, grayscale, endSlot }) => (
+    <StyledBanner grayscale={grayscale}>
+      <BannerContent>
+        {children || (
+          <Grid container justifyContent="space-between" spacing={2}>
             <Grid item>
-                {endSlot}
+              <BannerLink href="https://allenai.org">
+                <AI2Logo color="white" size={logoSize || 'sm'} />
+              </BannerLink>
             </Grid>
-          }
-      </Grid>
-      )}
-    </BannerContent>
-  </StyledBanner>
-));
+            {endSlot && <Grid item>{endSlot}</Grid>}
+          </Grid>
+        )}
+      </BannerContent>
+    </StyledBanner>
+  ),
+);
