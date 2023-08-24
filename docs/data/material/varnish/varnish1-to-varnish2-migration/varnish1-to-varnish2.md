@@ -72,3 +72,8 @@ More information about the Typography pattern in MUI can be found here: https://
 Transitions in Varnish-Deprecated: https://varnish-deprecated.apps.allenai.org/components/transitions
 
 Transitions in Varnish (MUI): https://varnish.allenai.org/material-ui/customization/transitions/
+
+## Nivo Charts
+
+We still suggest using [Nivo Charts](https://nivo.rocks/).
+However, there is currently no Varnish2 theme. So the colors may be off or need to be hand tuned.

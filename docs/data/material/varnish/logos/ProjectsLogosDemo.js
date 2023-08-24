@@ -68,6 +68,13 @@ export default function Demo() {
 
       <Item>
         <Center>
+          <ImageListItemBar title="OLMo" position="top" />
+          <logos.OLMo />
+        </Center>
+      </Item>
+
+      <Item>
+        <Center>
           <ImageListItemBar title="Incubator" position="top" />
           <logos.Incubator />
         </Center>
