@@ -9,7 +9,7 @@ githubLabel: 'varnish: getting-started'
 
 ## Note About Versions
 
-All new applications should be using `Varnish2`. However, many older applications will still be using `Varnish`. [Documentation on deprecated version](https://varnish-deprecated.allenai.org/) is still availiable.
+All new applications should be using `Varnish2`. However, many older applications will still be using `Varnish`. [Documentation on deprecated version](https://varnish-deprecated.apps.allenai.org/) is still availiable.
 
 ## Upgrading from Varnish to Varnish2
 
@@ -49,7 +49,7 @@ However, if you didn't, follow these steps to use `Varnish`:
     ```jsx
     import React from 'react';
     import ReactDOM from 'react-dom';
-    import { VarnishApp } from '@allenai/varnish2';
+    import { VarnishApp } from '@allenai/varnish2/components';
 
     const App = () => (
       <VarnishApp>
@@ -61,7 +61,7 @@ However, if you didn't, follow these steps to use `Varnish`:
 1.  Now that you have Varnish installed, you can start using it to style your application.
 
     ```jsx
-    import { Footer } from '@allenai/varnish2';
+    import { Footer } from '@allenai/varnish2/components';
 
     // use as any other React component
     const MyComponent = () => (
