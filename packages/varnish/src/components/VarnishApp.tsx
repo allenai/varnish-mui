@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { getTheme } from '../theme/theme';
+import { deepmerge } from 'packages/mui-utils/';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
+import { getTheme } from '../theme';
 
 export interface VarnishAppProps {
   layout?: LayoutVariant;
@@ -23,7 +24,17 @@ export interface VarnishAppProps {
  * and those not provided will use the defaults.
  */
 export function VarnishApp({ layout, theme, children }: VarnishAppProps) {
-  const mergedTheme = getTheme(theme);
+
+  const mergedTheme = createTheme(deepmerge(getTheme(theme), {
+    components: {
+      MuiContainer: {
+        defaultProps: {
+          disableGutters: true,
+        }
+      }
+    }
+  }));
+
   return (
     <StyledThemeProvider theme={mergedTheme}>
       <ThemeProvider theme={mergedTheme}>
