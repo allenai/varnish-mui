@@ -2,8 +2,8 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import { getTheme } from '../theme';
 import CssBaseline from '@mui/material/CssBaseline';
+import { getTheme } from '../theme';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
 
