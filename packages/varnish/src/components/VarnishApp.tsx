@@ -2,10 +2,10 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
+import { getTheme } from '../theme';
 import CssBaseline from '@mui/material/CssBaseline';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
-import { getTheme } from '../theme';
 
 export interface VarnishAppProps {
   layout?: LayoutVariant;
@@ -23,9 +23,7 @@ export interface VarnishAppProps {
  * and those not provided will use the defaults.
  */
 export function VarnishApp({ layout, theme, children }: VarnishAppProps) {
-
   const mergedTheme = getTheme(theme);
-
   return (
     <StyledThemeProvider theme={mergedTheme}>
       <ThemeProvider theme={mergedTheme}>
