@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { getTheme } from '../theme';
+import { getTheme } from '../theme/theme';
 import { DefaultAppLayoutProvider, LayoutVariant } from './VarnishContext';
 import { ErrorBoundary } from './ErrorBoundary';
 
