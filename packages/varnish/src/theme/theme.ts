@@ -56,6 +56,11 @@ export const getMuiCssBaselineStyleOverrides = (theme: Omit<Theme, 'components'>
 export const getVarnishDesignTokens = (): ThemeOptions => {
   return {
     components: {
+      MuiContainer: {
+        defaultProps: {
+          disableGutters: true,
+        }
+      },
       MuiCssBaseline: {
         styleOverrides: (theme) => getMuiCssBaselineStyleOverrides(theme),
       },
