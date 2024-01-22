@@ -1,3 +1,11 @@
+# STOP
+
+⚠️ Deprecated Repo, use: https://github.com/allenai/varnish instead!! ⚠️
+
+
+
+
+
 # Varnish2 Monorepo
 
 This repository contains code for a collection of libraries and applications that, in concert,
